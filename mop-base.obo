@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mop/releases/2026-08-20/mop-base.owl
+data-version: mop/releases/2026-09-29/mop-base.owl
 idspace: dc http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
@@ -8,8 +8,8 @@ property_value: dc:type IAO:8000001
 property_value: dcterms:date "01:02:2022 11:15" xsd:string
 property_value: dcterms:description "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation." xsd:string
 property_value: dcterms:license http://creativecommons.org/licenses/by/4.0/
-property_value: dcterms:title "MOP" xsd:string
-property_value: owl:versionInfo "2026-08-20" xsd:string
+property_value: dcterms:title "Molecular Process Ontology (MOP)" xsd:string
+property_value: owl:versionInfo "2026-09-29" xsd:string
 
 [Term]
 id: MOP:0000000
@@ -5758,14 +5758,14 @@ property_value: dcterms:date "2022-02-01T09:48:59Z" xsd:dateTime
 [Term]
 id: MOP:0000717
 name: enolisability
-namespace: RXNO
+namespace: MOP
 def: "Disposition that is realised in the process of enolisation" [https://orcid.org/0000-0001-5985-7429]
 is_a: BFO:0000016
 
 [Term]
 id: MOP:0000718
 name: enolisable carbonyl compound
-namespace: RXNO
+namespace: MOP
 def: "A carbonyl compound that bears the disposition to be enolised." [https://orcid.org/0000-0001-5985-7429]
 comment: this surely belongs in ChEBI but put it here pro tem
 is_a: CHEBI:36587
@@ -5776,14 +5776,14 @@ relationship: RO:0000091 MOP:0000717 ! enolisability
 [Term]
 id: MOP:0000719
 name: O-dealkylation
-namespace: RXNO
+namespace: MOP
 def: "Breaking of a covalent bond between an alkyl group and an oxygen atom." [RSC:xp]
 is_a: MOP:0001369 ! dealkylation
 
 [Term]
 id: MOP:0000720
 name: [2+2+1] cycloaddition
-namespace: RXNO
+namespace: MOP
 def: "A cycloaddition in which two participants contribute two electrons and the other participant contributes one electron to the transformation of reactants to products." [https://orcid.org/0000-0001-5985-7429]
 is_a: MOP:0000562 ! cycloaddition
 
@@ -5798,7 +5798,7 @@ is_a: MOP:0000728 ! sigmatropic rearrangement
 [Term]
 id: MOP:0000722
 name: decarboxylative condensation
-namespace: RXNO
+namespace: MOP
 def: "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of a carbon dioxide molecule." [RSC:xp]
 is_a: MOP:0000627 ! condensation reaction
 relationship: BFO:0000051 MOP:0001713 ! decarboxylation
@@ -5808,7 +5808,7 @@ creation_date: 2014-03-05T10:00:00Z
 [Term]
 id: MOP:0000723
 name: deethanolative condensation
-namespace: RXNO
+namespace: MOP
 def: "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an ethanol molecule." [RSC:xp]
 is_a: MOP:0000825 ! dealcoholative condensation
 created_by: batchelorc
@@ -6562,14 +6562,14 @@ is_a: MOP:0000410 ! hydrocarbylation
 [Term]
 id: MOP:0000825
 name: dealcoholative condensation
-namespace: RXNO
+namespace: MOP
 def: "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an alcohol molecule." [https://orcid.org/0000-0001-5985-7429]
 is_a: MOP:0000627 ! condensation reaction
 
 [Term]
 id: MOP:0000826
 name: dienophilicity
-namespace: RXNO
+namespace: MOP
 def: "A disposition which is realised in a [4+2] reaction with a double-bonded system." [https://orcid.org/0000-0001-5985-7429]
 xref: http://goldbook.iupac.org/D01700.html
 is_a: BFO:0000016
@@ -10463,7 +10463,7 @@ is_a: MOP:0000567 ! breaking of covalent bond with group
 [Term]
 id: MOP:0001713
 name: decarboxylation
-namespace: RXNO
+namespace: MOP
 def: "Breaking of a covalent bond between a molecule and a carboxy group." [RSC:xp]
 is_a: MOP:0001458 ! deorganylation
 relationship: RO:0000057 CHEBI:46883
@@ -26016,7 +26016,7 @@ is_a: IAO:0000030
 [Term]
 id: MOP:0006369
 name: P-alkylation
-namespace: RXNO
+namespace: MOP
 def: "The formation of a covalent bond between a phosphorus atom and an alkyl group." [RSC:xp]
 is_a: MOP:0000369 ! alkylation
 

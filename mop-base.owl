@@ -12,14 +12,14 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mop/mop-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-08-20/mop-base.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-09-29/mop-base.owl"/>
         <dc:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
         <dcterms:date>01:02:2022 11:15</dcterms:date>
         <dcterms:description>MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation.</dcterms:description>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <dcterms:title>MOP</dcterms:title>
+        <dcterms:title>Molecular Process Ontology (MOP)</dcterms:title>
         <oboInOwl:hasOBOFormatVersion>1.2</oboInOwl:hasOBOFormatVersion>
-        <owl:versionInfo>2026-08-20</owl:versionInfo>
+        <owl:versionInfo>2026-09-29</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -11986,7 +11986,7 @@
         <oboInOwl:creation_date>2009-06-05T04:57:07Z</oboInOwl:creation_date>
         <oboInOwl:id>MOP:0000591</oboInOwl:id>
         <rdfs:comment>CHEBI:46883.</rdfs:comment>
-        <rdfs:comment>Prior to the resolving of https://github.com/rsc-ontologies/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 (&apos;acetylene reduction&apos;). 
+        <rdfs:comment>Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 (&apos;acetylene reduction&apos;). 
 Thus the &quot;has_participant some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; (MOP:0000591) in MOP was copied from this wrongly defined  &apos;carboxylation&apos; in RXNO to the proper one in MOP.
 
 The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</rdfs:comment>
@@ -12001,7 +12001,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000591"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Prior to the resolving of https://github.com/rsc-ontologies/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 (&apos;acetylene reduction&apos;). 
+        <owl:annotatedTarget>Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 (&apos;acetylene reduction&apos;). 
 Thus the &quot;has_participant some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; (MOP:0000591) in MOP was copied from this wrongly defined  &apos;carboxylation&apos; in RXNO to the proper one in MOP.
 
 The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</owl:annotatedTarget>
@@ -14880,7 +14880,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000717">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
         <obo:IAO_0000115>Disposition that is realised in the process of enolisation</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0000717</oboInOwl:id>
         <rdfs:label>enolisability</rdfs:label>
     </owl:Class>
@@ -14915,7 +14915,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A carbonyl compound that bears the disposition to be enolised.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0000718</oboInOwl:id>
         <rdfs:comment>this surely belongs in ChEBI but put it here pro tem</rdfs:comment>
         <rdfs:label>enolisable carbonyl compound</rdfs:label>
@@ -14934,7 +14934,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000719">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0001369"/>
         <obo:IAO_0000115>Breaking of a covalent bond between an alkyl group and an oxygen atom.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0000719</oboInOwl:id>
         <rdfs:label>O-dealkylation</rdfs:label>
     </owl:Class>
@@ -14952,7 +14952,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000720">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000562"/>
         <obo:IAO_0000115>A cycloaddition in which two participants contribute two electrons and the other participant contributes one electron to the transformation of reactants to products.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0000720</oboInOwl:id>
         <rdfs:label>[2+2+1] cycloaddition</rdfs:label>
     </owl:Class>
@@ -14997,7 +14997,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <obo:IAO_0000115>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of a carbon dioxide molecule.</obo:IAO_0000115>
         <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
         <oboInOwl:creation_date>2014-03-05T10:00:00Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0000722</oboInOwl:id>
         <rdfs:label>decarboxylative condensation</rdfs:label>
     </owl:Class>
@@ -15017,7 +15017,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <obo:IAO_0000115>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an ethanol molecule.</obo:IAO_0000115>
         <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
         <oboInOwl:creation_date>2014-03-05T10:00:00Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0000723</oboInOwl:id>
         <rdfs:label>deethanolative condensation</rdfs:label>
     </owl:Class>
@@ -17252,7 +17252,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000825">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000627"/>
         <obo:IAO_0000115>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an alcohol molecule.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0000825</oboInOwl:id>
         <rdfs:label>dealcoholative condensation</rdfs:label>
     </owl:Class>
@@ -17271,7 +17271,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
         <obo:IAO_0000115>A disposition which is realised in a [4+2] reaction with a double-bonded system.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>http://goldbook.iupac.org/D01700.html</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0000826</oboInOwl:id>
         <rdfs:label>dienophilicity</rdfs:label>
     </owl:Class>
@@ -27342,7 +27342,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Breaking of a covalent bond between a molecule and a carboxy group.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0001713</oboInOwl:id>
         <rdfs:label>decarboxylation</rdfs:label>
     </owl:Class>
@@ -67536,7 +67536,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0006369">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000369"/>
         <obo:IAO_0000115>The formation of a covalent bond between a phosphorus atom and an alkyl group.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0006369</oboInOwl:id>
         <rdfs:label>P-alkylation</rdfs:label>
     </owl:Class>
