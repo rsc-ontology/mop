@@ -16,15 +16,15 @@
         "val" : "http://creativecommons.org/licenses/by/4.0/"
       }, {
         "pred" : "http://purl.org/dc/terms/title",
-        "val" : "MOP"
+        "val" : "Molecular Process Ontology (MOP)"
       }, {
         "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion",
         "val" : "1.2"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2026-08-20"
+        "val" : "2026-09-29"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/mop/releases/2026-08-20/mop-base.json"
+      "version" : "http://purl.obolibrary.org/obo/mop/releases/2026-09-29/mop-base.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000015",
@@ -9123,7 +9123,7 @@
           "val" : "Formation of a covalent bond between a substrate and a carboxy group.",
           "xrefs" : [ "RSC:xp" ]
         },
-        "comments" : [ "CHEBI:46883.", "Prior to the resolving of https://github.com/rsc-ontologies/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 ('acetylene reduction'). \nThus the \"has_participant some 'carboxy group'\" axiom, which was not yet present on 'carboxylation' (MOP:0000591) in MOP was copied from this wrongly defined  'carboxylation' in RXNO to the proper one in MOP.\n\nThe only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation' was also moved to be correctly subsumed in RXNO." ],
+        "comments" : [ "CHEBI:46883.", "Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 ('acetylene reduction'). \nThus the \"has_participant some 'carboxy group'\" axiom, which was not yet present on 'carboxylation' (MOP:0000591) in MOP was copied from this wrongly defined  'carboxylation' in RXNO to the proper one in MOP.\n\nThe only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation' was also moved to be correctly subsumed in RXNO." ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
           "val" : "batchelorc"
@@ -10967,7 +10967,7 @@
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -10982,7 +10982,7 @@
         "comments" : [ "this surely belongs in ChEBI but put it here pro tem" ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -10996,7 +10996,7 @@
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -11010,7 +11010,7 @@
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -11045,7 +11045,7 @@
           "val" : "2014-03-05T10:00:00Z"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -11065,7 +11065,7 @@
           "val" : "2014-03-05T10:00:00Z"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -12335,7 +12335,7 @@
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -12352,7 +12352,7 @@
         } ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -18566,7 +18566,7 @@
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
@@ -43378,7 +43378,7 @@
         },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "RXNO"
+          "val" : "MOP"
         } ]
       }
     }, {
