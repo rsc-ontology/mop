@@ -27,26 +27,30 @@ Before the migration to ODK, both ontologies were only published directly in the
     curl -o rxno_pre_ODK.owl https://raw.githubusercontent.com/rsc-ontology/rxno/refs/tags/pre-odk-release/rxno.owl && \
     curl -o mop_pre_ODK.owl https://raw.githubusercontent.com/rsc-ontology/rxno/refs/tags/pre-odk-release/mop.owl
     ```
-2. Use the RXNO file downloaded in step 1 in ROBOT, to produce an ontology in functional syntax that only contains the MOP classes and only references all external ontology terms via their PURL:
+2. Use the files downloaded in step 1 in ROBOT, to produce a ontologies that only contain the MOP classes and only references all external ontology terms via their PURL:
     ```shell
-    robot remove -i mop_pre_ODK.owl --base-iri MOP --exclude-term owl:versionIRI --axioms external --preserve-structure false --trim false -o mop_base_pre_ODK.owl && \
-    robot remove -i rxno_pre_ODK.owl --base-iri MOP --exclude-term owl:versionIRI --axioms external --preserve-structure false --trim false -o mop_base_in_rxno_pre_ODK.owl
+    robot remove -i mop_pre_ODK.owl --base-iri MOP --axioms external --preserve-structure false \
+      --trim false convert -f ofn \
+      -o mop_base_pre_ODK.owl  && \
+    robot remove -i rxno_pre_ODK.owl --base-iri MOP --axioms external --preserve-structure false \
+      --trim false convert -f ofn \
+      -o mop_base_in_rxno_pre_ODK.owl
     ```
-3. Use the `mop_base_in_rxno_pre_ODK.owl` file created in step 2 to transform it into a term list that only contains the MOP terms defined in the pre ODK RXNO version:
+3. Use the `mop_base_in_rxno_pre_ODK.owl` file created in step 2 to transform it into a term list that only contains the MOP terms defined in this RXNO version:
     ```shell
     robot export --input mop_base_in_rxno_pre_ODK.owl --header "ID|LABEL" --include "classes properties" --export mop_base_in_rxno_pre_ODK.csv && \
     grep '^MOP:' mop_base_in_rxno_pre_ODK.csv | \
     sed 's/,/\t# /' > mop_in_rxno_terms.txt && \
     rm mop_base_in_rxno_pre_ODK.csv
     ```
-4. Use the `mop_in_rxno_terms.txt` file from step 3 to filter the `mop_pre_ODK.owl` from step 1 into an MOP module that contains only those classes that were also present in `rxno_pre_ODK.owl`. We d this as a preperation to provide a slimmer diff between the pre ODK MOP and RXNO versions, which only focuses on the MOP terms defined in the pre ODK RXNO. 
+4. Use the `mop_in_rxno_terms.txt` file from step 3 to filter the `mop_base_pre_ODK.owl` from step 1 into an MOP module that contains only those classes that were also present in `rxno_pre_ODK.owl`. We do this as a preparation to provide a slimmer diff between the pre ODK MOP and RXNO versions, which only focuses on the MOP terms defined in the pre ODK RXNO. 
     ```shell
-    robot extract -i mop_base_pre_ODK.owl --term-file mop_in_rxno_terms.txt --force true --copy-ontology-annotations true --method BOT --copy-ontology-annotations true \
-      -o mop_base_pre_ODK_slim.owl &&
-    robot extract -i mop_base_in_rxno_pre_ODK.owl --term-file mop_in_rxno_terms.txt --force true --copy-ontology-annotations true --method BOT --copy-ontology-annotations true \
-      -o mop_base_in_rxno_pre_ODK_slim.owl
+    robot extract -i mop_base_pre_ODK.owl --method BOT \
+      --term-file mop_in_rxno_terms.txt --cop\
+      convert -f ofn \
+      -o mop_base_pre_ODK_slim.owl
     ```
 5. Make diff to see the changes of MOP classes in RXNO and MOP before ODK migration
     ```shell
-    robot diff --left mop_base_in_rxno_pre_ODK_slim.owl --right mop_base_pre_ODK_slim.owl -f html -o mop_in_rxno_pre_ODK_diff.html
+    robot diff --left mop_base_in_rxno_pre_ODK.owl --right mop_base_pre_ODK_slim.owl -f markdown -o mop_in_rxno_pre_ODK_diff.md
     ```
