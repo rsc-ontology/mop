@@ -21,7 +21,7 @@ Before the migration to ODK, both ontologies were only published directly in the
 ## Using ROBOT to identify the differences between the MOP terms defined in the pre ODK `rxno.owl` and `mop.owl` files. 
 @TODO: Add a paragraph about the initial workflow using ROBOT to convert RXNO and MOP to tsv first and then load into MS EXCEL to reconcile, with links to now outdated PR and files and such
 
-### Using ROBOT diff to produce a systematic diff
+### Using [ROBOT diff](https://robot.obolibrary.org/diff) to Produce a Systematic Diff 
 1. Download the pre-ODK RXNO and MOP release files:
     ```shell
     curl -o rxno_pre_ODK.owl https://raw.githubusercontent.com/rsc-ontology/rxno/refs/tags/pre-odk-release/rxno.owl && \
@@ -46,7 +46,7 @@ Before the migration to ODK, both ontologies were only published directly in the
 4. Use the `mop_in_rxno_terms.txt` file from step 3 to filter the `mop_base_pre_ODK.owl` from step 1 into an MOP module that contains only those classes that were also present in `rxno_pre_ODK.owl`. We do this as a preparation to provide a slimmer diff between the pre ODK MOP and RXNO versions, which only focuses on the MOP terms defined in the pre ODK RXNO. 
     ```shell
     robot extract -i mop_base_pre_ODK.owl --method BOT \
-      --term-file mop_in_rxno_terms.txt --cop\
+      --term-file mop_in_rxno_terms.txt --copy-ontology-annotations true \
       convert -f ofn \
       -o mop_base_pre_ODK_slim.owl
     ```
@@ -273,3 +273,72 @@ For `allylic rearrangement` ROBOT calculated a diff, although there are no chang
   - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
   - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:db"
   - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:cc" 
+
+## Using ROBOT to produce a diff comparing MOP before and after the ODK Migration
+In this step we produce a diff between the pre-ODK MOP version and the post-ODK version to make sure the ODK migration did not produce any unaccounted changes of MOP. 
+The MOP term overlap analysed in the previous section was partially addressed during the MOP migration by copying the MOP terms only defined in RXNO over to MOP, resolving the IRI clashes and some of the differences in SubclassOf axioms or annotations together with Colin Batchelor. 
+To produce a minimal diff between the pre- and post-ODK MOP version, we decided to merge only those MOP terms defined in the pre-ODK base RXNO with the pre ODK base version of MOP that were not previously defined in the `mop.owl`. Hence, the diff will show changes for those terms defined in both OWL files that are due to the reasons listed in the previous step.
+
+### 1. Get MOP Terms only defined in pre-ODK RXNO
+We used the terms identified in the previous step `6. Removed MOP Terms` to manually produce the `mop_only_in_rxno_terms.txt` file, which we then used to build the `mop_only_in_rxno_terms.owl` module that contains MOP terms only defined in RXNO, via ROBOT extract like this:
+```shell
+robot extract -i mop_base_in_rxno_pre_ODK.owl --method BOT \
+  --term-file mop_only_in_rxno_terms.txt --copy-ontology-annotations false \
+  -o mop_only_in_rxno.owl
+```
+
+### 2. Merge Pre ODK MOP versions
+We used ROBOT to merge the `mop_only_in_rxno_terms.owl` module with the pre ODK base release of MOP (`mop_base_pre_ODK.owl`) that we created earlier.
+```shell
+robot merge -i mop_base_pre_ODK.owl -i mop_only_in_rxno_base.owl \
+  --include-annotations true -o mop_base_pre_ODK_complete.owl
+```
+
+### 3. Download the post-ODK MOP release file:
+To compare the pre-ODK MOP version we need to download the first release made after the ODK migration. We're using the base release to exclude imported terms.
+```shell
+curl -o mop_base_post_ODK.owl https://raw.githubusercontent.com/rsc-ontology/mop/refs/heads/main/mop-base.owl
+```
+
+### 4. Make diff to see the changes after the ODK migration
+```shell
+robot diff --left mop_base_pre_ODK_complete.owl --right mop_base_post_ODK.owl -f markdown -o mop_ODK_diff.md
+```
+
+## Analysing ROBOT diff comparing MOP before and after the ODK Migration
+
+### Ontology annotation diff
+The DC Elements predicates were swapped with the newer and OBO preferred DCTerms equivalents. The `owl:versionIRI` and `dce:type` annotations were added automatically by the ODK in the release artifact build process.
+
+### Swapping of BFO relations
+Since the OBO Foundry ontologies are to use the Relations Ontology RO for their relations and only BFO classes for the upper level, we swapped all BFO object properties for their RO equivalents in https://github.com/rsc-ontology/mop/issues/3. This accounts for the SubclassOf changes on:
+* 3-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000750`
+* 3-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000751`
+* 3-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000749`
+* 3-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000778`
+* 3-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000748`
+* 4-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000754`
+* 4-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000753`
+* 4-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000762`
+* 4-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000741`
+* 4-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000752`
+* 5-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000758`
+* 5-endo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000745`
+* 5-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000757`
+* 5-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000756`
+* 5-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000742`
+* 5-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000755`
+* 6-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000770`
+* 6-endo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000746`
+* 6-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000759`
+* 6-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000763`
+* 6-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000743`
+* 6-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000765`
+* 7-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000761`
+* 7-endo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000747`
+* 7-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000760`
+* 7-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000764`
+* 7-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000744`
+* 7-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000766`
+* BFO_0000050 `http://purl.obolibrary.org/obo/BFO_0000050`
+* 
