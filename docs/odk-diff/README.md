@@ -284,6 +284,8 @@ We used the terms identified in the previous step `6. Removed MOP Terms` to manu
 ```shell
 robot extract -i mop_base_in_rxno_pre_ODK.owl --method BOT \
   --term-file mop_only_in_rxno_terms.txt --copy-ontology-annotations false \
+  filter --term-file mop_only_in_rxno_terms.txt --signature true --trim false \
+  convert --format ofn \
   -o mop_only_in_rxno.owl
 ```
 

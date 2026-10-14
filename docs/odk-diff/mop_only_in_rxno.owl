@@ -1,823 +1,209 @@
-<?xml version="1.0"?>
-<rdf:RDF xmlns="http://purl.obolibrary.org/obo/rxno.owl#"
-     xml:base="http://purl.obolibrary.org/obo/rxno.owl"
-     xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:owl="http://www.w3.org/2002/07/owl#"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
-    <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/rxno.owl"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/IAO_0000115 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000115"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#created_by -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#created_by"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#creation_date -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#creation_date"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasAlternativeId -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasAlternativeId"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasDbXref -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasExactSynonym -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBONamespace -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBONamespace"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#id -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#id"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Object Properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000055 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000055"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000057 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000057"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000077 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000077"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000078 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000078"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000162 -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/BFO_0000162"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/rxno.obo#has_part -->
-
-    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/rxno.obo#has_part"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Classes
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000016 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000016"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_15734 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_15734"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_16526 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_16526"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_17478 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17478"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_30879 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_30879"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_33595 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33595"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_33823 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33823"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_36587 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_36587"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CHEBI_46883 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_46883"/>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000369 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000369">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000410"/>
-        <obo:IAO_0000115>Formation of a covalent bond between a substrate and an alkyl group.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>alkylation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000369</oboInOwl:id>
-        <rdfs:comment>has_participant: CHEBI:22323</rdfs:comment>
-        <rdfs:label>alkylation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000369"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Formation of a covalent bond between a substrate and an alkyl group.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000410 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000410">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000458"/>
-        <obo:IAO_0000115>Formation of a covalent bond between a substrate and a hydrocarbyl group.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>hydrocarbylation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000410</oboInOwl:id>
-        <rdfs:comment>has_participant: CHEBI:33248</rdfs:comment>
-        <rdfs:label>hydrocarbylation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000410"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Formation of a covalent bond between a substrate and a hydrocarbyl group.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000458 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000458">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000566"/>
-        <obo:IAO_0000115>Formation of a covalent bond between a substrate and an organyl group.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>organylation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000458</oboInOwl:id>
-        <rdfs:comment>has_participant: CHEBI:33249</rdfs:comment>
-        <rdfs:label>organylation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000458"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Formation of a covalent bond between a substrate and an organyl group.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000543 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000543">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
-        <obo:IAO_0000115>A process in which at least one of the participants is a molecule.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000543</oboInOwl:id>
-        <rdfs:comment>TODO: needs work, formal definition, etc.</rdfs:comment>
-        <rdfs:label>molecular process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A process in which at least one of the participants is a molecule.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000561 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000561">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000077"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33595"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Formation of a ring in a molecule from a chain by formation of a new bond.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>cyclisation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000561</oboInOwl:id>
-        <rdfs:label>cyclization</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000561"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Formation of a ring in a molecule from a chain by formation of a new bond.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>AU:C01494</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000562 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000562">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000561"/>
-        <obo:IAO_0000115>A molecular process where two or more unsaturated molecules or parts of the same molecule combine to form a cyclic adduct in which there is a net reduction of bond multiplicity.</obo:IAO_0000115>
-        <oboInOwl:hasAlternativeId>RXNO:0000314</oboInOwl:hasAlternativeId>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000562</oboInOwl:id>
-        <rdfs:label>cycloaddition</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000562"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A molecular process where two or more unsaturated molecules or parts of the same molecule combine to form a cyclic adduct in which there is a net reduction of bond multiplicity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>AU:C01496</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000565 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000565">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000562"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MOP_0000826"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A cycloaddition in which one participant contributes four electrons and the other participant contributes two electrons to the transformation of reactants to products.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000565</oboInOwl:id>
-        <rdfs:label>[4+2] cycloaddition</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000565"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A cycloaddition in which one participant contributes four electrons and the other participant contributes two electrons to the transformation of reactants to products.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000566 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000566">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
-        <obo:IAO_0000115>Formation of a covalent bond between a substrate and a group.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2009-04-22T10:01:32Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000566</oboInOwl:id>
-        <rdfs:label>formation of covalent bond with group</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000566"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Formation of a covalent bond between a substrate and a group.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000567 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000567">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
-        <obo:IAO_0000115>Breaking of a covalent bond between a substrate and a group.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2009-04-30T02:24:32Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000567</oboInOwl:id>
-        <rdfs:label>breaking of covalent bond with group</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000567"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Breaking of a covalent bond between a substrate and a group.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000568 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000568">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
-        <obo:IAO_0000115>The complete, net removal of one or mole electrons from a molecular entity, corresponding to an increase in the oxidation number of any atom within any substrate.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2009-06-01T06:01:47Z</oboInOwl:creation_date>
-        <oboInOwl:hasExactSynonym>de-electronation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000568</oboInOwl:id>
-        <rdfs:label>oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000568"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The complete, net removal of one or mole electrons from a molecular entity, corresponding to an increase in the oxidation number of any atom within any substrate.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>AU:O04362</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000569 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000569">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
-        <obo:IAO_0000115>The complete transfer of one or more electrons to a molecular entity.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2009-06-01T06:04:18Z</oboInOwl:creation_date>
-        <oboInOwl:hasExactSynonym>electronation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000569</oboInOwl:id>
-        <rdfs:label>reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000569"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The complete transfer of one or more electrons to a molecular entity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>AU:R05222</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000571 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000571">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000569"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000077"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_15734"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000078"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_17478"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A reduction in which an aldehyde is reduced to form a primary alcohol.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2009-06-01T06:07:02Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000571</oboInOwl:id>
-        <rdfs:label>aldehyde reduction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000571"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A reduction in which an aldehyde is reduced to form a primary alcohol.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000572 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000572">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000568"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000078"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_30879"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>An oxidation process where an alcohol is transformed into a carbonyl compound.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2009-06-01T06:10:35Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000572</oboInOwl:id>
-        <rdfs:label>alcohol oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000572"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An oxidation process where an alcohol is transformed into a carbonyl compound.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000581 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000581">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000568"/>
-        <obo:IAO_0000115>An oxidation process where the oxidation state of at least one doubly-bonded carbon atom increases.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2009-06-02T05:45:30Z</oboInOwl:creation_date>
-        <oboInOwl:hasExactSynonym>olefin oxidation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000581</oboInOwl:id>
-        <rdfs:label>alkene oxidation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An oxidation process where the oxidation state of at least one doubly-bonded carbon atom increases.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000627 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000627">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
-        <obo:IAO_0000115>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of a small molecule.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2009-09-16T11:30:32Z</oboInOwl:creation_date>
-        <oboInOwl:hasAlternativeId>RXNO:0000315</oboInOwl:hasAlternativeId>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000627</oboInOwl:id>
-        <rdfs:label>condensation reaction</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000627"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of a small molecule.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>AU:C01238</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000716 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000716">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/MOP_0000543"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MOP_0000717"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000055"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MOP_0000717"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000077"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33823"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Molecular process in which an aldehyde or ketone tautomerises to form an enol.</obo:IAO_0000115>
-        <oboInOwl:hasExactSynonym>enolization</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000716</oboInOwl:id>
-        <rdfs:label>enolisation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000716"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Molecular process in which an aldehyde or ketone tautomerises to form an enol.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000717 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000717">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
-        <obo:IAO_0000115>Disposition that is realised in the process of enolisation</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000717</oboInOwl:id>
-        <rdfs:label>enolisability</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000717"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Disposition that is realised in the process of enolisation</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000718 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000718">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CHEBI_36587"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000162"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MOP_0000717"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36587"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MOP_0000717"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A carbonyl compound that bears the disposition to be enolised.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000718</oboInOwl:id>
-        <rdfs:comment>this surely belongs in ChEBI but put it here pro tem</rdfs:comment>
-        <rdfs:label>enolisable carbonyl compound</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000718"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A carbonyl compound that bears the disposition to be enolised.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000719 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000719">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0001369"/>
-        <obo:IAO_0000115>Breaking of a covalent bond between an alkyl group and an oxygen atom.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000719</oboInOwl:id>
-        <rdfs:label>O-dealkylation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000719"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Breaking of a covalent bond between an alkyl group and an oxygen atom.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000720 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000720">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000562"/>
-        <obo:IAO_0000115>A cycloaddition in which two participants contribute two electrons and the other participant contributes one electron to the transformation of reactants to products.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000720</oboInOwl:id>
-        <rdfs:label>[2+2+1] cycloaddition</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000720"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A cycloaddition in which two participants contribute two electrons and the other participant contributes one electron to the transformation of reactants to products.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000722 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000722">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000627"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/rxno.obo#has_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/MOP_0001713"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of a carbon dioxide molecule.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2014-03-05T10:00:00Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000722</oboInOwl:id>
-        <rdfs:label>decarboxylative condensation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000722"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of a carbon dioxide molecule.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000723 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000723">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000825"/>
-        <obo:IAO_0000115>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an ethanol molecule.</obo:IAO_0000115>
-        <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
-        <oboInOwl:creation_date>2014-03-05T10:00:00Z</oboInOwl:creation_date>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000723</oboInOwl:id>
-        <rdfs:label>deethanolative condensation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000723"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an ethanol molecule.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000825 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000825">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000627"/>
-        <obo:IAO_0000115>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an alcohol molecule.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000825</oboInOwl:id>
-        <rdfs:label>dealcoholative condensation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000825"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an alcohol molecule.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0000826 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000826">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000016"/>
-        <obo:IAO_0000115>A disposition which is realised in a [4+2] reaction with a double-bonded system.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>http://goldbook.iupac.org/D01700.html</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0000826</oboInOwl:id>
-        <rdfs:label>dienophilicity</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000826"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A disposition which is realised in a [4+2] reaction with a double-bonded system.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0001369 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0001369">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0001458"/>
-        <obo:IAO_0000115>Breaking of a covalent bond between an alkyl group and a substrate.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0001369</oboInOwl:id>
-        <rdfs:label>dealkylation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0001369"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Breaking of a covalent bond between an alkyl group and a substrate.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0001458 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0001458">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000567"/>
-        <obo:IAO_0000115>Breaking of a covalent bond between a substrate and an organyl group.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0001458</oboInOwl:id>
-        <rdfs:comment>has_participant: CHEBI:33249</rdfs:comment>
-        <rdfs:label>deorganylation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0001458"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Breaking of a covalent bond between a substrate and an organyl group.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0001713 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0001713">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0001458"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000057"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_46883"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000077"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_16526"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Breaking of a covalent bond between a molecule and a carboxy group.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0001713</oboInOwl:id>
-        <rdfs:label>decarboxylation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0001713"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Breaking of a covalent bond between a molecule and a carboxy group.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/MOP_0006369 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0006369">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000369"/>
-        <obo:IAO_0000115>The formation of a covalent bond between a phosphorus atom and an alkyl group.</obo:IAO_0000115>
-        <oboInOwl:hasOBONamespace>RXNO</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>MOP:0006369</oboInOwl:id>
-        <rdfs:label>P-alkylation</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0006369"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The formation of a covalent bond between a phosphorus atom and an alkyl group.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>RSC:xp</oboInOwl:hasDbXref>
-    </owl:Axiom>
-</rdf:RDF>
-
-
-
-<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
-
+Prefix(:=<http://purl.obolibrary.org/obo/rxno.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+
+
+Ontology(<http://purl.obolibrary.org/obo/rxno.owl>
+
+Declaration(Class(<http://purl.obolibrary.org/obo/BFO_0000016>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CHEBI_15734>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CHEBI_16526>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CHEBI_17478>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CHEBI_30879>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CHEBI_36587>))
+Declaration(Class(<http://purl.obolibrary.org/obo/CHEBI_46883>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000369>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000543>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000562>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000565>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000568>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000569>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000571>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000572>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000581>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000627>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000716>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000717>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000718>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000719>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000720>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000722>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000723>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000825>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0000826>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0001369>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0001458>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0001713>))
+Declaration(Class(<http://purl.obolibrary.org/obo/MOP_0006369>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000055>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000057>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000077>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000078>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000162>))
+Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/rxno.obo#has_part>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#created_by>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#creation_date>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasDbXref>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#id>))
+
+
+
+############################
+#   Classes
+############################
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000565> ([4+2] cycloaddition)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000565> "A cycloaddition in which one participant contributes four electrons and the other participant contributes two electrons to the transformation of reactants to products.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000565> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000565> "MOP:0000565")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000565> "[4+2] cycloaddition")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000565> <http://purl.obolibrary.org/obo/MOP_0000562>)
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000565> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000055> <http://purl.obolibrary.org/obo/MOP_0000826>))
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000571> (aldehyde reduction)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000571> "A reduction in which an aldehyde is reduced to form a primary alcohol.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MOP_0000571> "batchelorc")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/MOP_0000571> "2009-06-01T06:07:02Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000571> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000571> "MOP:0000571")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000571> "aldehyde reduction")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000571> <http://purl.obolibrary.org/obo/MOP_0000569>)
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000571> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000077> <http://purl.obolibrary.org/obo/CHEBI_15734>))
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000571> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000078> <http://purl.obolibrary.org/obo/CHEBI_17478>))
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000572> (alcohol oxidation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000572> "An oxidation process where an alcohol is transformed into a carbonyl compound.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MOP_0000572> "batchelorc")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/MOP_0000572> "2009-06-01T06:10:35Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000572> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000572> "MOP:0000572")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000572> "alcohol oxidation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000572> <http://purl.obolibrary.org/obo/MOP_0000568>)
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000572> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000078> <http://purl.obolibrary.org/obo/CHEBI_30879>))
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000581> (alkene oxidation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000581> "An oxidation process where the oxidation state of at least one doubly-bonded carbon atom increases.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MOP_0000581> "batchelorc")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/MOP_0000581> "2009-06-02T05:45:30Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/MOP_0000581> "olefin oxidation")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000581> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000581> "MOP:0000581")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000581> "alkene oxidation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000581> <http://purl.obolibrary.org/obo/MOP_0000568>)
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000716> (<http://purl.obolibrary.org/obo/MOP_0000716>)
+
+EquivalentClasses(<http://purl.obolibrary.org/obo/MOP_0000716> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/MOP_0000543> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000055> <http://purl.obolibrary.org/obo/MOP_0000717>)))
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000716> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000055> <http://purl.obolibrary.org/obo/MOP_0000717>))
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000717> (enolisability)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000717> "Disposition that is realised in the process of enolisation")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000717> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000717> "MOP:0000717")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000717> "enolisability")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000717> <http://purl.obolibrary.org/obo/BFO_0000016>)
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000718> (enolisable carbonyl compound)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000718> "A carbonyl compound that bears the disposition to be enolised.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000718> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000718> "MOP:0000718")
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/MOP_0000718> "this surely belongs in ChEBI but put it here pro tem")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000718> "enolisable carbonyl compound")
+EquivalentClasses(<http://purl.obolibrary.org/obo/MOP_0000718> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CHEBI_36587> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000162> <http://purl.obolibrary.org/obo/MOP_0000717>)))
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000718> <http://purl.obolibrary.org/obo/CHEBI_36587>)
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000718> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000162> <http://purl.obolibrary.org/obo/MOP_0000717>))
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000719> (O-dealkylation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RSC:xp") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000719> "Breaking of a covalent bond between an alkyl group and an oxygen atom.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000719> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000719> "MOP:0000719")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000719> "O-dealkylation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000719> <http://purl.obolibrary.org/obo/MOP_0001369>)
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000720> ([2+2+1] cycloaddition)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000720> "A cycloaddition in which two participants contribute two electrons and the other participant contributes one electron to the transformation of reactants to products.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000720> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000720> "MOP:0000720")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000720> "[2+2+1] cycloaddition")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000720> <http://purl.obolibrary.org/obo/MOP_0000562>)
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000722> (decarboxylative condensation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RSC:xp") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000722> "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of a carbon dioxide molecule.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MOP_0000722> "batchelorc")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/MOP_0000722> "2014-03-05T10:00:00Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000722> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000722> "MOP:0000722")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000722> "decarboxylative condensation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000722> <http://purl.obolibrary.org/obo/MOP_0000627>)
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000722> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/rxno.obo#has_part> <http://purl.obolibrary.org/obo/MOP_0001713>))
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000723> (deethanolative condensation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RSC:xp") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000723> "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an ethanol molecule.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#created_by> <http://purl.obolibrary.org/obo/MOP_0000723> "batchelorc")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://purl.obolibrary.org/obo/MOP_0000723> "2014-03-05T10:00:00Z")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000723> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000723> "MOP:0000723")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000723> "deethanolative condensation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000723> <http://purl.obolibrary.org/obo/MOP_0000825>)
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000825> (dealcoholative condensation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000825> "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an alcohol molecule.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000825> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000825> "MOP:0000825")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000825> "dealcoholative condensation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000825> <http://purl.obolibrary.org/obo/MOP_0000627>)
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0000826> (dienophilicity)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "https://orcid.org/0000-0001-5985-7429") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0000826> "A disposition which is realised in a [4+2] reaction with a double-bonded system.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://purl.obolibrary.org/obo/MOP_0000826> "http://goldbook.iupac.org/D01700.html")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0000826> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0000826> "MOP:0000826")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0000826> "dienophilicity")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0000826> <http://purl.obolibrary.org/obo/BFO_0000016>)
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0001369> (dealkylation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RSC:xp") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0001369> "Breaking of a covalent bond between an alkyl group and a substrate.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0001369> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0001369> "MOP:0001369")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0001369> "dealkylation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0001369> <http://purl.obolibrary.org/obo/MOP_0001458>)
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0001713> (decarboxylation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RSC:xp") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0001713> "Breaking of a covalent bond between a molecule and a carboxy group.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0001713> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0001713> "MOP:0001713")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0001713> "decarboxylation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0001713> <http://purl.obolibrary.org/obo/MOP_0001458>)
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0001713> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000057> <http://purl.obolibrary.org/obo/CHEBI_46883>))
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0001713> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000077> <http://purl.obolibrary.org/obo/CHEBI_16526>))
+
+# Class: <http://purl.obolibrary.org/obo/MOP_0006369> (P-alkylation)
+
+AnnotationAssertion(Annotation(<http://www.geneontology.org/formats/oboInOwl#hasDbXref> "RSC:xp") <http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/MOP_0006369> "The formation of a covalent bond between a phosphorus atom and an alkyl group.")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://purl.obolibrary.org/obo/MOP_0006369> "RXNO")
+AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#id> <http://purl.obolibrary.org/obo/MOP_0006369> "MOP:0006369")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/MOP_0006369> "P-alkylation")
+SubClassOf(<http://purl.obolibrary.org/obo/MOP_0006369> <http://purl.obolibrary.org/obo/MOP_0000369>)
+
+
+)
