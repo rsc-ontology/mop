@@ -32,7 +32,7 @@ Before the migration to ODK, both ontologies were only published directly in the
     robot remove -i mop_pre_ODK.owl --base-iri MOP --axioms external --preserve-structure false \
       --trim false convert -f ofn \
       -o mop_base_pre_ODK.owl  && \
-    robot remove -i rxno_pre_ODK.owl --base-iri MOP --axioms external --preserve-structure false \
+    robot remove -i rxno_pre_ODK.owl --base-iri MOP --axioms "internal annotations" --preserve-structure false \
       --trim false convert -f ofn \
       -o mop_base_in_rxno_pre_ODK.owl
     ```
@@ -54,180 +54,56 @@ Before the migration to ODK, both ontologies were only published directly in the
     ```shell
     robot diff --left mop_base_in_rxno_pre_ODK.owl --right mop_base_pre_ODK_slim.owl -f markdown -o mop_in_rxno_pre_ODK_diff.md
     ```
-## Analysing the ROBOT diff
-This section analyses the differences between the MOP terms defined in the pre ODK `rxno.owl` and `mop.owl` files made visible by the ROBOT derived markdown document. In there, the deletion of the ontology annotations are expected, sine we are comparing the MOP part wrongly defined in the `rxno.owl` file against the `mop.owl` file. The remaining differences are  systematic and can be grouped as follows: 
+## Analysing the ROBOT diff between pre-ODK RXNO & MOP 
+This section analyses the differences between the MOP terms defined in the pre ODK `rxno.owl` and `mop.owl` files made 
+visible by the ROBOT derived markdown document.
 
-### 1. Deletion of external terms
-External terms, such as [RXNO_0000344](http://purl.obolibrary.org/obo/RXNO_0000344), [BFO_0000016](http://purl.obolibrary.org/obo/BFO_0000016) or [CHEBI_15734](http://purl.obolibrary.org/obo/CHEBI_15734), were deleted because they were not used in any axioms within the `mop.owl` file on those MOP terms that were also wrongly defined in the `rxno.owl` file.
+### Pipeline Artifact
+#### Ontology-level annotations
 
-### 2. Addition of external terms
-External terms, such as [BFO_0000117](http://purl.obolibrary.org/obo/BFO_0000117) or [CHEBI_22221](http://purl.obolibrary.org/obo/CHEBI_22221), were added in axioms within the `mop.owl` file on those MOP terms that were also wrongly defined in the `rxno.owl` file.
+**Cause:** The left side of the diff carries the metadata of the original `rxno.owl` file (title, description, license, date, default-namespace, hasOBOFormatVersion). The right side (`mop_base_pre_ODK_slim.owl`) was produced by `robot extract`, which does not carry forward ontology-level annotations.
 
-### 3. Deletion of "RXNO" Namespace annotation
-The namespace annotation `RXNO` is not present in the `mop.owl` file because it does not make any sense, since the MOP terms already are declared to be within the MOP namespace via their base IRI `http://purl.obolibrary.org/obo/MOP_`. Hence, this type of diff can savely be ignored. Here is an example copied from the ROBOT diff:
-#### EXAMPLE 
-substitution reaction `http://purl.obolibrary.org/obo/MOP_0000790`
-##### Removed
-- [substitution reaction](http://purl.obolibrary.org/obo/MOP_0000790) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO"
-- 
-### 4. Deletion of `http://purl.obolibrary.org/obo/rxno.obo#has_part`
-In the `rxno.owl` file, the relation `has_part` (http://purl.obolibrary.org/obo/rxno.obo#has_part) was defined and used in SubClassOf axioms of MOP terms (`Brønsted base catalysis` & `Lewis adduct formation`), whereas in the `mop.owl` file the equivalent BFO relation (http://purl.obolibrary.org/obo/BFO_0000117) was used in these SubClassOf axioms. This reason explains the differences on:
+**Action:** Ignore. These differences reflect the container file, not the MOP term content.
 
-* decarboxylative condensation `http://purl.obolibrary.org/obo/MOP_0000722`
-* Brønsted base catalysis `http://purl.obolibrary.org/obo/MOP_0000736`
-* Lewis adduct formation `http://purl.obolibrary.org/obo/MOP_0000739`
+**Affected annotations (all removed from left):**
+- `dcterms:description` — "RXNO is the name reaction ontology..."
+- `dcterms:title` — "RXNO"
+- `dcterms:license` — CC-BY-4.0
+- `oboInOwl:date` — "16:12:2021 15:55"
+- `oboInOwl:default-namespace` — "RXNO"
+- `oboInOwl:hasOBOFormatVersion` — "1.4"
 
-Here is an example copied from the ROBOT diff:
-#### EXAMPLE 
-Brønsted base catalysis `http://purl.obolibrary.org/obo/MOP_0000736`
-##### Removed
-- [Brønsted base catalysis](http://purl.obolibrary.org/obo/MOP_0000736) SubClassOf [has_part](http://purl.obolibrary.org/obo/rxno.obo#has_part) some [accepting a hydron](http://purl.obolibrary.org/obo/MOP_0000737)
-##### Added
-- [Brønsted base catalysis](http://purl.obolibrary.org/obo/MOP_0000736) SubClassOf [BFO_0000117](http://purl.obolibrary.org/obo/BFO_0000117) some [accepting a hydron](http://purl.obolibrary.org/obo/MOP_0000737)
+#### Spurious `hasOBONamespace "RXNO"` on MOP terms
 
-### 5. Alternaive IDs
-Two MOP terms (`http://purl.obolibrary.org/obo/MOP_0002524` & `http://purl.obolibrary.org/obo/MOP_0003524`) have and additional `hasAlternativeId`(http://www.geneontology.org/formats/oboInOwl#hasAlternativeId) annotation axiom that points to the ID of the deprecated successor MOP term and that was only present in the `mop.owl` file. While two terms (`http://purl.obolibrary.org/obo/MOP_0000627` & `http://purl.obolibrary.org/obo/MOP_0000562`) had an alternative ID annotation in `rxno.owl` that was not present in the `mop.owl`.
+**Cause:** When MOP classes were erroneously defined inside `rxno.owl`, they inherited the `hasOBONamespace "RXNO"` annotation. This is incorrect — MOP terms are already identified as MOP-namespace terms by their IRI (`http://purl.obolibrary.org/obo/MOP_...`). The `mop.owl` file correctly omits this annotation.
 
-### 6. Removed MOP Terms
-Some MOP terms where only defined in the `rxno.owl` file and are thus showing up in the diff as being removed from the `mop.owl` file (see example below). This reason explains the differences on:
+**Action:** Ignore. The absence of this annotation in `mop.owl` is correct behaviour.
 
-* O-dealkylation `http://purl.obolibrary.org/obo/MOP_0000719`
-* P-alkylation `http://purl.obolibrary.org/obo/MOP_0006369`
-* [2+2+1] cycloaddition `http://purl.obolibrary.org/obo/MOP_0000720`
-* [4+2] cycloaddition `http://purl.obolibrary.org/obo/MOP_0000565`
-* alcohol oxidation `http://purl.obolibrary.org/obo/MOP_0000572`
-* aldehyde reduction `http://purl.obolibrary.org/obo/MOP_0000571`
-* alkene oxidation `http://purl.obolibrary.org/obo/MOP_0000581
-* dealkylation `http://purl.obolibrary.org/obo/MOP_0001369`
-* decarboxylative condensation `http://purl.obolibrary.org/obo/MOP_0000722`
-* deethanolative condensation `http://purl.obolibrary.org/obo/MOP_0000723`
-* dealcoholative condensation `http://purl.obolibrary.org/obo/MOP_0000825`
-* decarboxylation `http://purl.obolibrary.org/obo/MOP_0001713`
-* dienophilicity `http://purl.obolibrary.org/obo/MOP_0000826`
-* enolisability `http://purl.obolibrary.org/obo/MOP_0000717`
-* enolisable carbonyl compound `http://purl.obolibrary.org/obo/MOP_0000718`
+**Affected terms:** All ~30 MOP terms that were defined in `rxno.owl` carry this spurious annotation. It is removed for every such term in the diff. No individual listing needed — treat as universal noise.
 
-#### EXAMPLE 
-O-dealkylation `http://purl.obolibrary.org/obo/MOP_0000719`
-##### Removed
-- Class: [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719)
-- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO"
-- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000719"
-- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Breaking of a covalent bond between an alkyl group and an oxygen atom." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:xp"
-- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [label](http://www.w3.org/2000/01/rdf-schema#label) "O-dealkylation"
-- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) SubClassOf [dealkylation](http://purl.obolibrary.org/obo/MOP_0001369) 
-
-### 7. IRI Clashes 
-Some MOP terms in the `rxno.owl` files are using the same IRI as another MOP term in the `mop.owl` file. These IRI clashes show up in the diff not via the removal of the class itself, but via the removal and new addition of required annotations, such as rdfs:label and definition (IAO:0000115). Also, the linked class reference in the diff uses the wrong label for the term from the `mop.owl` (see `[3+2] cycloaddition` example below). These terms need to be discussed with RXNO/MOP maintainer and domain expert Colin Batchelor. This reason explains the differences on:
-
-* [3+2] cycloaddition `http://purl.obolibrary.org/obo/MOP_0000715`
-* carbonyl oxidation to alkyne `http://purl.obolibrary.org/obo/MOP_0000714`
-* carboxylation `http://purl.obolibrary.org/obo/MOP_0000713`
-* enolisation `http://purl.obolibrary.org/obo/MOP_0000716`
-* oxidation state `http://purl.obolibrary.org/obo/MOP_0000712`
-
-#### Example
-[3+2] cycloaddition `http://purl.obolibrary.org/obo/MOP_0000715`
-##### Removed
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO"
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A cycloaddition in which one participant contributes three electrons and the other participant contributes two electrons to the transformation of reactants to products." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [label](http://www.w3.org/2000/01/rdf-schema#label) "[3+2] cycloaddition"
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) SubClassOf [cycloaddition](http://purl.obolibrary.org/obo/MOP_0000562) 
-##### Added
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [IAO_0000116](http://purl.obolibrary.org/obo/IAO_0000116) "The GO class &quot;protein trimerization&quot; (https://purl.obolibrary.org/obo/GO_0070206) would actually be a subclass of &quot;trimerization&quot; according to the definition provided here. However, for the reason of not wanting to inject this subclassOf axiom into GO, we decided to not assert this in MOP as of yet. Further discussion is needed with the GO and/or OBO team to see how this GO class can be integrated."
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [creator](http://purl.org/dc/elements/1.1/creator) [0000-0002-4378-6061](http://orcid.org/0000-0002-4378-6061)
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [date](http://purl.org/dc/elements/1.1/date) "2022-02-01T09:40:48Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The formation of a trimer from three molecular subunits." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://en.wiktionary.org/wiki/trimerization"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [label](http://www.w3.org/2000/01/rdf-schema#label) "trimerization"@en
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [45](https://github.com/rsc-ontologies/rxno/issues/45)
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [issuecomment-1124151946](https://github.com/rsc-ontologies/rxno/pull/46#issuecomment-1124151946)
-- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000715) SubClassOf [molecular process](http://purl.obolibrary.org/obo/MOP_0000543) 
-
-### 8. Missing Annotations on MOP terms in `rxno.owl` 
-Some MOP terms in the `rxno.owl` file have less or less specific annotations (see `[3,3]-sigmatropic rearrangement` example below). This reason explains the differences on:
-
-* [3,3]-sigmatropic rearrangement `http://purl.obolibrary.org/obo/MOP_0000721`
-* accepting a hydron `http://purl.obolibrary.org/obo/MOP_0000737`
-* accepting an electron pair in Lewis adduct formation `http://purl.obolibrary.org/obo/MOP_0000733`
-* acylation `http://purl.obolibrary.org/obo/MOP_0000479`
-* base catalysis `http://purl.obolibrary.org/obo/MOP_0000731`
-* condensation reaction `http://purl.obolibrary.org/obo/MOP_0000627`
-* cyclization `http://purl.obolibrary.org/obo/MOP_0000561`
-* cycloaddition `http://purl.obolibrary.org/obo/MOP_0000562`
-* cycloelimination `http://purl.obolibrary.org/obo/MOP_0000564`
-* electron attachment `http://purl.obolibrary.org/obo/MOP_0000570`
-* electron pair donation in Lewis adduct formation `http://purl.obolibrary.org/obo/MOP_0000738`
-* elimination reaction `http://purl.obolibrary.org/obo/MOP_0000656`
-* hydron donation `http://purl.obolibrary.org/obo/MOP_0000732`
-* methylation `http://purl.obolibrary.org/obo/MOP_0000364`
-* oxidation `http://purl.obolibrary.org/obo/MOP_0000568`
-* reduction `http://purl.obolibrary.org/obo/MOP_0000569`
-* solvolysis `http://purl.obolibrary.org/obo/MOP_0000618`
-
-#### Example
-[3,3]-sigmatropic rearrangement `http://purl.obolibrary.org/obo/MOP_0000721`
-##### Added
-- [[3,3]-sigmatropic rearrangement](http://purl.obolibrary.org/obo/MOP_0000721) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A sigmatropic rearrangement where the intermediate consists of two three-electron fragments." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
-
-### 9. Different labels on MOP terms in `mop.owl` 
-Some MOP terms in the `rxno.owl` file different labels than in the `mop.owl` file (see `molecular dehydration reaction` example below). This reason explains the differences on:
-
-* molecular dehydration reaction `http://purl.obolibrary.org/obo/MOP_0000628`
-* secondary alcohol oxidation to ketone `http://purl.obolibrary.org/obo/MOP_0000574`
-
-#### molecular dehydration reaction `http://purl.obolibrary.org/obo/MOP_0000628`
-##### Removed
-- [molecular dehydration reaction](http://purl.obolibrary.org/obo/MOP_0000628) [label](http://www.w3.org/2000/01/rdf-schema#label) "molecular dehydration reaction"
-##### Added
-- [molecular dehydration reaction](http://purl.obolibrary.org/obo/MOP_0000628) [label](http://www.w3.org/2000/01/rdf-schema#label) "dehydration reaction" 
-
-### 10. Different SubclassOf Axioms of MOP terms in `rxno.owl` 
-Some MOP terms in the `rxno.owl` file have a different SubclassOf axioms than in the `mop.owl` file (see `acylation` example below). Sometimes there are differences in the parent class itself and sometimes the SubclassOf expressions were either only declared in `rxno.owl` or in `mop.owl`. This reason explains the differences on:
-
-* [3,3]-sigmatropic rearrangement `http://purl.obolibrary.org/obo/MOP_0000721`
-* acid catalysis `http://purl.obolibrary.org/obo/MOP_0000740`
-* acylation `http://purl.obolibrary.org/obo/MOP_0000479`
-* allylation `http://purl.obolibrary.org/obo/MOP_0000422`
-* amine oxidation `http://purl.obolibrary.org/obo/MOP_0000575`
-* arylation `http://purl.obolibrary.org/obo/MOP_0000411`
-* breaking of covalent bond with group `http://purl.obolibrary.org/obo/MOP_0000567`
-* cyclization `http://purl.obolibrary.org/obo/MOP_0000561`
-* cycloaddition `http://purl.obolibrary.org/obo/MOP_0000562`
-* epoxidation `http://purl.obolibrary.org/obo/MOP_0000671`
-* ester reduction `http://purl.obolibrary.org/obo/MOP_0000577`
-* ester reduction to aldehyde `http://purl.obolibrary.org/obo/MOP_0000578`
-* ester reduction to primary alcohol `http://purl.obolibrary.org/obo/MOP_0000579`
-* formylation `http://purl.obolibrary.org/obo/MOP_0000003`
-* ketone reduction `http://purl.obolibrary.org/obo/MOP_0000580`
-* halogenation `http://purl.obolibrary.org/obo/MOP_0000550`
-* N-arylation `http://purl.obolibrary.org/obo/MOP_0002411`
-* nitration `http://purl.obolibrary.org/obo/MOP_0000556`
-* organylation `http://purl.obolibrary.org/obo/MOP_0000458`
-* primary alcohol oxidation to aldehyde `http://purl.obolibrary.org/obo/MOP_0000573`
-* primary alkene oxidation to carboxylic acid and carbon dioxide `http://purl.obolibrary.org/obo/MOP_0000584`
-* quaternary alkene oxidation to ketones `http://purl.obolibrary.org/obo/MOP_0000588
-* secondary alcohol oxidation to ketone `http://purl.obolibrary.org/obo/MOP_0000574`
-* secondary, non-terminal alkene oxidation to aldehydes `http://purl.obolibrary.org/obo/MOP_0000586`
-* silylation `http://purl.obolibrary.org/obo/MOP_0000339`
-* sulfonylation `http://purl.obolibrary.org/obo/MOP_0000539`
-* tertiary alkene oxidation to carboxylic acid and ketone `http://purl.obolibrary.org/obo/MOP_0000585`
-
-#### acylation `http://purl.obolibrary.org/obo/MOP_0000479`
-##### Removed
-- [acylation](http://purl.obolibrary.org/obo/MOP_0000479) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "has_participant: CHEBI:22221"
-- [acylation](http://purl.obolibrary.org/obo/MOP_0000479) SubClassOf [organylation](http://purl.obolibrary.org/obo/MOP_0000458)
-##### Added
-- [acylation](http://purl.obolibrary.org/obo/MOP_0000479) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "you probably want &quot;carboacylation&quot;, MOP:0000028, here"
-- [acylation](http://purl.obolibrary.org/obo/MOP_0000479) SubClassOf [formation of covalent bond with carbon centre](http://purl.obolibrary.org/obo/MOP_0000800)
-- [acylation](http://purl.obolibrary.org/obo/MOP_0000479) SubClassOf [BFO_0000057](http://purl.obolibrary.org/obo/BFO_0000057) some [CHEBI_22221](http://purl.obolibrary.org/obo/CHEBI_22221) 
+**Example:**
+- **substitution reaction** `http://purl.obolibrary.org/obo/MOP_0000790`
+  - **Removed**
+    - [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO"
 
 
-### 11. Added Classes due to MOP Base Module Extraction  
-Some MOP terms in the `mop.owl` file got added, due to being the parent or grandparent of one of those terms that was defined in both files. This addition came from Step 4. of building the MOP module that was used in the comparison. This reason explains the differences on:
+#### External terms added or removed
+
+**Cause:** The diff compares two OWL files that each contain only the axioms relevant to MOP terms. An external term (from BFO, CHEBI, IAO, RO, etc.) appears in one file but not the other depending on whether it is referenced in an axiom on a MOP term *in that specific file*. This is a mechanical consequence of the extraction, not a semantic disagreement.
+
+**Action:** Ignore. These additions/removals reflect which external terms each file happens to reference, not a decision to include or exclude them from the ontology.
+
+**Removed external terms (18):** `BFO_0000016`, `BFO_0000162`, `CHEBI_15734`, `CHEBI_16526`, `CHEBI_17087`, `CHEBI_17478`, `CHEBI_29785`, `CHEBI_30879`, `CHEBI_33308`, `CHEBI_33338`, `CHEBI_33595`, `CHEBI_33823`, `CHEBI_35681`, `CHEBI_36587`, `CHEBI_42485`, `CHEBI_46883`, `IAO_0000030`, `RXNO_0000344`
+
+**Added external terms (10):** `BFO_0000117`, `CHEBI_22221`, `CHEBI_33641`, `CHEBI_51100`, `CHEBI_52214`, `CHEBI_52845`, `IAO_0000116`, `RO_0002213`, `dc:creator`, `dc:date`
+
+> **Note:** Some of these "added" terms (`BFO_0000117`, `CHEBI_22221`, `CHEBI_51100`, `CHEBI_52214`, `CHEBI_52845`, `RO_0002213`) are added because `mop.owl` uses them in axioms where `rxno.owl` used a different term or no axiom at all. The *axiom* difference is the semantic issue (covered under logical axiom drift); the *presence of the external term declaration* is a pipeline artifact.
+
+
+#### Classes added due to MOP Base Module Extraction  
+Some MOP terms appear as *added* in the diff purely because of step 4 of the workflow, where the right-hand file (`mop_base_pre_ODK_slim.owl`) was built with `robot extract --method BOT`. BOT pulls in every ancestor needed to keep the extracted classes connected, so parent or grandparent classes that are present in `mop.owl` — but that were *not* part of the term list extracted from `rxno.owl` — get added to the slim module and consequently show up as additions in the diff.
+
+This reason explains the differences on:
 * alkene oxidative cleavage `http://purl.obolibrary.org/obo/MOP_0000708`
 * alkenylation `http://purl.obolibrary.org/obo/MOP_0000420`
 * breaking of covalent bond `http://purl.obolibrary.org/obo/MOP_0000780`
@@ -244,37 +120,263 @@ Some MOP terms in the `mop.owl` file got added, due to being the parent or grand
 * sigmatropic rearrangement `http://purl.obolibrary.org/obo/MOP_0000728`
 * univalent carboacylation `http://purl.obolibrary.org/obo/MOP_0000029`
 
-### 12. Dublicate Terms in RXNO and MOP
-The term `alkene oxidative cleavage` was defined in `rxno.owl`with http://purl.obolibrary.org/obo/RXNO_0000344 and in `mop.owl` with http://purl.obolibrary.org/obo/MOP_0000708. The RXNO duplicate was used as parent for MOP terms defined in the `rxno.owl`, whereas the MOP duplicate or another MOP term was used as parent for these terms in `mop.owl` (see `alkene ozonolysis`example below). This reason explains the differences on:
+### Semantic Drift
+#### Critical Severity: IRI integrity issues
 
-* alkene ozonolysis `http://purl.obolibrary.org/obo/MOP_0000583`
-* quaternary alkene oxidation to ketones `http://purl.obolibrary.org/obo/MOP_0000588`
-* secondary, non-terminal alkene oxidation to aldehydes `http://purl.obolibrary.org/obo/MOP_0000586`
-* secondary terminal alkene oxidation to ketone and carbon dioxide `http://purl.obolibrary.org/obo/MOP_0000587`
-* tertiary alkene oxidation to carboxylic acid and ketone `http://purl.obolibrary.org/obo/MOP_0000585`
+Two classes of problems threaten the integrity of MOP PURLs. Both must be resolved before MOP can be imported into RXNO via `owl:import`, because a single ontology cannot contain two different meanings for the same IRI, nor two IRIs for the same meaning.
 
-#### alkene ozonolysis `http://purl.obolibrary.org/obo/MOP_0000583`
-##### Removed
-- [alkene ozonolysis](http://purl.obolibrary.org/obo/MOP_0000583) SubClassOf [RXNO_0000344](http://purl.obolibrary.org/obo/RXNO_0000344)
-##### Added
-- [alkene ozonolysis](http://purl.obolibrary.org/obo/MOP_0000583) SubClassOf [alkene oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000708) 
+##### 1. One IRI, two different reactions (IRI clashes)
 
-### 13. Pseudodiff
-For `allylic rearrangement` ROBOT calculated a diff, although there are no changes at all, as can be seen below:
-#### allylic rearrangement `http://purl.obolibrary.org/obo/MOP_0000792`
-##### Removed
-- [allylic rearrangement](http://purl.obolibrary.org/obo/MOP_0000792) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO"
-- [allylic rearrangement](http://purl.obolibrary.org/obo/MOP_0000792) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A substitution reaction in an allylic system with concomitant migration of the allyl double bond." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0002-4077-4719"
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:db"
-##### Added
-- [allylic rearrangement](http://purl.obolibrary.org/obo/MOP_0000792) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A substitution reaction in an allylic system with concomitant migration of the allyl double bond." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:db"
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:cc" 
+**Cause:** Some MOP IRIs were used for *different reactions* in `rxno.owl` vs. `mop.owl`. In `rxno.owl`, the IRI carried the RXNO meaning; in `mop.owl`, the same IRI carried the canonical MOP meaning. These are not annotation drift — they are entirely different chemical processes sharing a single PURL.
 
-## Using ROBOT to produce a diff comparing MOP before and after the ODK Migration
+**Action:** Requires domain-expert adjudication (Colin Batchelor). For each clash, decide:
+- If the RXNO-defined term already has an equivalent MOP term under a *different* IRI → reuse the existing MOP IRI and sync annotations & logical axioms.
+- If the RXNO-defined term has no equivalent in MOP → mint a new MOP IRI, copy the full definition and axioms from `rxno.owl` and add a comment that points to the PR where this was done.
+
+**Affected terms (5):**
+
+| IRI         | Meaning in `rxno.owl`        | Meaning in `mop.owl`     | Sub-case                                          |
+|-------------|------------------------------|--------------------------|---------------------------------------------------|
+| MOP_0000715 | [3+2] cycloaddition          | trimerization            | New MOP IRI must be minted                        |
+| MOP_0000714 | carbonyl oxidation to alkyne | ligand exchange reaction | New MOP IRI must be minted                        |
+| MOP_0000713 | carboxylation                | acetylene reduction      | MOP_0000591 is the correct ID for 'carboxylation' |
+| MOP_0000716 | enolisation                  | cyclotrimerization       | MOP_0000672 is the correct ID for 'enolisation'   |
+| MOP_0000712 | oxidation state              | olefin reduction         | New MOP IRI must be minted                        |
+
+> **Note on diff appearance:** These clashes do NOT show up as class removals in the diff. Instead, the diff shows the `rxno.owl` annotations (label, definition, SubClassOf) as "Removed" and the `mop.owl` annotations as "Added" — because ROBOT sees the same IRI with different content on each side. The linked label in the diff header uses the `rxno.owl` label, which can be misleading.
+
+**Example:**
+- **\[3+2\] cycloaddition** `http://purl.obolibrary.org/obo/MOP_0000715`
+  - **Removed** (this is what `rxno.owl` defined at this IRI)
+    - [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A cycloaddition in which one participant contributes three electrons and the other participant contributes two electrons to the transformation of reactants to products." 
+      - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
+    - [label](http://www.w3.org/2000/01/rdf-schema#label) "[3+2] cycloaddition"
+    - SubClassOf [cycloaddition](http://purl.obolibrary.org/obo/MOP_0000562) 
+  - **Added** (this is what `mop.owl` defined at this same IRI)
+    - [IAO_0000116](http://purl.obolibrary.org/obo/IAO_0000116) "The GO class &quot;protein trimerization&quot; (https://purl.obolibrary.org/obo/GO_0070206) would actually be a subclass of &quot;trimerization&quot; according to the definition provided here. However, for the reason of not wanting to inject this subclassOf axiom into GO, we decided to not assert this in MOP as of yet. Further discussion is needed with the GO and/or OBO team to see how this GO class can be integrated."
+    - [creator](http://purl.org/dc/elements/1.1/creator) [0000-0002-4378-6061](http://orcid.org/0000-0002-4378-6061)
+    - [date](http://purl.org/dc/elements/1.1/date) "2022-02-01T09:40:48Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime)
+    - [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The formation of a trimer from three molecular subunits." 
+      - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://en.wiktionary.org/wiki/trimerization"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI)
+    - [label](http://www.w3.org/2000/01/rdf-schema#label) "trimerization"@en
+    - [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [45](https://github.com/rsc-ontologies/rxno/issues/45)
+    - [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [issuecomment-1124151946](https://github.com/rsc-ontologies/rxno/pull/46#issuecomment-1124151946)
+    - SubClassOf [molecular process](http://purl.obolibrary.org/obo/MOP_0000543) 
+
+##### 2. One reaction, two IRIs (cross-namespace duplicates)
+
+**Cause:** The concept `alkene oxidative cleavage` was defined twice: once as `RXNO:0000344` in the RXNO namespace and once as `MOP:0000708` in the MOP namespace. In `rxno.owl`, MOP terms like `alkene ozonolysis` used the RXNO IRI as their parent; in `mop.owl`, they correctly used either the MOP IRI or its parent classes.
+
+**Action:** The RXNO duplicate (`RXNO:0000344`) needs to be deprecated in favor of the MOP term (`MOP:0000708`). The subsumption of its children should be reviewed to check if `MOP:0000708` is the better parent, than the current use of `oxidative cleavage` & `alkene oxidation` (`MOP:0000708` parents) as parents.
+
+**Affected terms (6):**
+- alkene ozonolysis `http://purl.obolibrary.org/obo/MOP_0000583`
+- primary alkene oxidation to carboxylic acid and carbon dioxide `http://purl.obolibrary.org/obo/MOP_0000584`
+- quaternary alkene oxidation to ketones `http://purl.obolibrary.org/obo/MOP_0000588`
+- secondary, non-terminal alkene oxidation to aldehydes `http://purl.obolibrary.org/obo/MOP_0000586`
+- secondary terminal alkene oxidation to ketone and carbon dioxide `http://purl.obolibrary.org/obo/MOP_0000587`
+- tertiary alkene oxidation to carboxylic acid and ketone `http://purl.obolibrary.org/obo/MOP_0000585`
+
+**Example:**
+- **quaternary alkene oxidation to ketones** `http://purl.obolibrary.org/obo/MOP_0000588`
+  - **Removed**
+    - SubClassOf [RXNO_0000344](http://purl.obolibrary.org/obo/RXNO_0000344)
+  - **Added**
+    - SubClassOf [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581)
+    - SubClassOf [oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000707) 
+
+#### High Severity: MOP terms only defined in `rxno.owl`
+
+**Cause:** Ten MOP terms were defined exclusively in the `rxno.owl` file and were never added to `mop.owl`. They carry full definitions, labels, and logical axioms in `rxno.owl` but are entirely absent from `mop.owl`. A naive removal of MOP terms from `rxno.owl` would silently delete these classes.
+
+**Action:** These terms must be copied into MOP before they can be cut from RXNO. Each requires verification that its parent classes and referenced external terms exist in MOP.
+
+**Affected terms (10):**
+- O-dealkylation `http://purl.obolibrary.org/obo/MOP_0000719`
+- P-alkylation `http://purl.obolibrary.org/obo/MOP_0006369`
+- [2+2+1] cycloaddition `http://purl.obolibrary.org/obo/MOP_0000720`
+- dealcoholative condensation `http://purl.obolibrary.org/obo/MOP_0000825`
+- decarboxylation `http://purl.obolibrary.org/obo/MOP_0001713`
+- decarboxylative condensation `http://purl.obolibrary.org/obo/MOP_0000722`
+- deethanolative condensation `http://purl.obolibrary.org/obo/MOP_0000723`
+- dienophilicity `http://purl.obolibrary.org/obo/MOP_0000826`
+- enolisability `http://purl.obolibrary.org/obo/MOP_0000717`
+- enolisable carbonyl compound `http://purl.obolibrary.org/obo/MOP_0000718`
+
+> **Note:** `decarboxylative condensation` (MOP:0000722) also uses the local `rxno.obo#has_part` relation in its axioms. When copied to MOP, this must be replaced with `BFO_0000117` (has occurrent part) — see "Low: Relation name swap" below.
+
+**Example:**
+- **O-dealkylation** `http://purl.obolibrary.org/obo/MOP_0000719`
+  - **Removed** (entire class definition absent from `mop.owl`)
+    - Class: [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719)
+    - [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO"
+    - [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000719"
+    - [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Breaking of a covalent bond between an alkyl group and an oxygen atom." 
+      - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:xp"
+    - [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [label](http://www.w3.org/2000/01/rdf-schema#label) "O-dealkylation"
+    - [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) SubClassOf [dealkylation](http://purl.obolibrary.org/obo/MOP_0001369) 
+
+
+#### Medium Severity: Different logical axioms on shared MOP terms
+
+**Cause:** Some MOP terms exist in both files and refer to the same reaction, but their SubClassOf axioms or EquivalentTo axioms differ. In several cases, `mop.owl` has a more refined hierarchy (e.g., `halogenation` is a child of `formation of covalent bond with halogen centre` in `mop.owl` but only of `formation of covalent bond with group` in `rxno.owl`). In other cases, `rxno.owl` carried participant axioms that `mop.owl` demoted to `rdfs:comment` placeholders.
+
+**Action:** Each case requires domain-expert review to decide which axiomatisation is correct. Where `rxno.owl` had a more specific or additional axiom, it should be salvaged into MOP. Where `mop.owl` refined the hierarchy, the RXNO version is outdated and should be discarded.
+
+**Affected terms (33):**
+- N-arylation `http://purl.obolibrary.org/obo/MOP_0002411`
+- [3,3]-sigmatropic rearrangement `http://purl.obolibrary.org/obo/MOP_0000721`
+- [4+2] cycloaddition `http://purl.obolibrary.org/obo/MOP_0000565` (removed axiom references `dienophilicity`, which is RXNO-only — see cascade note below)
+- acid catalysis `http://purl.obolibrary.org/obo/MOP_0000740`
+- acylation `http://purl.obolibrary.org/obo/MOP_0000479`
+- alcohol oxidation `http://purl.obolibrary.org/obo/MOP_0000572`
+- aldehyde reduction `http://purl.obolibrary.org/obo/MOP_0000571`
+- alkene ozonolysis `http://purl.obolibrary.org/obo/MOP_0000583` (Parent swap only — see Critical §2 for details.)
+- allylation `http://purl.obolibrary.org/obo/MOP_0000422`
+- amine oxidation `http://purl.obolibrary.org/obo/MOP_0000575`
+- arylation `http://purl.obolibrary.org/obo/MOP_0000411`
+- breaking of covalent bond with group `http://purl.obolibrary.org/obo/MOP_0000567`
+- cyclization `http://purl.obolibrary.org/obo/MOP_0000561`
+- cycloaddition `http://purl.obolibrary.org/obo/MOP_0000562`
+- dealkylation `http://purl.obolibrary.org/obo/MOP_0001369`
+- epoxidation `http://purl.obolibrary.org/obo/MOP_0000671`
+- ester reduction `http://purl.obolibrary.org/obo/MOP_0000577`
+- ester reduction to aldehyde `http://purl.obolibrary.org/obo/MOP_0000578`
+- ester reduction to primary alcohol `http://purl.obolibrary.org/obo/MOP_0000579`
+- formylation `http://purl.obolibrary.org/obo/MOP_0000003`
+- halogenation `http://purl.obolibrary.org/obo/MOP_0000550`
+- ketone reduction `http://purl.obolibrary.org/obo/MOP_0000580`
+- nitration `http://purl.obolibrary.org/obo/MOP_0000556`
+- organylation `http://purl.obolibrary.org/obo/MOP_0000458`
+- primary alcohol oxidation to aldehyde `http://purl.obolibrary.org/obo/MOP_0000573`
+- primary alkene oxidation to carboxylic acid and carbon dioxide `http://purl.obolibrary.org/obo/MOP_0000584`
+- quaternary alkene oxidation to ketones `http://purl.obolibrary.org/obo/MOP_0000588`
+- secondary alcohol oxidation to ketone `http://purl.obolibrary.org/obo/MOP_0000574`
+- secondary terminal alkene oxidation to ketone and carbon dioxide `http://purl.obolibrary.org/obo/MOP_0000587`
+- secondary, non-terminal alkene oxidation to aldehydes `http://purl.obolibrary.org/obo/MOP_0000586`
+- silylation `http://purl.obolibrary.org/obo/MOP_0000339`
+- sulfonylation `http://purl.obolibrary.org/obo/MOP_0000539`
+- tertiary alkene oxidation to carboxylic acid and ketone `http://purl.obolibrary.org/obo/MOP_0000585`
+
+> **Sub-pattern: demotion of participant axioms to comments.** In `rxno.owl`, several terms had `SubClassOf BFO_0000057 some CHEBI:xxx` axioms. In `mop.owl`, these were only provided as `rdfs:comment "has_participant: CHEBI:xxx"` — a placeholder indicating the axiom was not yet properly added in MOP. Affected: N-arylation, arylation, formylation, nitration, dealkylation. These terms also appear under "Low: Annotation drift" because the comment is technically an annotation change, but the *loss of a logical axiom* is the substantive issue.
+
+> **Sub-pattern: axiom removal cascading from a missing term.** The removed `SubClassOf BFO_0000055 some dienophilicity` axiom on [4+2] cycloaddition (`MOP_0000565`) references `MOP_0000826` (dienophilicity), which is only defined in `rxno.owl` (see "High Severity: MOP terms only defined in `rxno.owl`"). The axiom was therefore *not* deliberately removed in `mop.owl` — it simply could not exist there because its object class was absent. Once `dienophilicity` is copied into MOP (resolving the High Severity item), this axiom must be restored on `MOP_0000565`. This restoration will appear as an added SubClassOf axiom in the pre- vs post-ODK MOP diff.
+
+**Example:**
+- **acylation** `http://purl.obolibrary.org/obo/MOP_0000479`
+  - **Removed**
+    - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "has_participant: CHEBI:22221"
+    - SubClassOf [organylation](http://purl.obolibrary.org/obo/MOP_0000458) 
+  - **Added**
+    - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "you probably want &quot;carboacylation&quot;, MOP:0000028, here" 
+    - SubClassOf [formation of covalent bond with carbon centre](http://purl.obolibrary.org/obo/MOP_0000800)
+    - SubClassOf [BFO_0000057](http://purl.obolibrary.org/obo/BFO_0000057) some [CHEBI_22221](http://purl.obolibrary.org/obo/CHEBI_22221) 
+
+
+#### Low Severity: Annotation differences and relation normalization
+##### `rxno.obo#has_part` replaced by `BFO_0000117`
+
+**Cause:** The `rxno.owl` file defined a local object property `has_part` (`http://purl.obolibrary.org/obo/rxno.obo#has_part`) and used it in SubClassOf axioms on MOP terms. The `mop.owl` file correctly used the standard BFO property `has occurrent part` (`BFO_0000117`). These are semantically equivalent — the only difference is the property IRI.
+
+**Action:** Mechanical. Replace all uses of the local `has_part` with `BFO_0000117` when copying terms to MOP. No domain-expert judgement needed.
+
+> **Note:** The OBO Foundry principle is to use the Relations Ontology (RO) for relations and BFO only for upper-level classes. In a later step (post-ODK migration), `BFO_0000117` was itself replaced by its RO equivalent. See the post-ODK diff analysis.
+
+**Affected terms (2):**
+- Brønsted base catalysis `http://purl.obolibrary.org/obo/MOP_0000736`
+- Lewis adduct formation `http://purl.obolibrary.org/obo/MOP_0000739`
+
+> `decarboxylative condensation` (MOP:0000722) also used `has_part`, but since that term is entirely absent from `mop.owl` (see "MOP terms only defined in RXNO"), the swap is handled as part of copying the term, not as a standalone diff entry.
+
+**Example:**
+- **Brønsted base catalysis** `http://purl.obolibrary.org/obo/MOP_0000736`
+  - **Removed**
+    - SubClassOf [has_part](http://purl.obolibrary.org/obo/rxno.obo#has_part) some [accepting a hydron](http://purl.obolibrary.org/obo/MOP_0000737) 
+  - **Added**
+    - SubClassOf [BFO_0000117](http://purl.obolibrary.org/obo/BFO_0000117) some [accepting a hydron](http://purl.obolibrary.org/obo/MOP_0000737) 
+
+##### Annotation differences (no logical impact)
+
+**Cause:** The two files carry different annotations on otherwise logically identical terms. The most common pattern is that `mop.owl` has richer annotations than `rxno.owl` (definitions added, dbxref URIs updated from `AU:xxx` shorthand to full DOI URLs, synonyms added). One term (`allylic rearrangement`) shows the reverse pattern: `rxno.owl` had an extra `hasDbXref` that `mop.owl` replaced with a different one.
+
+**Action:** Sync annotations by taking the superset from both files, preferring the full DOI URI format from `mop.owl`. No domain-expert judgement needed for dbxref format changes; definition text changes should be reviewed for accuracy.
+
+**Terms where `mop.owl` has richer annotations (27):**
+- Brønsted acid catalysis `http://purl.obolibrary.org/obo/MOP_0000730`
+- Brønsted base catalysis `http://purl.obolibrary.org/obo/MOP_0000736`
+- Lewis acid catalysis `http://purl.obolibrary.org/obo/MOP_0000734`
+- Lewis adduct formation `http://purl.obolibrary.org/obo/MOP_0000739`
+- Lewis base catalysis `http://purl.obolibrary.org/obo/MOP_0000735`
+- [3,3]-sigmatropic rearrangement `http://purl.obolibrary.org/obo/MOP_0000721`
+- accepting a hydron `http://purl.obolibrary.org/obo/MOP_0000737`
+- accepting an electron pair in Lewis adduct formation `http://purl.obolibrary.org/obo/MOP_0000733`
+- acylation `http://purl.obolibrary.org/obo/MOP_0000479`
+- base catalysis `http://purl.obolibrary.org/obo/MOP_0000731`
+- condensation reaction `http://purl.obolibrary.org/obo/MOP_0000627`
+- cyclization `http://purl.obolibrary.org/obo/MOP_0000561`
+- cycloaddition `http://purl.obolibrary.org/obo/MOP_0000562`
+- cycloelimination `http://purl.obolibrary.org/obo/MOP_0000564` (CAVE: synonym typo in MOP for `retrocycloaddition`)
+- electron attachment `http://purl.obolibrary.org/obo/MOP_0000570`
+- electron pair donation in Lewis adduct formation `http://purl.obolibrary.org/obo/MOP_0000738`
+- elimination reaction `http://purl.obolibrary.org/obo/MOP_0000656`
+- hydron donation `http://purl.obolibrary.org/obo/MOP_0000732`
+- methylation `http://purl.obolibrary.org/obo/MOP_0000364`
+- oxidation `http://purl.obolibrary.org/obo/MOP_0000568`
+- reduction `http://purl.obolibrary.org/obo/MOP_0000569`
+- solvolysis `http://purl.obolibrary.org/obo/MOP_0000618`
+- N-arylation `http://purl.obolibrary.org/obo/MOP_0002411`
+- arylation `http://purl.obolibrary.org/obo/MOP_0000411`
+- formylation `http://purl.obolibrary.org/obo/MOP_0000003`
+- nitration `http://purl.obolibrary.org/obo/MOP_0000556`
+- dealkylation `http://purl.obolibrary.org/obo/MOP_0001369`
+
+> The last 5 terms (N-arylation through dealkylation) gained `rdfs:comment "has_participant: CHEBI:xxx"` in `mop.owl` where `rxno.owl` had a real `BFO_0000057 some CHEBI:XXX` axiom. They are listed here because the comment *is* an annotation, but cross-reference "Medium: Logical axiom drift" for the substantive issue.
+
+**Term where `rxno.owl` had richer annotations (1):**
+- allylic rearrangement `http://purl.obolibrary.org/obo/MOP_0000792`
+
+**Example:**
+- [3,3]-sigmatropic rearrangement `http://purl.obolibrary.org/obo/MOP_0000721`
+  - Added
+    - [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A sigmatropic rearrangement where the intermediate consists of two three-electron fragments." 
+      - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
+
+### Cosmetic Diff
+#### Different labels
+
+**Cause:** Three MOP terms have different `rdfs:label` values in the two files. The
+`mop.owl` label is generally shorter and more generic (e.g., "dehydration reaction"
+vs. "molecular dehydration reaction").
+
+**Action:** Domain-expert review to decide which label is more accurate. In all three
+cases the difference is stylistic, not semantic.
+
+**Affected terms (3):**
+- molecular dehydration reaction `http://purl.obolibrary.org/obo/MOP_0000628` — "molecular dehydration reaction" → "dehydration reaction"
+- secondary alcohol oxidation to ketone `http://purl.obolibrary.org/obo/MOP_0000574` — "secondary alcohol oxidation to ketone" → "secondary alcohol oxidation"
+- primary alcohol oxidation to aldehyde `http://purl.obolibrary.org/obo/MOP_0000573` — "primary alcohol oxidation to aldehyde" → "primary alcohol oxidation"
+
+**Example:**
+- molecular dehydration reaction `http://purl.obolibrary.org/obo/MOP_0000628`
+  - Removed
+    - [label](http://www.w3.org/2000/01/rdf-schema#label) "molecular dehydration reaction"
+  - Added
+    - [label](http://www.w3.org/2000/01/rdf-schema#label) "dehydration reaction"
+
+#### Alternative ID annotations
+
+**Cause:** Four terms have `hasAlternativeId` annotations that exist in one file but
+not the other. These are bookkeeping records of deprecated predecessor IDs.
+
+**Action:** Take the union of all alternative IDs. No logical impact.
+
+**Affected terms (4):**
+- N-sulfonylation `http://purl.obolibrary.org/obo/MOP_0002524` — `hasAlternativeId "MOP:0002539"` only in `mop.owl`
+- O-sulfonylation `http://purl.obolibrary.org/obo/MOP_0003524` — `hasAlternativeId "MOP:0003539"` only in `mop.owl`
+- condensation reaction `http://purl.obolibrary.org/obo/MOP_0000627` — `hasAlternativeId "RXNO:0000315"` only in `rxno.owl`
+- cycloaddition `http://purl.obolibrary.org/obo/MOP_0000562` — `hasAlternativeId "RXNO:0000314"` only in `rxno.owl`
+
+## Using ROBOT to identify the differences between MOP before and after the ODK Migration
 In this step we produce a diff between the pre-ODK MOP version and the post-ODK version to make sure the ODK migration did not produce any unaccounted changes of MOP. 
 The MOP term overlap analysed in the previous section was partially addressed during the MOP migration by copying the MOP terms only defined in RXNO over to MOP, resolving the IRI clashes and some of the differences in SubclassOf axioms or annotations together with Colin Batchelor. 
 To produce a minimal diff between the pre- and post-ODK MOP version, we decided to merge only those MOP terms defined in the pre-ODK base RXNO with the pre ODK base version of MOP that were not previously defined in the `mop.owl`. Hence, the diff will show changes for those terms defined in both OWL files that are due to the reasons listed in the previous step.
@@ -308,39 +410,3 @@ robot diff --left mop_base_pre_ODK_complete.owl --right mop_base_post_ODK.owl -f
 ```
 
 ## Analysing ROBOT diff comparing MOP before and after the ODK Migration
-
-### Ontology annotation diff
-The DC Elements predicates were swapped with the newer and OBO preferred DCTerms equivalents. The `owl:versionIRI` and `dce:type` annotations were added automatically by the ODK in the release artifact build process.
-
-### Swapping of BFO relations
-Since the OBO Foundry ontologies are to use the Relations Ontology RO for their relations and only BFO classes for the upper level, we swapped all BFO object properties for their RO equivalents in https://github.com/rsc-ontology/mop/issues/3. This accounts for the SubclassOf changes on:
-* 3-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000750`
-* 3-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000751`
-* 3-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000749`
-* 3-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000778`
-* 3-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000748`
-* 4-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000754`
-* 4-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000753`
-* 4-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000762`
-* 4-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000741`
-* 4-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000752`
-* 5-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000758`
-* 5-endo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000745`
-* 5-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000757`
-* 5-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000756`
-* 5-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000742`
-* 5-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000755`
-* 6-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000770`
-* 6-endo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000746`
-* 6-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000759`
-* 6-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000763`
-* 6-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000743`
-* 6-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000765`
-* 7-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000761`
-* 7-endo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000747`
-* 7-endo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000760`
-* 7-exo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000764`
-* 7-exo-tet cyclization `http://purl.obolibrary.org/obo/MOP_0000744`
-* 7-exo-trig cyclization `http://purl.obolibrary.org/obo/MOP_0000766`
-* BFO_0000050 `http://purl.obolibrary.org/obo/BFO_0000050`
-* 
