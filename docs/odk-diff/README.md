@@ -32,7 +32,7 @@ Before the migration to ODK, both ontologies were published only directly in the
     robot remove -i mop_pre_ODK.owl --base-iri MOP --axioms external --preserve-structure false \
       --trim false convert -f ofn \
       -o mop_base_pre_ODK.owl  && \
-    robot remove -i rxno_pre_ODK.owl --base-iri MOP --axioms "internal annotations" --preserve-structure false \
+    robot remove -i rxno_pre_ODK.owl --base-iri MOP --axioms external --preserve-structure false \
       --trim false convert -f ofn \
       -o mop_base_in_rxno_pre_ODK.owl
     ```
