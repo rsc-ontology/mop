@@ -20,14 +20,20 @@
 
 - [title](http://purl.org/dc/elements/1.1/title) "RXNO" 
 
-- [license](http://purl.org/dc/terms/license) [<http://creativecommons.org/licenses/by/4.0/>](http://creativecommons.org/licenses/by/4.0/) 
-
 - [date](http://www.geneontology.org/formats/oboInOwl#date) "16:12:2021 15:55" 
 
 - [default-namespace](http://www.geneontology.org/formats/oboInOwl#default-namespace) "RXNO" 
 
 - [hasOBOFormatVersion](http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion) "1.4" 
 
+#### Added
+- [date](http://purl.org/dc/elements/1.1/date) "11:05:2022 11:15" 
+
+- [description](http://purl.org/dc/elements/1.1/description) "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation." 
+
+- [title](http://purl.org/dc/elements/1.1/title) "MOP" 
+
+- [hasOBOFormatVersion](http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion) "1.2" 
 
 
 ### BFO_0000016 `http://purl.obolibrary.org/obo/BFO_0000016`
@@ -952,12 +958,6 @@
 
 
 
-### description `http://purl.org/dc/elements/1.1/description`
-#### Removed
-- AnnotationProperty: [description](http://purl.org/dc/elements/1.1/description) 
-
-
-
 ### dienophilicity `http://purl.obolibrary.org/obo/MOP_0000826`
 #### Removed
 - Class: [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) 
@@ -1241,12 +1241,6 @@
 - [halogenation](http://purl.obolibrary.org/obo/MOP_0000550) SubClassOf [formation of covalent bond with halogen centre](http://purl.obolibrary.org/obo/MOP_0000820) 
 
 
-### hasOBOFormatVersion `http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion`
-#### Removed
-- AnnotationProperty: [hasOBOFormatVersion](http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion) 
-
-
-
 ### hasOBONamespace `http://www.geneontology.org/formats/oboInOwl#hasOBONamespace`
 #### Removed
 - AnnotationProperty: [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) 
@@ -1320,12 +1314,6 @@
 - [ketone reduction](http://purl.obolibrary.org/obo/MOP_0000580) SubClassOf [BFO_0000077](http://purl.obolibrary.org/obo/BFO_0000077) some [CHEBI_35681](http://purl.obolibrary.org/obo/CHEBI_35681) 
 
 - [ketone reduction](http://purl.obolibrary.org/obo/MOP_0000580) SubClassOf [BFO_0000078](http://purl.obolibrary.org/obo/BFO_0000078) some [CHEBI_17087](http://purl.obolibrary.org/obo/CHEBI_17087) 
-
-
-
-### license `http://purl.org/dc/terms/license`
-#### Removed
-- AnnotationProperty: [license](http://purl.org/dc/terms/license) 
 
 
 
@@ -1626,12 +1614,6 @@
 - [tertiary alkene oxidation to carboxylic acid and ketone](http://purl.obolibrary.org/obo/MOP_0000585) SubClassOf [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581) 
 
 - [tertiary alkene oxidation to carboxylic acid and ketone](http://purl.obolibrary.org/obo/MOP_0000585) SubClassOf [oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000707) 
-
-
-### title `http://purl.org/dc/elements/1.1/title`
-#### Removed
-- AnnotationProperty: [title](http://purl.org/dc/elements/1.1/title) 
-
 
 
 ### univalent carboacylation `http://purl.obolibrary.org/obo/MOP_0000029`
