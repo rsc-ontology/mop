@@ -17,11 +17,12 @@ Import(<http://purl.obolibrary.org/obo/mop/imports/chebi_import.owl>)
 Import(<http://purl.obolibrary.org/obo/mop/imports/iao_import.owl>)
 Import(<http://purl.obolibrary.org/obo/mop/imports/omo_import.owl>)
 Import(<http://purl.obolibrary.org/obo/mop/imports/ro_import.owl>)
-Annotation(dcterms:date "01:02:2022 11:15")
+Annotation(dcterms:contributor <https://orcid.org/0000-0002-1595-3213>)
+Annotation(dcterms:contributor <https://orcid.org/0009-0001-5998-5030>)
+Annotation(dcterms:creator <https://orcid.org/0000-0001-5985-7429>)
 Annotation(dcterms:description "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation.")
 Annotation(dcterms:license <http://creativecommons.org/licenses/by/4.0/>)
 Annotation(dcterms:title "Molecular Process Ontology (MOP)")
-Annotation(oboInOwl:hasOBOFormatVersion "1.2")
 
 Declaration(Class(obo:MOP_0000000))
 Declaration(Class(obo:MOP_0000001))
@@ -3657,6 +3658,9 @@ Declaration(Class(obo:MOP_0006371))
 Declaration(ObjectProperty(obo:BFO_0000119))
 Declaration(ObjectProperty(obo:BFO_0000133))
 Declaration(ObjectProperty(obo:MOP_0000769))
+Declaration(NamedIndividual(<https://orcid.org/0000-0001-5985-7429>))
+Declaration(NamedIndividual(<https://orcid.org/0000-0002-1595-3213>))
+Declaration(NamedIndividual(<https://orcid.org/0009-0001-5998-5030>))
 Declaration(AnnotationProperty(mop:FORMULA))
 Declaration(AnnotationProperty(mop:IUPAC_NAME))
 Declaration(AnnotationProperty(dcterms:creator))
@@ -33581,6 +33585,23 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:MOP_0006371 "MOP")
 AnnotationAssertion(oboInOwl:id obo:MOP_0006371 "MOP:0006371")
 AnnotationAssertion(rdfs:label obo:MOP_0006371 "[3+2] cycloaddition")
 SubClassOf(obo:MOP_0006371 obo:MOP_0000562)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: <https://orcid.org/0000-0001-5985-7429> (Colin Batchelor)
+
+AnnotationAssertion(rdfs:label <https://orcid.org/0000-0001-5985-7429> "Colin Batchelor")
+
+# Individual: <https://orcid.org/0000-0002-1595-3213> (Philip Strömert)
+
+AnnotationAssertion(rdfs:label <https://orcid.org/0000-0002-1595-3213> "Philip Strömert")
+
+# Individual: <https://orcid.org/0009-0001-5998-5030> (Noura Rayya)
+
+AnnotationAssertion(rdfs:label <https://orcid.org/0009-0001-5998-5030> "Noura Rayya")
 
 
 )
