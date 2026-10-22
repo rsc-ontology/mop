@@ -1,15 +1,17 @@
 format-version: 1.2
-data-version: mop/releases/2026-09-29/mop-base.owl
+data-version: mop/releases/2026-10-22/mop-base.owl
 idspace: dc http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
 ontology: mop/mop-base
 property_value: dc:type IAO:8000001
-property_value: dcterms:date "01:02:2022 11:15" xsd:string
+property_value: dcterms:contributor https://orcid.org/0000-0002-1595-3213
+property_value: dcterms:contributor https://orcid.org/0009-0001-5998-5030
+property_value: dcterms:creator https://orcid.org/0000-0001-5985-7429
 property_value: dcterms:description "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation." xsd:string
 property_value: dcterms:license http://creativecommons.org/licenses/by/4.0/
 property_value: dcterms:title "Molecular Process Ontology (MOP)" xsd:string
-property_value: owl:versionInfo "2026-09-29" xsd:string
+property_value: owl:versionInfo "2026-10-22" xsd:string
 
 [Term]
 id: MOP:0000000

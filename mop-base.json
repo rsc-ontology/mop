@@ -6,8 +6,14 @@
         "pred" : "http://purl.org/dc/elements/1.1/type",
         "val" : "http://purl.obolibrary.org/obo/IAO_8000001"
       }, {
-        "pred" : "http://purl.org/dc/terms/date",
-        "val" : "01:02:2022 11:15"
+        "pred" : "http://purl.org/dc/terms/contributor",
+        "val" : "https://orcid.org/0000-0002-1595-3213"
+      }, {
+        "pred" : "http://purl.org/dc/terms/contributor",
+        "val" : "https://orcid.org/0009-0001-5998-5030"
+      }, {
+        "pred" : "http://purl.org/dc/terms/creator",
+        "val" : "https://orcid.org/0000-0001-5985-7429"
       }, {
         "pred" : "http://purl.org/dc/terms/description",
         "val" : "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation."
@@ -18,13 +24,10 @@
         "pred" : "http://purl.org/dc/terms/title",
         "val" : "Molecular Process Ontology (MOP)"
       }, {
-        "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion",
-        "val" : "1.2"
-      }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2026-09-29"
+        "val" : "2026-10-22"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/mop/releases/2026-09-29/mop-base.json"
+      "version" : "http://purl.obolibrary.org/obo/mop/releases/2026-10-22/mop-base.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000015",
@@ -43477,6 +43480,10 @@
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {
+      "id" : "http://purl.org/dc/terms/contributor",
+      "type" : "PROPERTY",
+      "propertyType" : "ANNOTATION"
+    }, {
       "id" : "http://purl.org/dc/terms/creator",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
@@ -43518,10 +43525,6 @@
       "propertyType" : "ANNOTATION"
     }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym",
-      "type" : "PROPERTY",
-      "propertyType" : "ANNOTATION"
-    }, {
-      "id" : "http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion",
       "type" : "PROPERTY",
       "propertyType" : "ANNOTATION"
     }, {

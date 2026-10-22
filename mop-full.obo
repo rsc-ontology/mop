@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mop/releases/2026-09-29/mop-full.owl
+data-version: mop/releases/2026-10-22/mop-full.owl
 subsetdef: 1:STAR ""
 subsetdef: 3:STAR ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
@@ -29,11 +29,13 @@ idspace: dcterms http://purl.org/dc/terms/
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
 idspace: protege http://protege.stanford.edu/plugins/owl/protege# 
 ontology: mop/mop-full
-property_value: dcterms:date "01:02:2022 11:15" xsd:string
+property_value: dcterms:contributor https://orcid.org/0000-0002-1595-3213
+property_value: dcterms:contributor https://orcid.org/0009-0001-5998-5030
+property_value: dcterms:creator https://orcid.org/0000-0001-5985-7429
 property_value: dcterms:description "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation." xsd:string
 property_value: dcterms:license http://creativecommons.org/licenses/by/4.0/
 property_value: dcterms:title "Molecular Process Ontology (MOP)" xsd:string
-property_value: owl:versionInfo "2026-09-29" xsd:string
+property_value: owl:versionInfo "2026-10-22" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -28723,6 +28725,10 @@ id: RO:0009501
 name: realized in response to
 def: "r 'realized in response to' s iff, r is a realizable (e.g. a plant trait such as responsivity to drought), s is an environmental stimulus (a process), and s directly causes the realization of r." []
 synonym: "triggered by process" EXACT [https://orcid.org/0000-0002-6601-2165]
+property_value: dcterms:contributor https://orcid.org/0000-0001-6996-0040
+property_value: dcterms:contributor https://orcid.org/0000-0002-6601-2165
+property_value: dcterms:contributor https://orcid.org/0000-0002-7073-9172
+property_value: dcterms:contributor https://orcid.org/0000-0002-8461-9745
 domain: BFO:0000017 ! realizable entity
 range: BFO:0000015 ! process
 holds_over_chain: BFO:0000054 RO:0002404

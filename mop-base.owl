@@ -12,14 +12,15 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mop/mop-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-09-29/mop-base.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-10-22/mop-base.owl"/>
         <dc:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
-        <dcterms:date>01:02:2022 11:15</dcterms:date>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0009-0001-5998-5030"/>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0001-5985-7429"/>
         <dcterms:description>MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation.</dcterms:description>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:title>Molecular Process Ontology (MOP)</dcterms:title>
-        <oboInOwl:hasOBOFormatVersion>1.2</oboInOwl:hasOBOFormatVersion>
-        <owl:versionInfo>2026-09-29</owl:versionInfo>
+        <owl:versionInfo>2026-10-22</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -56,6 +57,12 @@
     <!-- http://purl.org/dc/elements/1.1/type -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/type"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
     
 
 
@@ -122,12 +129,6 @@
     <!-- http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
-    
-
-
-    <!-- http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion"/>
     
 
 

@@ -17,13 +17,14 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mop.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-09-29/mop.owl"/>
-        <dcterms:date>01:02:2022 11:15</dcterms:date>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-10-22/mop.owl"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0009-0001-5998-5030"/>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0001-5985-7429"/>
         <dcterms:description>MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation.</dcterms:description>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:title>Molecular Process Ontology (MOP)</dcterms:title>
-        <oboInOwl:hasOBOFormatVersion>1.2</oboInOwl:hasOBOFormatVersion>
-        <owl:versionInfo>2026-09-29</owl:versionInfo>
+        <owl:versionInfo>2026-10-22</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -1912,6 +1913,10 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002404"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>r &apos;realized in response to&apos; s iff, r is a realizable (e.g. a plant trait such as responsivity to drought), s is an environmental stimulus (a process), and s directly causes the realization of r.</obo:IAO_0000115>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0001-6996-0040"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-7073-9172"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-8461-9745"/>
         <oboInOwl:hasExactSynonym>triggered by process</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">realized in response to</rdfs:label>
     </owl:ObjectProperty>
@@ -76290,6 +76295,30 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <obo:IAO_0000233>https://github.com/information-artifact-ontology/ontology-metadata/issues/136</obo:IAO_0000233>
         <obo:IAO_0000234>https://orcid.org/0000-0002-4142-7153</obo:IAO_0000234>
         <rdfs:label>domain entity does not exist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://orcid.org/0000-0001-5985-7429 -->
+
+    <owl:NamedIndividual rdf:about="https://orcid.org/0000-0001-5985-7429">
+        <rdfs:label>Colin Batchelor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://orcid.org/0000-0002-1595-3213 -->
+
+    <owl:NamedIndividual rdf:about="https://orcid.org/0000-0002-1595-3213">
+        <rdfs:label>Philip Strömert</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://orcid.org/0009-0001-5998-5030 -->
+
+    <owl:NamedIndividual rdf:about="https://orcid.org/0009-0001-5998-5030">
+        <rdfs:label>Noura Rayya</rdfs:label>
     </owl:NamedIndividual>
     
 

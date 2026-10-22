@@ -3,8 +3,14 @@
     "id" : "http://purl.obolibrary.org/obo/mop/mop-full.json",
     "meta" : {
       "basicPropertyValues" : [ {
-        "pred" : "http://purl.org/dc/terms/date",
-        "val" : "01:02:2022 11:15"
+        "pred" : "http://purl.org/dc/terms/contributor",
+        "val" : "https://orcid.org/0000-0002-1595-3213"
+      }, {
+        "pred" : "http://purl.org/dc/terms/contributor",
+        "val" : "https://orcid.org/0009-0001-5998-5030"
+      }, {
+        "pred" : "http://purl.org/dc/terms/creator",
+        "val" : "https://orcid.org/0000-0001-5985-7429"
       }, {
         "pred" : "http://purl.org/dc/terms/description",
         "val" : "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation."
@@ -15,13 +21,10 @@
         "pred" : "http://purl.org/dc/terms/title",
         "val" : "Molecular Process Ontology (MOP)"
       }, {
-        "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion",
-        "val" : "1.2"
-      }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2026-09-29"
+        "val" : "2026-10-22"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/mop/releases/2026-09-29/mop-full.json"
+      "version" : "http://purl.obolibrary.org/obo/mop/releases/2026-10-22/mop-full.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000001",
@@ -49770,6 +49773,19 @@
           "pred" : "hasExactSynonym",
           "val" : "triggered by process",
           "xrefs" : [ "https://orcid.org/0000-0002-6601-2165" ]
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/terms/contributor",
+          "val" : "https://orcid.org/0000-0001-6996-0040"
+        }, {
+          "pred" : "http://purl.org/dc/terms/contributor",
+          "val" : "https://orcid.org/0000-0002-6601-2165"
+        }, {
+          "pred" : "http://purl.org/dc/terms/contributor",
+          "val" : "https://orcid.org/0000-0002-7073-9172"
+        }, {
+          "pred" : "http://purl.org/dc/terms/contributor",
+          "val" : "https://orcid.org/0000-0002-8461-9745"
         } ]
       }
     }, {
@@ -50247,6 +50263,18 @@
           "val" : "https://orcid.org/0000-0002-4142-7153"
         } ]
       }
+    }, {
+      "id" : "https://orcid.org/0000-0001-5985-7429",
+      "lbl" : "Colin Batchelor",
+      "type" : "INDIVIDUAL"
+    }, {
+      "id" : "https://orcid.org/0000-0002-1595-3213",
+      "lbl" : "Philip Strömert",
+      "type" : "INDIVIDUAL"
+    }, {
+      "id" : "https://orcid.org/0009-0001-5998-5030",
+      "lbl" : "Noura Rayya",
+      "type" : "INDIVIDUAL"
     }, {
       "id" : "http://protege.stanford.edu/plugins/owl/protege#defaultLanguage",
       "type" : "PROPERTY",
