@@ -6,7 +6,7 @@ Before the migration to an Ontology Development Kit (ODK) based workflow, the tw
 
 In 2021, as a result of the [Ontologies4Chem: the landscape of ontologies in chemistry](https://doi.org/10.1515/pac-2021-2007) overview paper, the NFDI4Chem team began improving both ontologies by filing issues and pull requests in this single RXNO repository. One of the first suggestions was to properly import MOP into RXNO via `owl:import` instead of (re)defining the MOP classes inside the `rxno.owl` file (see [issue #27](https://github.com/rsc-ontology/rxno/issues/27)).
 
-While trying to resolve this issue in 2022, it became apparent that the MOP classes defined in the `rxno.owl` file where not always just copied over from `mop.owl` file, but where differently defined in both files. This led to a state in which:
+While trying to resolve this issue in 2022, it became apparent that the MOP classes defined in the `rxno.owl` file were not always just copied over from `mop.owl` file, but were differently defined in both files. This led to a state in which:
 * some MOP classes were identical in both files,
 * some MOP classes were defined only in `rxno.owl` and thus missing from `mop.owl`,
 * and some MOP classes sharing the same PURL in both files
@@ -15,13 +15,13 @@ While trying to resolve this issue in 2022, it became apparent that the MOP clas
 
 To resolve this and enable a proper import of MOP into RXNO in an ODK based repository, a systematic analysis was needed to identify: which MOP classes could be safely cut from RXNO and copied to MOP, which had to be split into two classes to avoid PURL clashes, and which had to be vetted for differing axiomatisation. The following sections describe how this analysis was conducted.
 
-## Creating and Archival Release of RXNO and MOP
+## Creating and Archiving a Pre-ODK Release of RXNO and MOP
 Before the migration to ODK, both ontologies were published only directly in the GitHub repository's code base; no GitHub releases had ever been created. We therefore created a pre-ODK release and tag so that these versions of RXNO and MOP could be referenced: https://github.com/rsc-ontology/rxno/tree/pre-odk-release
 
-## Using ROBOT to identify the differences between the MOP terms defined in the pre-ODK `rxno.owl` and `mop.owl` files
+## Using ROBOT to Identify the Differences Between the MOP Terms Defined in the Pre-ODK `rxno.owl` and `mop.owl` Files
 When this task was initially addressed by NFDI4Chem in 2022, ROBOT was used to produce CSV for both RXNO and MOP to allow their comparison within a spreadsheet editor (see also: https://github.com/rsc-ontology/rxno/issues/27#issuecomment-1091415293). The comparison was then done within an Excel file that was shared with the RXNO/MOP maintainer Colin Batchelor, in order to discuss how to fix the above stated problems on a case by case (term by term) basis. This Excel file, which was later migrated to Google Sheets for better collaborative working, formed the basis for the ODK migration. However, in order to have another quality control step and provide a more reproducible approach, we decided to use the [ROBOT diff](https://robot.obolibrary.org/diff) feature to better document and compare the differences of MOP terms defined in RXNO and MOP before the ODK migration.
 
-### Using ROBOT diff to show the differences between MOP terms defined in RXNO and MOP
+### Using ROBOT diff to Show the Differences Between MOP Terms Defined in RXNO and MOP
 1. Download the pre-ODK RXNO and MOP release files:
     ```shell
     curl -o rxno_pre_ODK.owl https://raw.githubusercontent.com/rsc-ontology/rxno/refs/tags/pre-odk-release/rxno.owl && \
@@ -55,9 +55,8 @@ When this task was initially addressed by NFDI4Chem in 2022, ROBOT was used to p
     robot diff --left mop_base_in_rxno_pre_ODK.owl --right mop_base_pre_ODK_slim.owl -f markdown -o mop_in_rxno_pre_ODK_diff.md
     ```
 
-## Analysing the ROBOT diff between pre-ODK RXNO & MOP 
-This section analyses the differences between the MOP terms defined in the pre ODK `rxno.owl` and `mop.owl` files made 
-visible by the ROBOT markdown document created in step 5 of the previous section.
+## Analysing the ROBOT diff Between Pre-ODK RXNO & MOP 
+This section analyses the differences between the MOP terms defined in the pre ODK `rxno.owl` and `mop.owl` files made visible by the ROBOT markdown document created in step 5 of the previous section.
 
 ### Pipeline Artifact
 #### Ontology-level annotations
@@ -80,7 +79,7 @@ visible by the ROBOT markdown document created in step 5 of the previous section
     - [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO"
 
 
-#### External terms added or removed
+#### External Terms Added or Removed
 
 **Cause:** The diff compares two OWL files that each contain only the axioms relevant to MOP terms. An external term (from BFO, CHEBI, IAO, RO, etc.) appears in one file but not the other depending on whether it is referenced in an axiom on a MOP term *in that specific file*. This is a mechanical consequence of the extraction, not a semantic disagreement.
 
@@ -93,7 +92,7 @@ visible by the ROBOT markdown document created in step 5 of the previous section
 > **Note:** Some of these "added" terms (`BFO_0000117`, `CHEBI_22221`, `CHEBI_51100`, `CHEBI_52214`, `CHEBI_52845`, `RO_0002213`) are added because `mop.owl` uses them in axioms where `rxno.owl` used a different term or no axiom at all. The *axiom* difference is the semantic issue (covered under logical axiom drift); the *presence of the external term declaration* is a pipeline artifact.
 
 
-#### Classes added due to MOP Base Module Extraction  
+#### Classes Added Due to MOP Base Module Extraction  
 Some MOP terms appear as *added* in the diff purely because of step 4 of the workflow, where the right-hand file (`mop_base_pre_ODK_slim.owl`) was built with `robot extract --method BOT`. BOT pulls in every ancestor needed to keep the extracted classes connected, so parent or grandparent classes that are present in `mop.owl` — but that were *not* part of the term list extracted from `rxno.owl` — get added to the slim module and consequently show up as additions in the diff.
 
 This reason explains the differences on:
