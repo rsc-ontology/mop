@@ -71,7 +71,7 @@ This section analyses the differences between the MOP terms defined in the pre O
 
 **Action:** Ignore. The absence of this annotation in `mop.owl` is correct behaviour.
 
-**Affected terms:** All ~30 MOP terms that were defined in `rxno.owl` carry this spurious annotation. It is removed for every such term in the diff. No individual listing is needed, and it can be treated as universal noise.
+**Affected terms:** All MOP terms that were defined in `rxno.owl` carry this spurious annotation. It is removed for every such term in the diff. No individual listing is needed, and it can be treated as universal noise.
 
 **Example:**
 - **substitution reaction** `http://purl.obolibrary.org/obo/MOP_0000790`
@@ -81,15 +81,15 @@ This section analyses the differences between the MOP terms defined in the pre O
 
 #### External Terms Added or Removed
 
-**Cause:** The diff compares two OWL files that each contain only the axioms relevant to MOP terms. An external term (from BFO, CHEBI, IAO, RO, etc.) appears in one file but not the other depending on whether it is referenced in an axiom on a MOP term *in that specific file*. This is a mechanical consequence of the extraction, not a semantic disagreement.
+**Cause:** The diff compares two OWL files that each contain only the axioms relevant to MOP terms. An external term (from BFO, CHEBI, IAO, RO, etc.) declaration appears in one file but not the other depending on whether it is referenced in an axiom on a MOP term *in that specific file*. 
 
-**Action:** Ignore. These additions/removals reflect which external terms each file happens to reference, not a decision to include or exclude them from the ontology.
+**Action:** Ignore. The *axiom* difference is the semantic issue (covered under *Semantic Drift* below); the *presence of the external term declaration* is a pipeline artifact associated with the OWL syntax.
 
 **Removed external terms (18):** `BFO_0000016`, `BFO_0000162`, `CHEBI_15734`, `CHEBI_16526`, `CHEBI_17087`, `CHEBI_17478`, `CHEBI_29785`, `CHEBI_30879`, `CHEBI_33308`, `CHEBI_33338`, `CHEBI_33595`, `CHEBI_33823`, `CHEBI_35681`, `CHEBI_36587`, `CHEBI_42485`, `CHEBI_46883`, `IAO_0000030`, `RXNO_0000344`
 
 **Added external terms (10):** `BFO_0000117`, `CHEBI_22221`, `CHEBI_33641`, `CHEBI_51100`, `CHEBI_52214`, `CHEBI_52845`, `IAO_0000116`, `RO_0002213`, `dc:creator`, `dc:date`
 
-> **Note:** Some of these "added" terms (`BFO_0000117`, `CHEBI_22221`, `CHEBI_51100`, `CHEBI_52214`, `CHEBI_52845`, `RO_0002213`) are added because `mop.owl` uses them in axioms where `rxno.owl` used a different term or no axiom at all. The *axiom* difference is the semantic issue (covered under logical axiom drift); the *presence of the external term declaration* is a pipeline artifact.
+> **Note:** Some of these "added" terms (`BFO_0000117`, `CHEBI_22221`, `CHEBI_51100`, `CHEBI_52214`, `CHEBI_52845`, `RO_0002213`) are added because `mop.owl` uses them in axioms where `rxno.owl` used a different term or no axiom at all.
 
 
 #### Classes Added Due to MOP Base Module Extraction  
@@ -112,16 +112,16 @@ This reason explains the differences on:
 * sigmatropic rearrangement `http://purl.obolibrary.org/obo/MOP_0000728`
 * univalent carboacylation `http://purl.obolibrary.org/obo/MOP_0000029`
 
-### Semantic Drift
-#### Critical Severity: IRI integrity issues
+### Semantic Changes
 
-Two classes of problems threaten the integrity of MOP PURLs. Both must be resolved before MOP can be imported into RXNO via `owl:import`, because a single ontology cannot contain two different meanings for the same IRI, nor two IRIs for the same meaning.
+#### Critical Severity
 
-##### 1. One IRI, two different reactions (IRI clashes)
+<a id="iri-clashes"></a>
+##### IRI clashes: One IRI, two different reactions
 
 **Cause:** Some MOP IRIs were used for *different reactions* in `rxno.owl` vs. `mop.owl`. In `rxno.owl`, the IRI carried the RXNO meaning; in `mop.owl`, the same IRI carried the canonical MOP meaning. These are not annotation drift. They are entirely different chemical processes sharing a single PURL.
 
-**Action:** Requires domain-expert adjudication (Colin Batchelor). For each clash, decide:
+**Action:** For each clash, decide:
 - If the RXNO-defined term already has an equivalent MOP term under a *different* IRI → reuse the existing MOP IRI and sync annotations & logical axioms.
 - If the RXNO-defined term has no equivalent in MOP → mint a new MOP IRI, copy the full definition and axioms from `rxno.owl` and add a comment that points to the PR where this was done.
 
@@ -132,7 +132,7 @@ Two classes of problems threaten the integrity of MOP PURLs. Both must be resolv
 | MOP_0000715 | [3+2] cycloaddition          | trimerization            | New MOP IRI must be minted                        |
 | MOP_0000714 | carbonyl oxidation to alkyne | ligand exchange reaction | New MOP IRI must be minted                        |
 | MOP_0000713 | carboxylation                | acetylene reduction      | MOP_0000591 is the correct ID for 'carboxylation' |
-| MOP_0000716 | enolisation                  | cyclotrimerization       | MOP_0000672 is the correct ID for 'enolisation'   |
+| MOP_0000716 | enolization                  | cyclotrimerization       | MOP_0000672 is the correct ID for 'enolization'   |
 | MOP_0000712 | oxidation state              | olefin reduction         | New MOP IRI must be minted                        |
 
 > **Note on diff appearance:** These clashes do NOT show up as class removals in the diff. Instead, the diff shows the `rxno.owl` annotations (label, definition, SubClassOf) as "Removed" and the `mop.owl` annotations as "Added", because ROBOT sees the same IRI with different content on each side. The linked label in the diff header uses the `rxno.owl` label simply because it was read in by ROBOT first, which can be misleading.
@@ -155,7 +155,8 @@ Two classes of problems threaten the integrity of MOP PURLs. Both must be resolv
     - [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [issuecomment-1124151946](https://github.com/rsc-ontologies/rxno/pull/46#issuecomment-1124151946)
     - SubClassOf [molecular process](http://purl.obolibrary.org/obo/MOP_0000543) 
 
-##### 2. One reaction, two IRIs (cross-namespace duplicates)
+<a id="duplicates"></a>
+##### Duplicates: One reaction, two IRIs
 
 **Cause:** The concept `alkene oxidative cleavage` was defined twice: once as `RXNO:0000344` in the RXNO namespace and once as `MOP:0000708` in the MOP namespace. In `rxno.owl`, MOP terms like `alkene ozonolysis` used the RXNO IRI as their parent; in `mop.owl`, they correctly used either the MOP IRI or its parent classes.
 
@@ -177,6 +178,8 @@ Two classes of problems threaten the integrity of MOP PURLs. Both must be resolv
     - SubClassOf [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581)
     - SubClassOf [oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000707) 
 
+
+<a id="mop-only-in-rxno"></a>
 #### High Severity: MOP terms only defined in `rxno.owl`
 
 **Cause:** Ten MOP terms were defined exclusively in the `rxno.owl` file and were never copied/added to `mop.owl`. They carry full definitions, labels, and logical axioms in `rxno.owl` but are entirely absent from `mop.owl`. A naive removal of MOP terms from `rxno.owl` would silently delete these classes.
@@ -208,7 +211,7 @@ Two classes of problems threaten the integrity of MOP PURLs. Both must be resolv
     - [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [label](http://www.w3.org/2000/01/rdf-schema#label) "O-dealkylation"
     - [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) SubClassOf [dealkylation](http://purl.obolibrary.org/obo/MOP_0001369) 
 
-
+<a id="axiom-diffs"></a>
 #### Medium Severity: Different logical axioms on shared MOP terms
 
 **Cause:** Some MOP terms exist in both files and refer to the same reaction, but their SubClassOf axioms or EquivalentTo axioms differ. In several cases, `mop.owl` has a more refined hierarchy (e.g., `halogenation` is a child of `formation of covalent bond with halogen centre` in `mop.owl` but only of `formation of covalent bond with group` in `rxno.owl`). In other cases, `rxno.owl` carried reaction participant axioms that in `mop.owl` were only present as `rdfs:comment` annotations.
@@ -268,11 +271,11 @@ Two classes of problems threaten the integrity of MOP PURLs. Both must be resolv
 #### Low Severity: Annotation differences and relation normalization
 ##### `rxno.obo#has_part` replaced by `BFO_0000117`
 
-**Cause:** The `rxno.owl` file defined a local object property `has_part` (`http://purl.obolibrary.org/obo/rxno.obo#has_part`) and used it in SubClassOf axioms on MOP terms. The `mop.owl` file used the BFO property `has occurrent part` (`BFO_0000117`). These the two relations can be considered semantically equivalent.
+**Cause:** The `rxno.owl` file defined a local object property `has_part` (`http://purl.obolibrary.org/obo/rxno.obo#has_part`) and used it in SubClassOf axioms on MOP terms. The `mop.owl` file used the BFO property `has occurrent part` (`BFO_0000117`). These two relations can be considered semantically equivalent.
 
 **Action:** Mechanical. Replace all uses of the local `has_part` with `BFO_0000117` when copying terms to MOP. No domain-expert judgement needed.
 
-> **Note:** The OBO Foundry principle is to use the Relations Ontology (RO) for relations and BFO only for upper-level classes. In a later step (post-ODK migration), `BFO_0000117` was itself replaced by its RO equivalent. See the post-ODK diff analysis.
+> **Note:** The [OBO Foundry principle 7](https://obofoundry.org/principles/fp-007-relations.html) requires OBO ontologies to use the Relations Ontology (RO) for relations and BFO only for upper-level classes. In a later step (post-ODK migration), `BFO_0000117` was itself replaced by its RO equivalent. See the post-ODK diff analysis.
 
 **Affected terms (2):**
 - Brønsted base catalysis `http://purl.obolibrary.org/obo/MOP_0000736`
@@ -333,8 +336,8 @@ Two classes of problems threaten the integrity of MOP PURLs. Both must be resolv
     - [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A sigmatropic rearrangement where the intermediate consists of two three-electron fragments." 
       - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
 
-### Cosmetic Diff
-#### Different labels
+
+##### Different labels
 
 **Cause:** Three MOP terms have different `rdfs:label` values in the two files. The `mop.owl` label is generally shorter and more generic (e.g., "dehydration reaction" vs. "molecular dehydration reaction").
 
@@ -351,6 +354,9 @@ Two classes of problems threaten the integrity of MOP PURLs. Both must be resolv
     - [label](http://www.w3.org/2000/01/rdf-schema#label) "molecular dehydration reaction"
   - Added
     - [label](http://www.w3.org/2000/01/rdf-schema#label) "dehydration reaction"
+
+
+### Metadata Changes
 
 #### Alternative ID annotations
 
