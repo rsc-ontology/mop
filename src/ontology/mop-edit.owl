@@ -8764,9 +8764,9 @@ SubClassOf(obo:MOP_0000555 obo:MOP_0000802)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "RSC:xp") obo:IAO_0000115 obo:MOP_0000556 "Formation of a covalent bond between a substrate and a nitro group.")
 AnnotationAssertion(oboInOwl:id obo:MOP_0000556 "MOP:0000556")
-AnnotationAssertion(rdfs:comment obo:MOP_0000556 "has_participant: CHEBI:29785")
 AnnotationAssertion(rdfs:label obo:MOP_0000556 "nitration")
 SubClassOf(obo:MOP_0000556 obo:MOP_0000802)
+SubClassOf(obo:MOP_0000556 ObjectSomeValuesFrom(obo:RO_0000057 obo:CHEBI_29785))
 
 # Class: obo:MOP_0000557 (hydroxyamination)
 
