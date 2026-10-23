@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: mop/releases/2026-10-22/mop-base.owl
+data-version: mop/releases/2026-10-23/mop-base.owl
 idspace: dc http://purl.org/dc/elements/1.1/ 
 idspace: dcterms http://purl.org/dc/terms/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
@@ -11,7 +11,7 @@ property_value: dcterms:creator https://orcid.org/0000-0001-5985-7429
 property_value: dcterms:description "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation." xsd:string
 property_value: dcterms:license http://creativecommons.org/licenses/by/4.0/
 property_value: dcterms:title "Molecular Process Ontology (MOP)" xsd:string
-property_value: owl:versionInfo "2026-10-22" xsd:string
+property_value: owl:versionInfo "2026-10-23" xsd:string
 
 [Term]
 id: MOP:0000000
@@ -25,7 +25,6 @@ id: MOP:0000001
 name: methanidylation
 def: "Formation of a covalent bond between a substrate and a methanidyl group." [RSC:xp]
 comment: has_participant: CHEBI:29361
-synonym: "methanidylation" EXACT []
 is_a: MOP:0000800 ! formation of covalent bond with carbon centre
 
 [Term]
@@ -33,7 +32,6 @@ id: MOP:0000002
 name: azaniumylation
 def: "Formation of a covalent bond between a substrate and an azaniumyl group." [RSC:xp]
 comment: has_participant: CHEBI:48284
-synonym: "azaniumylation" EXACT []
 is_a: MOP:0000802 ! formation of covalent bond with nitrogen centre
 
 [Term]
@@ -41,7 +39,6 @@ id: MOP:0000003
 name: formylation
 def: "Formation of a covalent bond between a substrate and a formyl group." [RSC:xp]
 comment: has_participant: CHEBI:42485
-synonym: "formylation" EXACT []
 is_a: MOP:0000029 ! univalent carboacylation
 relationship: RO:0000057 CHEBI:42485
 
@@ -50,7 +47,6 @@ id: MOP:0000004
 name: acetonylation
 def: "Formation of a covalent bond between a substrate and an acetonyl group." [RSC:xp]
 comment: has_participant: CHEBI:48056
-synonym: "acetonylation" EXACT []
 is_a: MOP:0000800 ! formation of covalent bond with carbon centre
 
 [Term]
@@ -58,7 +54,6 @@ id: MOP:0000005
 name: L-cystylation
 def: "Formation of a covalent bond between a substrate and an L-cystyl group." [RSC:xp]
 comment: has_participant: CHEBI:50057
-synonym: "L-cystylation" EXACT []
 is_a: MOP:0000009 ! cystylation
 
 [Term]
@@ -4727,8 +4722,8 @@ creation_date: 2009-06-05T04:54:48Z
 id: MOP:0000591
 name: carboxylation
 def: "Formation of a covalent bond between a substrate and a carboxy group." [RSC:xp]
-comment: CHEBI:46883.
-is_a: MOP:0000479 ! acylation
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for 'acetylene reduction'. Thus, the "'has participant' some 'carboxy group'" axiom, which was not yet present on 'carboxylation' in MOP, was copied over from this wrongly defined 'carboxylation' in RXNO to MOP:0000591. The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation' was also moved to be correctly subsumed in RXNO. {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
+is_a: MOP:0000458 ! organylation
 relationship: RO:0000057 CHEBI:46883
 created_by: batchelorc
 creation_date: 2009-06-05T04:57:07Z
@@ -5384,6 +5379,7 @@ relationship: RO:0004008 CHEBI:32955
 id: MOP:0000672
 name: enolization
 def: "A 'keto-enol tautomerisation' where a carbonyl compound is converted to an enol. Usually this is a reversible tautomerization but it can be irreversible." [https://orcid.org/0000-0001-5985-7429]
+comment: Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for 'cyclotrimerization'. Thus, the 'realizes some enolisability' axiom, which was not yet present on 'enolization' (MOP:0000672) in MOP was copied over from this wrongly defined 'enolization' in RXNO. {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 synonym: "enolisation" EXACT []
 is_a: MOP:0000725 ! keto-enol tautomerisation
 intersection_of: MOP:0000725 ! keto-enol tautomerisation
@@ -5720,6 +5716,7 @@ relationship: RO:0004009 CHEBI:18379
 id: MOP:0000712
 name: olefin reduction
 def: "Hydrogenation of an olefin to a paraffin." [https://orcid.org/0000-0001-5985-7429]
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term 'oxidation state', although it was already used for 'olefin reduction' in the MOP release. Since 'oxidation state' was not yet defined in MOP, MOP:0005561 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000712 were copied over to MOP:0005561. (see also: https://github.com/rsc-ontology/rxno/issues/27) {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 is_a: MOP:0000589 ! hydrogenation
 relationship: RO:0004009 CHEBI:33641
 
@@ -5727,13 +5724,14 @@ relationship: RO:0004009 CHEBI:33641
 id: MOP:0000713
 name: acetylene reduction
 def: "Hydrogenation of an acetylene to an olefin." []
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term 'carboxylation', although it was already used for 'acetylene reduction' in the MOP release and 'carboxylation' was already defined in MOP with a different IRI (MOP:0000591). Hence, the axioms wrongly asserted in RXNO were copied over to the correct 'carboxylation' (MOP:0000591) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27) {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 is_a: MOP:0000589 ! hydrogenation
 
 [Term]
 id: MOP:0000714
 name: ligand exchange reaction
 def: "A ligand exchange reaction is a molecular process, in which one or more ligands around a metal ion are replaced by other ligands without changing the oxidation state of the metal atom." [https://doi.org/10.1093/oso/9780195301007.003.0005] {comment="A definition of this term in the Gold Book was not yet available at the time of addition. However, inclusion in the Gold Book was requested in October 2021."}
-comment: Typically, weakly bound ligands are replaced by more strongly bound ones, so that the resulting complex becomes thermodynamically more stable.
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term 'carbonyl oxidation to alkyne', although it was already used for 'ligand exchange reaction' in the MOP release. Since 'carbonyl oxidation to alkyne' was not yet defined in MOP, MOP:0006370 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000714 were copied over to MOP:0006370. (see also: https://github.com/rsc-ontology/rxno/issues/27) {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 synonym: "ligand substitution reaction" EXACT []
 is_a: MOP:0000543 ! molecular process
 relationship: RO:0000057 CHEBI:52214
@@ -5744,6 +5742,7 @@ creation_date: 2021-11-03T09:13:45Z
 id: MOP:0000715
 name: trimerization
 def: "The formation of a trimer from three molecular subunits." [https://en.wiktionary.org/wiki/trimerization]
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term '[3+2] cycloaddition', although it was already used for 'trimerization' in the MOP release. Since 'carbonyl oxidation to alkyne' was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27) {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 is_a: MOP:0000543 ! molecular process
 property_value: dcterms:creator http://orcid.org/0000-0002-4378-6061
 property_value: dcterms:date "2022-02-01T09:40:48Z" xsd:dateTime
@@ -5752,6 +5751,7 @@ property_value: dcterms:date "2022-02-01T09:40:48Z" xsd:dateTime
 id: MOP:0000716
 name: cyclotrimerization
 def: "The formation of a trimer by cycloaddition of three unsaturated compounds (e.g. alkynes, alkenes, nitriles or mixtures thereof). A metal catalyst is usually required for this type of reaction." [https://doi.org/10.1002/anie.200700802]
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term 'enolization', although it was already used for 'cyclotrimerization' in the MOP release and 'enolization' was already defined in MOP with a different IRI  (MOP:0000672). Hence, the axioms wrongly asserted in RXNO on MOP:0000716 were copied over to the correct 'enolization' (MOP:0000672) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27) {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 is_a: MOP:0000562 ! cycloaddition
 is_a: MOP:0000715 ! trimerization
 property_value: dcterms:creator http://orcid.org/0000-0002-4378-6061
@@ -26011,7 +26011,7 @@ is_a: MOP:0000560 ! selenonation
 id: MOP:0005561
 name: oxidation state
 def: "A formal account of the degree of oxidation of an atom." [https://orcid.org/0000-0001-5985-7429]
-comment: It turns out to be formally defined, which makes our definitions a bit poor.
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000712, which was already used in MOP for 'olefin reduction' (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, 'oxidation state' (MOP:0005561) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000712 were copied over to it. {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 xref: http://goldbook.iupac.org/O04365.html
 is_a: IAO:0000030
 
@@ -26027,6 +26027,7 @@ id: MOP:0006370
 name: carbonyl oxidation to alkyne
 namespace: MOP
 def: "Oxidation of a carbonyl group to an alkyne." [https://orcid.org/0000-0001-5985-7429]
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000714, which was already used in MOP for 'ligand exchange reaction'(see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, 'carbonyl oxidation to alkyne' (MOP:0006370) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000714 were copied over to it. {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 is_a: MOP:0000568 ! oxidation
 
 [Term]
@@ -26034,6 +26035,7 @@ id: MOP:0006371
 name: [3+2] cycloaddition
 namespace: MOP
 def: "A cycloaddition in which one participant contributes three electrons and the other participant contributes two electrons to the transformation of reactants to products." [https://orcid.org/0000-0001-5985-7429]
+comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000715, which was already used in MOP for 'trimerization' (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, '[3+2] cycloaddition' (MOP:0006371) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000715 were copied over to it. {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
 is_a: MOP:0000562 ! cycloaddition
 
 [Typedef]
