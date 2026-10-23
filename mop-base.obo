@@ -4419,8 +4419,8 @@ is_a: MOP:0000802 ! formation of covalent bond with nitrogen centre
 id: MOP:0000556
 name: nitration
 def: "Formation of a covalent bond between a substrate and a nitro group." [RSC:xp]
-comment: has_participant: CHEBI:29785
 is_a: MOP:0000802 ! formation of covalent bond with nitrogen centre
+relationship: RO:0000057 CHEBI:29785
 
 [Term]
 id: MOP:0000557
@@ -4664,7 +4664,8 @@ creation_date: 2009-06-02T05:48:42Z
 id: MOP:0000584
 name: primary alkene oxidation to carboxylic acid and carbon dioxide
 def: "An alkene oxidation process where the reactant is a primary alkene and the products are carboxylic acid and carbon dioxide. This can be achieved with a warm, acidic solution of potassium permanganate." [https://orcid.org/0000-0001-5985-7429]
-is_a: MOP:0000708 ! alkene oxidative cleavage
+is_a: MOP:0000581 ! alkene oxidation
+is_a: MOP:0000707 ! oxidative cleavage
 relationship: RO:0004008 CHEBI:16526
 created_by: batchelorc
 creation_date: 2009-06-02T06:02:46Z
@@ -4673,7 +4674,8 @@ creation_date: 2009-06-02T06:02:46Z
 id: MOP:0000585
 name: tertiary alkene oxidation to carboxylic acid and ketone
 def: "An alkene oxidation where the reactant is a tertiary alkene and the products are the corresponding carboxylic acid and ketone. This can be achieved with a warm, acidic solution of potassium permanganate." [https://orcid.org/0000-0001-5985-7429]
-is_a: MOP:0000708 ! alkene oxidative cleavage
+is_a: MOP:0000581 ! alkene oxidation
+is_a: MOP:0000707 ! oxidative cleavage
 relationship: RO:0004008 CHEBI:17087
 relationship: RO:0004008 CHEBI:33575
 created_by: batchelorc
@@ -4683,7 +4685,8 @@ creation_date: 2009-06-02T06:04:14Z
 id: MOP:0000586
 name: secondary, non-terminal alkene oxidation to aldehydes
 def: "An alkene oxidation process where the reactant is a secondary alkene and the products are the corresponding aldehydes. This can be achieved with warm, acidic potassium permanganate." [https://orcid.org/0000-0001-5985-7429]
-is_a: MOP:0000708 ! alkene oxidative cleavage
+is_a: MOP:0000581 ! alkene oxidation
+is_a: MOP:0000707 ! oxidative cleavage
 relationship: RO:0004008 CHEBI:17478
 created_by: batchelorc
 creation_date: 2009-06-02T06:06:23Z
@@ -4692,7 +4695,8 @@ creation_date: 2009-06-02T06:06:23Z
 id: MOP:0000587
 name: secondary terminal alkene oxidation to ketone and carbon dioxide
 def: "An alkene oxidation process where the reactant is a secondary terminal alkene and the products are carbon dioxide and the corresponding ketone. This can be achieved by warm, acidic potassium permanganate solution." [https://orcid.org/0000-0001-5985-7429]
-is_a: MOP:0000708 ! alkene oxidative cleavage
+is_a: MOP:0000581 ! alkene oxidation
+is_a: MOP:0000707 ! oxidative cleavage
 relationship: RO:0004008 CHEBI:16526
 relationship: RO:0004008 CHEBI:17087
 created_by: batchelorc
@@ -4702,7 +4706,8 @@ creation_date: 2009-06-02T06:07:44Z
 id: MOP:0000588
 name: quaternary alkene oxidation to ketones
 def: "An alkene oxidation process where the reactant is a quaternary alkene and the products are the corresponding ketones." [https://orcid.org/0000-0001-5985-7429]
-is_a: MOP:0000708 ! alkene oxidative cleavage
+is_a: MOP:0000581 ! alkene oxidation
+is_a: MOP:0000707 ! oxidative cleavage
 relationship: RO:0004008 CHEBI:17087
 created_by: batchelorc
 creation_date: 2009-06-02T06:09:24Z
@@ -6432,7 +6437,6 @@ id: MOP:0000802
 name: formation of covalent bond with nitrogen centre
 def: "Formation of a covalent bond with a group where the free valence is on a nitrogen centre." [https://orcid.org/0000-0001-5985-7429]
 is_a: MOP:0000566 ! formation of covalent bond with group
-relationship: RO:0000057 CHEBI:29785
 
 [Term]
 id: MOP:0000803

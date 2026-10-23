@@ -8513,8 +8513,7 @@
         "definition" : {
           "val" : "Formation of a covalent bond between a substrate and a nitro group.",
           "xrefs" : [ "RSC:xp" ]
-        },
-        "comments" : [ "has_participant: CHEBI:29785" ]
+        }
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/MOP_0000557",
@@ -45792,6 +45791,10 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MOP_0000802"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/MOP_0000556",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0000057",
+      "obj" : "http://purl.obolibrary.org/obo/CHEBI_29785"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000557",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MOP_0000802"
@@ -45958,7 +45961,11 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000584",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MOP_0000708"
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000581"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MOP_0000584",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000707"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000584",
       "pred" : "http://purl.obolibrary.org/obo/RO_0004008",
@@ -45966,7 +45973,11 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000585",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MOP_0000708"
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000581"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MOP_0000585",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000707"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000585",
       "pred" : "http://purl.obolibrary.org/obo/RO_0004008",
@@ -45978,7 +45989,11 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000586",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MOP_0000708"
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000581"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MOP_0000586",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000707"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000586",
       "pred" : "http://purl.obolibrary.org/obo/RO_0004008",
@@ -45986,7 +46001,11 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000587",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MOP_0000708"
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000581"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MOP_0000587",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000707"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000587",
       "pred" : "http://purl.obolibrary.org/obo/RO_0004008",
@@ -45998,7 +46017,11 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000588",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MOP_0000708"
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000581"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/MOP_0000588",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000707"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000588",
       "pred" : "http://purl.obolibrary.org/obo/RO_0004008",
@@ -47363,10 +47386,6 @@
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000802",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/MOP_0000566"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/MOP_0000802",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0000057",
-      "obj" : "http://purl.obolibrary.org/obo/CHEBI_29785"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000803",
       "pred" : "is_a",

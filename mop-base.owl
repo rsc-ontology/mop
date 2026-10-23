@@ -11165,9 +11165,14 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000556">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000802"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29785"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and a nitro group.</obo:IAO_0000115>
         <oboInOwl:id>MOP:0000556</oboInOwl:id>
-        <rdfs:comment>has_participant: CHEBI:29785</rdfs:comment>
         <rdfs:label>nitration</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -11800,7 +11805,8 @@
     <!-- http://purl.obolibrary.org/obo/MOP_0000584 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000584">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -11825,7 +11831,8 @@
     <!-- http://purl.obolibrary.org/obo/MOP_0000585 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000585">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -11856,7 +11863,8 @@
     <!-- http://purl.obolibrary.org/obo/MOP_0000586 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000586">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -11881,7 +11889,8 @@
     <!-- http://purl.obolibrary.org/obo/MOP_0000587 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000587">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -11912,7 +11921,8 @@
     <!-- http://purl.obolibrary.org/obo/MOP_0000588 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000588">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -16891,12 +16901,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000802">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000566"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29785"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Formation of a covalent bond with a group where the free valence is on a nitrogen centre.</obo:IAO_0000115>
         <oboInOwl:id>MOP:0000802</oboInOwl:id>
         <rdfs:label>formation of covalent bond with nitrogen centre</rdfs:label>
