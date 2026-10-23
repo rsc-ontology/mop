@@ -11000,7 +11000,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0001-5
 AnnotationAssertion(oboInOwl:id obo:MOP_0000802 "MOP:0000802")
 AnnotationAssertion(rdfs:label obo:MOP_0000802 "formation of covalent bond with nitrogen centre")
 SubClassOf(obo:MOP_0000802 obo:MOP_0000566)
-SubClassOf(obo:MOP_0000802 ObjectSomeValuesFrom(obo:RO_0000057 obo:CHEBI_29785))
 
 # Class: obo:MOP_0000803 (formation of covalent bond with oxygen centre)
 
