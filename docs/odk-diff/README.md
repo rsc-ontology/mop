@@ -367,35 +367,20 @@ Two classes of problems threaten the integrity of MOP PURLs. Both must be resolv
 
 ## Using ROBOT to identify the differences between MOP before and after the ODK Migration
 In this step we produce a diff between the pre-ODK MOP version and the post-ODK version to make sure the ODK migration did not produce any unaccounted changes of MOP. 
-The MOP term overlap analysed in the previous section was partially addressed during the MOP migration by copying the MOP terms only defined in RXNO over to MOP, resolving the IRI clashes and some of the differences in SubclassOf axioms or annotations together with Colin Batchelor. 
-To produce a minimal diff between the pre- and post-ODK MOP version, we decided to merge only those MOP terms defined in the pre-ODK base RXNO with the pre ODK base version of MOP that were not previously defined in the `mop.owl`. Hence, the diff will show changes for those terms defined in both OWL files that are due to the reasons listed in the previous step.
+The MOP term overlap analysed in the previous section was partially addressed during the MOP migration by copying the MOP terms only defined in RXNO over to MOP, resolving the IRI clashes and some of the differences in SubclassOf axioms or annotations together with Colin Batchelor.
 
-### 1. Get MOP Terms only defined in pre-ODK RXNO
-We used the terms identified in the previous step `6. Removed MOP Terms` to manually produce the `mop_only_in_rxno_terms.txt` file, which we then used to build the `mop_only_in_rxno_terms.owl` module that contains MOP terms only defined in RXNO, via ROBOT extract like this:
-```shell
-robot extract -i mop_base_in_rxno_pre_ODK.owl --method BOT \
-  --term-file mop_only_in_rxno_terms.txt --copy-ontology-annotations false \
-  filter --term-file mop_only_in_rxno_terms.txt --signature true --trim false \
-  convert --format ofn \
-  -o mop_only_in_rxno.owl
-```
-
-### 2. Merge Pre ODK MOP versions
-We used ROBOT to merge the `mop_only_in_rxno_terms.owl` module with the pre ODK base release of MOP (`mop_base_pre_ODK.owl`) that we created earlier.
-```shell
-robot merge -i mop_base_pre_ODK.owl -i mop_only_in_rxno_base.owl \
-  --include-annotations true -o mop_base_pre_ODK_complete.owl
-```
-
-### 3. Download the post-ODK MOP release file:
+### 1. Download the post-ODK MOP release file:
 To compare the pre-ODK MOP version we need to download the first release made after the ODK migration. We're using the base release to exclude imported terms.
 ```shell
-curl -o mop_base_post_ODK.owl https://raw.githubusercontent.com/rsc-ontology/mop/refs/heads/main/mop-base.owl
+curl -o mop_base_post_ODK.owl https://raw.githubusercontent.com/rsc-ontology/mop/refs/heads/Fix-ODK-migration-errors/mop-base.owl
+```
+<a id="merge-pre-odk-mop-verions"></a>
+### 2. Make diff to see the changes after the ODK migration
+```shell
+robot diff --left mop_base_pre_ODK.owl --right mop_base_post_ODK.owl -f markdown -o mop_ODK_diff.md
 ```
 
-### 4. Make diff to see the changes after the ODK migration
-```shell
-robot diff --left mop_base_pre_ODK_complete.owl --right mop_base_post_ODK.owl -f markdown -o mop_ODK_diff.md
-```
+## Analysing ROBOT diff comparing MOP before and after the ODK Migration
+
 
 ## Analysing ROBOT diff comparing MOP before and after the ODK Migration
