@@ -231,7 +231,11 @@
           "val" : "Formation of a covalent bond between a substrate and a methanidyl group.",
           "xrefs" : [ "RSC:xp" ]
         },
-        "comments" : [ "has_participant: CHEBI:29361" ]
+        "comments" : [ "has_participant: CHEBI:29361" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "methanidylation"
+        } ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/MOP_0000002",
@@ -242,7 +246,11 @@
           "val" : "Formation of a covalent bond between a substrate and an azaniumyl group.",
           "xrefs" : [ "RSC:xp" ]
         },
-        "comments" : [ "has_participant: CHEBI:48284" ]
+        "comments" : [ "has_participant: CHEBI:48284" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "azaniumylation"
+        } ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/MOP_0000003",
@@ -253,7 +261,11 @@
           "val" : "Formation of a covalent bond between a substrate and a formyl group.",
           "xrefs" : [ "RSC:xp" ]
         },
-        "comments" : [ "has_participant: CHEBI:42485" ]
+        "comments" : [ "has_participant: CHEBI:42485" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "formylation"
+        } ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/MOP_0000004",
@@ -264,7 +276,11 @@
           "val" : "Formation of a covalent bond between a substrate and an acetonyl group.",
           "xrefs" : [ "RSC:xp" ]
         },
-        "comments" : [ "has_participant: CHEBI:48056" ]
+        "comments" : [ "has_participant: CHEBI:48056" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "acetonylation"
+        } ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/MOP_0000005",
@@ -275,7 +291,11 @@
           "val" : "Formation of a covalent bond between a substrate and an L-cystyl group.",
           "xrefs" : [ "RSC:xp" ]
         },
-        "comments" : [ "has_participant: CHEBI:50057" ]
+        "comments" : [ "has_participant: CHEBI:50057" ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "L-cystylation"
+        } ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/MOP_0000006",

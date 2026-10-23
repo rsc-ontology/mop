@@ -9084,6 +9084,7 @@ No imports</obo:IAO_0000115>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000800"/>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and a methanidyl group.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>methanidylation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000001</oboInOwl:id>
         <rdfs:comment>has_participant: CHEBI:29361</rdfs:comment>
         <rdfs:label>methanidylation</rdfs:label>
@@ -9102,6 +9103,7 @@ No imports</obo:IAO_0000115>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000802"/>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and an azaniumyl group.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>azaniumylation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000002</oboInOwl:id>
         <rdfs:comment>has_participant: CHEBI:48284</rdfs:comment>
         <rdfs:label>azaniumylation</rdfs:label>
@@ -9126,6 +9128,7 @@ No imports</obo:IAO_0000115>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and a formyl group.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>formylation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000003</oboInOwl:id>
         <rdfs:comment>has_participant: CHEBI:42485</rdfs:comment>
         <rdfs:label>formylation</rdfs:label>
@@ -9144,6 +9147,7 @@ No imports</obo:IAO_0000115>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000004">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000800"/>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and an acetonyl group.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>acetonylation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000004</oboInOwl:id>
         <rdfs:comment>has_participant: CHEBI:48056</rdfs:comment>
         <rdfs:label>acetonylation</rdfs:label>
@@ -9162,6 +9166,7 @@ No imports</obo:IAO_0000115>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000005">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000009"/>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and an L-cystyl group.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>L-cystylation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000005</oboInOwl:id>
         <rdfs:comment>has_participant: CHEBI:50057</rdfs:comment>
         <rdfs:label>L-cystylation</rdfs:label>

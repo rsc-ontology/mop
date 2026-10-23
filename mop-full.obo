@@ -2278,6 +2278,7 @@ id: MOP:0000001
 name: methanidylation
 def: "Formation of a covalent bond between a substrate and a methanidyl group." [RSC:xp]
 comment: has_participant: CHEBI:29361
+synonym: "methanidylation" EXACT []
 is_a: MOP:0000800 ! formation of covalent bond with carbon centre
 
 [Term]
@@ -2285,6 +2286,7 @@ id: MOP:0000002
 name: azaniumylation
 def: "Formation of a covalent bond between a substrate and an azaniumyl group." [RSC:xp]
 comment: has_participant: CHEBI:48284
+synonym: "azaniumylation" EXACT []
 is_a: MOP:0000802 ! formation of covalent bond with nitrogen centre
 
 [Term]
@@ -2292,6 +2294,7 @@ id: MOP:0000003
 name: formylation
 def: "Formation of a covalent bond between a substrate and a formyl group." [RSC:xp]
 comment: has_participant: CHEBI:42485
+synonym: "formylation" EXACT []
 is_a: MOP:0000029 ! univalent carboacylation
 relationship: RO:0000057 CHEBI:42485 ! has participant formyl group
 
@@ -2300,6 +2303,7 @@ id: MOP:0000004
 name: acetonylation
 def: "Formation of a covalent bond between a substrate and an acetonyl group." [RSC:xp]
 comment: has_participant: CHEBI:48056
+synonym: "acetonylation" EXACT []
 is_a: MOP:0000800 ! formation of covalent bond with carbon centre
 
 [Term]
@@ -2307,6 +2311,7 @@ id: MOP:0000005
 name: L-cystylation
 def: "Formation of a covalent bond between a substrate and an L-cystyl group." [RSC:xp]
 comment: has_participant: CHEBI:50057
+synonym: "L-cystylation" EXACT []
 is_a: MOP:0000009 ! cystylation
 
 [Term]
