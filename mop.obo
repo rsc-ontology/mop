@@ -2504,7 +2504,7 @@ name: univalent carboacylation
 def: "Formation of a covalent bond between a substrate and an univalent carboacyl group." [RSC:xp]
 comment: has_participant: CHEBI:27207
 synonym: "univalent carboacylation" EXACT []
-is_a: MOP:0000028 ! carboacylation
+is_a: MOP:0000458 ! organylation
 
 [Term]
 id: MOP:0000030

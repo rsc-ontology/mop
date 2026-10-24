@@ -43696,7 +43696,7 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000029",
       "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/MOP_0000028"
+      "obj" : "http://purl.obolibrary.org/obo/MOP_0000458"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/MOP_0000030",
       "pred" : "is_a",

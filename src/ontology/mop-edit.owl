@@ -4041,7 +4041,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:MOP_0000029 "univalent carboacy
 AnnotationAssertion(oboInOwl:id obo:MOP_0000029 "MOP:0000029")
 AnnotationAssertion(rdfs:comment obo:MOP_0000029 "has_participant: CHEBI:27207")
 AnnotationAssertion(rdfs:label obo:MOP_0000029 "univalent carboacylation")
-SubClassOf(obo:MOP_0000029 obo:MOP_0000028)
+SubClassOf(obo:MOP_0000029 obo:MOP_0000458)
 
 # Class: obo:MOP_0000030 (acetylation)
 

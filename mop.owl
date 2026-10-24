@@ -9625,7 +9625,7 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/MOP_0000029 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000029">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000028"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000458"/>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and an univalent carboacyl group.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>univalent carboacylation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000029</oboInOwl:id>
