@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2026-10-23
+data-version: releases/2026-10-24
 subsetdef: 1:STAR ""
 subsetdef: 3:STAR ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
@@ -35,7 +35,7 @@ property_value: dcterms:creator https://orcid.org/0000-0001-5985-7429
 property_value: dcterms:description "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation." xsd:string
 property_value: dcterms:license http://creativecommons.org/licenses/by/4.0/
 property_value: dcterms:title "Molecular Process Ontology (MOP)" xsd:string
-property_value: owl:versionInfo "2026-10-23" xsd:string
+property_value: owl:versionInfo "2026-10-24" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -8009,6 +8009,9 @@ comment: Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI
 is_a: MOP:0000543 ! molecular process
 property_value: dcterms:creator http://orcid.org/0000-0002-4378-6061
 property_value: dcterms:date "2022-02-01T09:40:48Z" xsd:dateTime
+property_value: IAO:0000116 "The GO class \"protein trimerization\" (https://purl.obolibrary.org/obo/GO_0070206) would actually be a subclass of \"trimerization\" according to the definition provided here. However, for the reason of not wanting to inject this subclassOf axiom into GO, we decided to not assert this in MOP as of yet. Further discussion is needed with the GO and/or OBO team to see how this GO class can be integrated." xsd:string {dcterms:creator="https://orcid.org/0000-0002-1595-3213"}
+property_value: IAO:0000233 https://github.com/rsc-ontology/rxno/issues/34
+property_value: IAO:0000233 https://github.com/rsc-ontology/rxno/issues/45
 
 [Term]
 id: MOP:0000716

@@ -22,9 +22,9 @@
         "val" : "Molecular Process Ontology (MOP)"
       }, {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2026-10-23"
+        "val" : "2026-10-24"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/mop/releases/2026-10-23/mop.json"
+      "version" : "http://purl.obolibrary.org/obo/mop/releases/2026-10-24/mop.json"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000001",
@@ -16722,6 +16722,21 @@
         },
         "comments" : [ "Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term '[3+2] cycloaddition', although it was already used for 'trimerization' in the MOP release. Since 'carbonyl oxidation to alkyne' was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27)" ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
+          "val" : "The GO class \"protein trimerization\" (https://purl.obolibrary.org/obo/GO_0070206) would actually be a subclass of \"trimerization\" according to the definition provided here. However, for the reason of not wanting to inject this subclassOf axiom into GO, we decided to not assert this in MOP as of yet. Further discussion is needed with the GO and/or OBO team to see how this GO class can be integrated.",
+          "meta" : {
+            "basicPropertyValues" : [ {
+              "pred" : "http://purl.org/dc/terms/creator",
+              "val" : "https://orcid.org/0000-0002-1595-3213"
+            } ]
+          }
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/rsc-ontology/rxno/issues/34"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/rsc-ontology/rxno/issues/45"
+        }, {
           "pred" : "http://purl.org/dc/terms/creator",
           "val" : "http://orcid.org/0000-0002-4378-6061"
         }, {
