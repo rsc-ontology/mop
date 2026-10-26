@@ -17,13 +17,14 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mop.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-09-29/mop.owl"/>
-        <dcterms:date>01:02:2022 11:15</dcterms:date>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-10-26/mop.owl"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0009-0001-5998-5030"/>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0001-5985-7429"/>
         <dcterms:description>MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation.</dcterms:description>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:title>Molecular Process Ontology (MOP)</dcterms:title>
-        <oboInOwl:hasOBOFormatVersion>1.2</oboInOwl:hasOBOFormatVersion>
-        <owl:versionInfo>2026-09-29</owl:versionInfo>
+        <owl:versionInfo>2026-10-26</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -158,6 +159,7 @@ We also have the outstanding issue of how to aim different definitions to differ
         <obo:IAO_0000115 xml:lang="en">An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">PERSON:Daniel Schober</obo:IAO_0000117>
         <obo:IAO_0000119 xml:lang="en">GROUP:OBI:&lt;http://purl.obofoundry.org/obo/obi&gt;</obo:IAO_0000119>
+        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/iao.owl"/>
         <rdfs:label xml:lang="en">editor note</rdfs:label>
     </owl:AnnotationProperty>
     
@@ -1203,6 +1205,11 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a part and its whole</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">Everything is part of itself. Any part of any part of a thing is itself part of that thing. Two distinct things cannot be part of each other.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent can be part of an occurrent; only a process can be part of a process; only a continuant can be part of a continuant; only an independent continuant can be part of an independent continuant; only an immaterial entity can be part of an immaterial entity; only a specifically dependent continuant can be part of a specifically dependent continuant; only a generically dependent continuant can be part of a generically dependent continuant. (This list is not exhaustive.)
+
+A continuant cannot be part of an occurrent: use &apos;participates in&apos;. An occurrent cannot be part of a continuant: use &apos;has participant&apos;. A material entity cannot be part of an immaterial entity: use &apos;has location&apos;. A specifically dependent continuant cannot be part of an independent continuant: use &apos;inheres in&apos;. An independent continuant cannot be part of a specifically dependent continuant: use &apos;bearer of&apos;.</obo:IAO_0000116>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_gp2term"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
@@ -1218,6 +1225,11 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <obo:IAO_0000115 xml:lang="en">a core relation that holds between a whole and its part</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">Everything has itself as a part. Any part of any part of a thing is itself part of that thing. Two distinct things cannot have each other as a part.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Occurrents are not subject to change and so parthood between occurrents holds for all the times that the part exists. Many continuants are subject to change, so parthood between continuants will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Parthood requires the part and the whole to have compatible classes: only an occurrent have an occurrent as part; only a process can have a process as part; only a continuant can have a continuant as part; only an independent continuant can have an independent continuant as part; only a specifically dependent continuant can have a specifically dependent continuant as part; only a generically dependent continuant can have a generically dependent continuant as part. (This list is not exhaustive.)
+
+A continuant cannot have an occurrent as part: use &apos;participates in&apos;. An occurrent cannot have a continuant as part: use &apos;has participant&apos;. An immaterial entity cannot have a material entity as part: use &apos;location of&apos;. An independent continuant cannot have a specifically dependent continuant as part: use &apos;bearer of&apos;. A specifically dependent continuant cannot have an independent continuant as part: use &apos;inheres in&apos;.</obo:IAO_0000116>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_ontology"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
@@ -1263,6 +1275,7 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000062"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115 xml:lang="en">x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) &lt;= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other.</obo:IAO_0000116>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <rdfs:label xml:lang="en">preceded by</rdfs:label>
     </owl:ObjectProperty>
@@ -1310,6 +1323,11 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000136">
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <obo:IAO_0000115 xml:lang="en">A (currently) primitive relation that relates an information artifact to an entity.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of &quot;mentions&quot; relation. Weaken the is_about relationship to be primitive. 
+
+We will try to build it back up by elaborating the various subproperties that are more precisely defined.
+
+Some currently missing phenomena that should be considered &quot;about&quot; are predications - &quot;The only person who knows the answer is sitting beside me&quot; , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">is about</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1351,6 +1369,7 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <obo:IAO_0000115 xml:lang="en">Inverse of characteristic_of</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">has characteristic</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1383,6 +1402,7 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0000057"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115 xml:lang="en">a relation between a process and a continuant, in which the continuant is somehow involved in the process</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">has participant</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1394,6 +1414,7 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000052"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0000087"/>
         <obo:IAO_0000115 xml:lang="en">a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">A role inheres in its bearer at all times for which the role exists, however the role need not be realized at all the times that the role exists.</obo:IAO_0000116>
         <rdfs:comment>This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.</rdfs:comment>
         <rdfs:label xml:lang="en">role of</rdfs:label>
     </owl:ObjectProperty>
@@ -1407,6 +1428,7 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000023"/>
         <obo:IAO_0000115 xml:lang="en">a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">A bearer can have many roles, and its roles can exist for different periods of time, but none of its roles can exist when the bearer does not exist. A role need not be realized at all the times that the role exists.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">has role</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1597,6 +1619,7 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>q characteristic of part of w if and only if there exists some p such that q inheres in p and p part of w.</obo:IAO_0000115>
+        <obo:IAO_0000116>Because part_of is transitive, inheres in is a sub-relation of characteristic of part of</obo:IAO_0000116>
         <rdfs:label xml:lang="en">characteristic of part of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -1698,6 +1721,21 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002410">
         <obo:IAO_0000115>relation that links two events, processes, states, or objects such that one event, process, state, or object (a cause) contributes to the production of another event, process, state, or object (an effect) where the cause is partly or wholly responsible for the effect, and the effect is partly or wholly dependent on the cause.</obo:IAO_0000115>
+        <obo:IAO_0000116>This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an &apos;activity flow-centric approach&apos;, with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.
+
+To define causal relations in an activity-flow type network, we make use of 3 primitives:
+
+ * Temporal: how do the intervals of the two occurrents relate? 
+ * Is the causal relation regulatory?
+ * Is the influence positive or negative?
+
+The first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are &apos;direct&apos;, &apos;indirect&apos; or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under &apos;temporally related to&apos;). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.
+
+For the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.
+
+For the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.
+
+Each of these 3 primitives can be composed to yield a cross-product of different relation types.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">causally related to</rdfs:label>
     </owl:ObjectProperty>
     <owl:Axiom>
@@ -1773,6 +1811,7 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/BFO_0000050"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>p is &apos;causally upstream or within&apos; q iff p is causally related to q, and the end of p precedes, or is coincident with, the end of q.</obo:IAO_0000115>
+        <obo:IAO_0000116>We would like to make this disjoint with &apos;preceded by&apos;, but this is prohibited in OWL2</obo:IAO_0000116>
         <oboInOwl:hasRelatedSynonym>affects</oboInOwl:hasRelatedSynonym>
         <rdfs:label>causally upstream of or within</rdfs:label>
     </owl:ObjectProperty>
@@ -1912,6 +1951,10 @@ EquivalentTo: xsd:integer[&gt; 2151 , &lt;= 2300]
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002404"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000115>r &apos;realized in response to&apos; s iff, r is a realizable (e.g. a plant trait such as responsivity to drought), s is an environmental stimulus (a process), and s directly causes the realization of r.</obo:IAO_0000115>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0001-6996-0040"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-7073-9172"/>
+        <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-8461-9745"/>
         <oboInOwl:hasExactSynonym>triggered by process</oboInOwl:hasExactSynonym>
         <rdfs:label xml:lang="en">realized in response to</rdfs:label>
     </owl:ObjectProperty>
@@ -8670,6 +8713,17 @@ This commonly refers to prototropy in which a hydrogen&apos;s position is change
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030"/>
         <obo:IAO_0000111 xml:lang="en">data entity</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">An information content entity that is intended to be one or more truthful statement(s) about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">2/2/2009 Alan and Bjoern discussing FACS run output data. This is a data item because it is about the cell population. Each element records an event and is typically further composed a set of measurment data items that record the fluorescent intensity stimulated by one of the lasers.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">2009-03-16: data item deliberatly ambiguous: we merged data set and datum to be one entity, not knowing how to define singular versus plural. So data item is more general than datum.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">2009-03-16: removed datum as alternative term as datum specifically refers to singular form, and is thus not an exact synonym.</obo:IAO_0000116>
+        <obo:IAO_0000116>2014-03-31: See discussion at http://odontomachus.wordpress.com/2014/03/30/aboutness-objects-propositions/</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">JAR: datum     -- well, this will be very tricky to define, but maybe some 
+information-like stuff that might be put into a computer and that is 
+meant, by someone, to denote and/or to be interpreted by some 
+process... I would include lists, tables, sentences... I think I might 
+defer to Barry, or to Brian Cantwell Smith
+
+JAR: A data item is an approximately justified approximately true approximate belief</obo:IAO_0000116>
         <rdfs:label xml:lang="en">data entity</rdfs:label>
     </owl:Class>
     
@@ -8687,6 +8741,10 @@ This commonly refers to prototropy in which a hydrogen&apos;s position is change
         </rdfs:subClassOf>
         <obo:IAO_0000111 xml:lang="en">information content entity</obo:IAO_0000111>
         <obo:IAO_0000115 xml:lang="en">A generically dependent continuant that is about some thing.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">2014-03-10: The use of &quot;thing&quot; is intended to be general enough to include universals and configurations (see https://groups.google.com/d/msg/information-ontology/GBxvYZCk1oc/-L6B5fSBBTQJ).</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">information_content_entity &apos;is_encoded_in&apos; some digital_entity in obi before split (040907). information_content_entity &apos;is_encoded_in&apos; some physical_document in obi before split (040907).
+
+Previous. An information content entity is a non-realizable information entity that &apos;is encoded in&apos; some digital or physical entity.</obo:IAO_0000116>
         <rdfs:label xml:lang="en">information content entity</rdfs:label>
     </owl:Class>
     
@@ -9620,7 +9678,7 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/MOP_0000029 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000029">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000028"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000458"/>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and an univalent carboacyl group.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>univalent carboacylation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000029</oboInOwl:id>
@@ -19607,9 +19665,14 @@ No imports</obo:IAO_0000115>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000556">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000802"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29785"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>Formation of a covalent bond between a substrate and a nitro group.</obo:IAO_0000115>
         <oboInOwl:id>MOP:0000556</oboInOwl:id>
-        <rdfs:comment>has_participant: CHEBI:29785</rdfs:comment>
         <rdfs:label>nitration</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -20242,7 +20305,8 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/MOP_0000584 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000584">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -20267,7 +20331,8 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/MOP_0000585 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000585">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -20298,7 +20363,8 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/MOP_0000586 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000586">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -20323,7 +20389,8 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/MOP_0000587 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000587">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -20354,7 +20421,8 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/MOP_0000588 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000588">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000708"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000581"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000707"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004008"/>
@@ -20417,7 +20485,7 @@ No imports</obo:IAO_0000115>
     <!-- http://purl.obolibrary.org/obo/MOP_0000591 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000591">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000479"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000458"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
@@ -20428,11 +20496,8 @@ No imports</obo:IAO_0000115>
         <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
         <oboInOwl:creation_date>2009-06-05T04:57:07Z</oboInOwl:creation_date>
         <oboInOwl:id>MOP:0000591</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000713, which in MOP was already used for &apos;acetylene reduction&apos;. Thus, the &quot;&apos;has participant&apos; some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; in MOP, was copied over from this wrongly defined &apos;carboxylation&apos; in RXNO to MOP:0000591. The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</rdfs:comment>
         <rdfs:comment>CHEBI:46883.</rdfs:comment>
-        <rdfs:comment>Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 (&apos;acetylene reduction&apos;). 
-Thus the &quot;has_participant some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; (MOP:0000591) in MOP was copied from this wrongly defined  &apos;carboxylation&apos; in RXNO to the proper one in MOP.
-
-The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</rdfs:comment>
         <rdfs:label>carboxylation</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -20444,11 +20509,8 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000591"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 (&apos;acetylene reduction&apos;). 
-Thus the &quot;has_participant some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; (MOP:0000591) in MOP was copied from this wrongly defined  &apos;carboxylation&apos; in RXNO to the proper one in MOP.
-
-The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</owl:annotatedTarget>
-        <oboInOwl:created_by rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000713, which in MOP was already used for &apos;acetylene reduction&apos;. Thus, the &quot;&apos;has participant&apos; some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; in MOP, was copied over from this wrongly defined &apos;carboxylation&apos; in RXNO to MOP:0000591. The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
 
@@ -22214,6 +22276,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <obo:IAO_0000115>A &apos;keto-enol tautomerisation&apos; where a carbonyl compound is converted to an enol. Usually this is a reversible tautomerization but it can be irreversible.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>enolisation</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000672</oboInOwl:id>
+        <rdfs:comment>Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for &apos;cyclotrimerization&apos;. Thus, the &apos;realizes some enolisability&apos; axiom, which was not yet present on &apos;enolization&apos; (MOP:0000672) in MOP was copied over from this wrongly defined &apos;enolization&apos; in RXNO.</rdfs:comment>
         <rdfs:label>enolization</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -22221,6 +22284,12 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A &apos;keto-enol tautomerisation&apos; where a carbonyl compound is converted to an enol. Usually this is a reversible tautomerization but it can be irreversible.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000672"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for &apos;cyclotrimerization&apos;. Thus, the &apos;realizes some enolisability&apos; axiom, which was not yet present on &apos;enolization&apos; (MOP:0000672) in MOP was copied over from this wrongly defined &apos;enolization&apos; in RXNO.</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
 
@@ -23229,6 +23298,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         </rdfs:subClassOf>
         <obo:IAO_0000115>Hydrogenation of an olefin to a paraffin.</obo:IAO_0000115>
         <oboInOwl:id>MOP:0000712</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;oxidation state&apos;, although it was already used for &apos;olefin reduction&apos; in the MOP release. Since &apos;oxidation state&apos; was not yet defined in MOP, MOP:0005561 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000712 were copied over to MOP:0005561. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:label>olefin reduction</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -23236,6 +23306,12 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Hydrogenation of an olefin to a paraffin.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000712"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;oxidation state&apos;, although it was already used for &apos;olefin reduction&apos; in the MOP release. Since &apos;oxidation state&apos; was not yet defined in MOP, MOP:0005561 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000712 were copied over to MOP:0005561. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
 
@@ -23246,8 +23322,15 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000589"/>
         <obo:IAO_0000115>Hydrogenation of an acetylene to an olefin.</obo:IAO_0000115>
         <oboInOwl:id>MOP:0000713</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;carboxylation&apos;, although it was already used for &apos;acetylene reduction&apos; in the MOP release and &apos;carboxylation&apos; was already defined in MOP with a different IRI (MOP:0000591). Hence, the axioms wrongly asserted in RXNO were copied over to the correct &apos;carboxylation&apos; (MOP:0000591) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:label>acetylene reduction</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000713"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;carboxylation&apos;, although it was already used for &apos;acetylene reduction&apos; in the MOP release and &apos;carboxylation&apos; was already defined in MOP with a different IRI (MOP:0000591). Hence, the axioms wrongly asserted in RXNO were copied over to the correct &apos;carboxylation&apos; (MOP:0000591) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
+    </owl:Axiom>
     
 
 
@@ -23266,6 +23349,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-03T09:13:45Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym>ligand substitution reaction</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000714</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;carbonyl oxidation to alkyne&apos;, although it was already used for &apos;ligand exchange reaction&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006370 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000714 were copied over to MOP:0006370. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:comment>Typically, weakly bound ligands are replaced by more strongly bound ones, so that the resulting complex becomes thermodynamically more stable.</rdfs:comment>
         <rdfs:label xml:lang="en">ligand exchange reaction</rdfs:label>
     </owl:Class>
@@ -23276,6 +23360,12 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1093/oso/9780195301007.003.0005</oboInOwl:hasDbXref>
         <rdfs:comment>A definition of this term in the Gold Book was not yet available at the time of addition. However, inclusion in the Gold Book was requested in October 2021.</rdfs:comment>
     </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000714"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;carbonyl oxidation to alkyne&apos;, although it was already used for &apos;ligand exchange reaction&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006370 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000714 were copied over to MOP:0006370. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
+    </owl:Axiom>
     
 
 
@@ -23284,9 +23374,13 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000715">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000543"/>
         <obo:IAO_0000115>The formation of a trimer from three molecular subunits.</obo:IAO_0000115>
+        <obo:IAO_0000116>The GO class &quot;protein trimerization&quot; (https://purl.obolibrary.org/obo/GO_0070206) would actually be a subclass of &quot;trimerization&quot; according to the definition provided here. However, for the reason of not wanting to inject this subclassOf axiom into GO, we decided to not assert this in MOP as of yet. Further discussion is needed with the GO and/or OBO team to see how this GO class can be integrated.</obo:IAO_0000116>
+        <obo:IAO_0000233 rdf:resource="https://github.com/rsc-ontology/rxno/issues/34"/>
+        <obo:IAO_0000233 rdf:resource="https://github.com/rsc-ontology/rxno/issues/45"/>
         <dcterms:creator rdf:resource="http://orcid.org/0000-0002-4378-6061"/>
         <dcterms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-01T09:40:48Z</dcterms:date>
         <oboInOwl:id>MOP:0000715</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;[3+2] cycloaddition&apos;, although it was already used for &apos;trimerization&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:label xml:lang="en">trimerization</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -23294,6 +23388,18 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The formation of a trimer from three molecular subunits.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://en.wiktionary.org/wiki/trimerization</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000715"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000116"/>
+        <owl:annotatedTarget>The GO class &quot;protein trimerization&quot; (https://purl.obolibrary.org/obo/GO_0070206) would actually be a subclass of &quot;trimerization&quot; according to the definition provided here. However, for the reason of not wanting to inject this subclassOf axiom into GO, we decided to not assert this in MOP as of yet. Further discussion is needed with the GO and/or OBO team to see how this GO class can be integrated.</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000715"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;[3+2] cycloaddition&apos;, although it was already used for &apos;trimerization&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
 
@@ -23307,6 +23413,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <dcterms:creator rdf:resource="http://orcid.org/0000-0002-4378-6061"/>
         <dcterms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-01T09:48:59Z</dcterms:date>
         <oboInOwl:id>MOP:0000716</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;enolization&apos;, although it was already used for &apos;cyclotrimerization&apos; in the MOP release and &apos;enolization&apos; was already defined in MOP with a different IRI  (MOP:0000672). Hence, the axioms wrongly asserted in RXNO on MOP:0000716 were copied over to the correct &apos;enolization&apos; (MOP:0000672) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:label xml:lang="en">cyclotrimerization</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -23314,6 +23421,12 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The formation of a trimer by cycloaddition of three unsaturated compounds (e.g. alkynes, alkenes, nitriles or mixtures thereof). A metal catalyst is usually required for this type of reaction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://doi.org/10.1002/anie.200700802</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000716"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;enolization&apos;, although it was already used for &apos;cyclotrimerization&apos; in the MOP release and &apos;enolization&apos; was already defined in MOP with a different IRI  (MOP:0000672). Hence, the axioms wrongly asserted in RXNO on MOP:0000716 were copied over to the correct &apos;enolization&apos; (MOP:0000672) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
 
@@ -25297,12 +25410,6 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/MOP_0000802">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000566"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000057"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_29785"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Formation of a covalent bond with a group where the free valence is on a nitrogen centre.</obo:IAO_0000115>
         <oboInOwl:id>MOP:0000802</oboInOwl:id>
         <rdfs:label>formation of covalent bond with nitrogen centre</rdfs:label>
@@ -75961,8 +76068,8 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <obo:IAO_0000115>A formal account of the degree of oxidation of an atom.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>http://goldbook.iupac.org/O04365.html</oboInOwl:hasDbXref>
         <oboInOwl:id>MOP:0005561</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000712, which was already used in MOP for &apos;olefin reduction&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;oxidation state&apos; (MOP:0005561) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000712 were copied over to it.</rdfs:comment>
         <rdfs:comment>It turns out to be formally defined, which makes our definitions a bit poor.</rdfs:comment>
-        <rdfs:comment>The same term was provided in RXNO under the ID MOP:0000712 which conflicts with the same ID in MOP preserved for olefin reduction. The term was deleted from RXNO to be reimported correctly from MOP iwith the new current ID&quot;)</rdfs:comment>
         <rdfs:label>oxidation state</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -75970,6 +76077,12 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A formal account of the degree of oxidation of an atom.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0005561"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000712, which was already used in MOP for &apos;olefin reduction&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;oxidation state&apos; (MOP:0005561) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000712 were copied over to it.</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
 
@@ -75999,6 +76112,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <obo:IAO_0000115>Oxidation of a carbonyl group to an alkyne.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0006370</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000714, which was already used in MOP for &apos;ligand exchange reaction&apos;(see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;carbonyl oxidation to alkyne&apos; (MOP:0006370) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000714 were copied over to it.</rdfs:comment>
         <rdfs:label>carbonyl oxidation to alkyne</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -76006,6 +76120,12 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Oxidation of a carbonyl group to an alkyne.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0006370"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000714, which was already used in MOP for &apos;ligand exchange reaction&apos;(see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;carbonyl oxidation to alkyne&apos; (MOP:0006370) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000714 were copied over to it.</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
 
@@ -76017,6 +76137,7 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <obo:IAO_0000115>A cycloaddition in which one participant contributes three electrons and the other participant contributes two electrons to the transformation of reactants to products.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0006371</oboInOwl:id>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000715, which was already used in MOP for &apos;trimerization&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;[3+2] cycloaddition&apos; (MOP:0006371) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000715 were copied over to it.</rdfs:comment>
         <rdfs:label>[3+2] cycloaddition</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -76024,6 +76145,12 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cycloaddition in which one participant contributes three electrons and the other participant contributes two electrons to the transformation of reactants to products.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5985-7429</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0006371"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000715, which was already used in MOP for &apos;trimerization&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;[3+2] cycloaddition&apos; (MOP:0006371) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000715 were copied over to it.</owl:annotatedTarget>
+        <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
 
@@ -76290,6 +76417,30 @@ The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apo
         <obo:IAO_0000233>https://github.com/information-artifact-ontology/ontology-metadata/issues/136</obo:IAO_0000233>
         <obo:IAO_0000234>https://orcid.org/0000-0002-4142-7153</obo:IAO_0000234>
         <rdfs:label>domain entity does not exist</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://orcid.org/0000-0001-5985-7429 -->
+
+    <owl:NamedIndividual rdf:about="https://orcid.org/0000-0001-5985-7429">
+        <rdfs:label>Colin Batchelor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://orcid.org/0000-0002-1595-3213 -->
+
+    <owl:NamedIndividual rdf:about="https://orcid.org/0000-0002-1595-3213">
+        <rdfs:label>Philip Strömert</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://orcid.org/0009-0001-5998-5030 -->
+
+    <owl:NamedIndividual rdf:about="https://orcid.org/0009-0001-5998-5030">
+        <rdfs:label>Noura Rayya</rdfs:label>
     </owl:NamedIndividual>
     
 
