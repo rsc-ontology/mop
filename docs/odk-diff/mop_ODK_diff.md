@@ -3,11 +3,11 @@
 ## Left
 - Ontology IRI: `http://purl.obolibrary.org/obo/mop.owl`
 - Version IRI: `http://purl.obolibrary.org/obo/mop/releases/2022-05-11/mop.owl`
-- Loaded from: `file:/work/mop_base_pre_ODK_complete.owl`
+- Loaded from: `file:/work/mop_base_pre_ODK.owl`
 
 ## Right
 - Ontology IRI: `http://purl.obolibrary.org/obo/mop/mop-base.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/mop/releases/2026-09-29/mop-base.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/mop/releases/2026-10-24/mop-base.owl`
 - Loaded from: `file:/work/mop_base_post_ODK.owl`
 
 ### Ontology imports 
@@ -22,16 +22,22 @@
 
 - [title](http://purl.org/dc/elements/1.1/title) "MOP" 
 
+- [hasOBOFormatVersion](http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion) "1.2" 
+
 #### Added
 - [type](http://purl.org/dc/elements/1.1/type) [IAO_8000001](http://purl.obolibrary.org/obo/IAO_8000001) 
 
-- [date](http://purl.org/dc/terms/date) "01:02:2022 11:15" 
+- [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
+- [contributor](http://purl.org/dc/terms/contributor) [0009-0001-5998-5030](https://orcid.org/0009-0001-5998-5030) 
+
+- [creator](http://purl.org/dc/terms/creator) [0000-0001-5985-7429](https://orcid.org/0000-0001-5985-7429) 
 
 - [description](http://purl.org/dc/terms/description) "MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation." 
 
 - [title](http://purl.org/dc/terms/title) "Molecular Process Ontology (MOP)" 
 
-- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2026-09-29" 
+- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2026-10-24" 
 
 
 ### 3-endo-dig cyclization `http://purl.obolibrary.org/obo/MOP_0000750`
@@ -258,6 +264,12 @@
 - [7-exo-trig cyclization](http://purl.obolibrary.org/obo/MOP_0000766) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [bond formation to trigonal centre](http://purl.obolibrary.org/obo/MOP_0000776) 
 
 
+### BFO_0000016 `http://purl.obolibrary.org/obo/BFO_0000016`
+
+#### Added
+- Class: [BFO_0000016](http://purl.obolibrary.org/obo/BFO_0000016) 
+
+
 ### BFO_0000050 `http://purl.obolibrary.org/obo/BFO_0000050`
 
 #### Added
@@ -300,12 +312,6 @@
 
 
 
-### BFO_0000162 `http://purl.obolibrary.org/obo/BFO_0000162`
-#### Removed
-- ObjectProperty: [BFO_0000162](http://purl.obolibrary.org/obo/BFO_0000162) 
-
-
-
 ### Brønsted base catalysis `http://purl.obolibrary.org/obo/MOP_0000736`
 #### Removed
 - [Brønsted base catalysis](http://purl.obolibrary.org/obo/MOP_0000736) SubClassOf [BFO_0000117](http://purl.obolibrary.org/obo/BFO_0000117) some [accepting a hydron](http://purl.obolibrary.org/obo/MOP_0000737) 
@@ -314,16 +320,40 @@
 - [Brønsted base catalysis](http://purl.obolibrary.org/obo/MOP_0000736) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [accepting a hydron](http://purl.obolibrary.org/obo/MOP_0000737) 
 
 
+### CHEBI_15734 `http://purl.obolibrary.org/obo/CHEBI_15734`
+
+#### Added
+- Class: [CHEBI_15734](http://purl.obolibrary.org/obo/CHEBI_15734) 
+
+
+### CHEBI_16526 `http://purl.obolibrary.org/obo/CHEBI_16526`
+
+#### Added
+- Class: [CHEBI_16526](http://purl.obolibrary.org/obo/CHEBI_16526) 
+
+
 ### CHEBI_17087 `http://purl.obolibrary.org/obo/CHEBI_17087`
 
 #### Added
 - Class: [CHEBI_17087](http://purl.obolibrary.org/obo/CHEBI_17087) 
 
 
+### CHEBI_17478 `http://purl.obolibrary.org/obo/CHEBI_17478`
+
+#### Added
+- Class: [CHEBI_17478](http://purl.obolibrary.org/obo/CHEBI_17478) 
+
+
 ### CHEBI_29785 `http://purl.obolibrary.org/obo/CHEBI_29785`
 
 #### Added
 - Class: [CHEBI_29785](http://purl.obolibrary.org/obo/CHEBI_29785) 
+
+
+### CHEBI_30879 `http://purl.obolibrary.org/obo/CHEBI_30879`
+
+#### Added
+- Class: [CHEBI_30879](http://purl.obolibrary.org/obo/CHEBI_30879) 
 
 
 ### CHEBI_33308 `http://purl.obolibrary.org/obo/CHEBI_33308`
@@ -344,16 +374,34 @@
 - Class: [CHEBI_33575](http://purl.obolibrary.org/obo/CHEBI_33575) 
 
 
+### CHEBI_33595 `http://purl.obolibrary.org/obo/CHEBI_33595`
+
+#### Added
+- Class: [CHEBI_33595](http://purl.obolibrary.org/obo/CHEBI_33595) 
+
+
 ### CHEBI_35681 `http://purl.obolibrary.org/obo/CHEBI_35681`
 
 #### Added
 - Class: [CHEBI_35681](http://purl.obolibrary.org/obo/CHEBI_35681) 
 
 
+### CHEBI_36587 `http://purl.obolibrary.org/obo/CHEBI_36587`
+
+#### Added
+- Class: [CHEBI_36587](http://purl.obolibrary.org/obo/CHEBI_36587) 
+
+
 ### CHEBI_42485 `http://purl.obolibrary.org/obo/CHEBI_42485`
 
 #### Added
 - Class: [CHEBI_42485](http://purl.obolibrary.org/obo/CHEBI_42485) 
+
+
+### CHEBI_46883 `http://purl.obolibrary.org/obo/CHEBI_46883`
+
+#### Added
+- Class: [CHEBI_46883](http://purl.obolibrary.org/obo/CHEBI_46883) 
 
 
 ### CHEBI_52845 `http://purl.obolibrary.org/obo/CHEBI_52845`
@@ -368,10 +416,10 @@
 - Class: [IAO_0000030](http://purl.obolibrary.org/obo/IAO_0000030) 
 
 
-### IAO_0000116 `http://purl.obolibrary.org/obo/IAO_0000116`
-#### Removed
-- AnnotationProperty: [IAO_0000116](http://purl.obolibrary.org/obo/IAO_0000116) 
+### IAO_0000233 `http://purl.obolibrary.org/obo/IAO_0000233`
 
+#### Added
+- AnnotationProperty: [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) 
 
 
 ### Lewis adduct formation `http://purl.obolibrary.org/obo/MOP_0000739`
@@ -403,19 +451,37 @@
 
 
 ### O-dealkylation `http://purl.obolibrary.org/obo/MOP_0000719`
-#### Removed
-- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
 
 #### Added
+- Class: [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) 
+
 - [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
+
+- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000719" 
+
+- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Breaking of a covalent bond between an alkyl group and an oxygen atom." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:xp" 
+
+- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) [label](http://www.w3.org/2000/01/rdf-schema#label) "O-dealkylation" 
+
+- [O-dealkylation](http://purl.obolibrary.org/obo/MOP_0000719) SubClassOf [dealkylation](http://purl.obolibrary.org/obo/MOP_0001369) 
 
 
 ### P-alkylation `http://purl.obolibrary.org/obo/MOP_0006369`
-#### Removed
-- [P-alkylation](http://purl.obolibrary.org/obo/MOP_0006369) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
 
 #### Added
+- Class: [P-alkylation](http://purl.obolibrary.org/obo/MOP_0006369) 
+
 - [P-alkylation](http://purl.obolibrary.org/obo/MOP_0006369) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
+
+- [P-alkylation](http://purl.obolibrary.org/obo/MOP_0006369) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0006369" 
+
+- [P-alkylation](http://purl.obolibrary.org/obo/MOP_0006369) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "The formation of a covalent bond between a phosphorus atom and an alkyl group." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:xp" 
+
+- [P-alkylation](http://purl.obolibrary.org/obo/MOP_0006369) [label](http://www.w3.org/2000/01/rdf-schema#label) "P-alkylation" 
+
+- [P-alkylation](http://purl.obolibrary.org/obo/MOP_0006369) SubClassOf [alkylation](http://purl.obolibrary.org/obo/MOP_0000369) 
 
 
 ### RO_0000057 `http://purl.obolibrary.org/obo/RO_0000057`
@@ -443,11 +509,20 @@
 
 
 ### [2+2+1] cycloaddition `http://purl.obolibrary.org/obo/MOP_0000720`
-#### Removed
-- [[2+2+1] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000720) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
 
 #### Added
+- Class: [[2+2+1] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000720) 
+
 - [[2+2+1] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000720) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
+
+- [[2+2+1] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000720) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000720" 
+
+- [[2+2+1] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000720) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A cycloaddition in which two participants contribute two electrons and the other participant contributes one electron to the transformation of reactants to products." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
+
+- [[2+2+1] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000720) [label](http://www.w3.org/2000/01/rdf-schema#label) "[2+2+1] cycloaddition" 
+
+- [[2+2+1] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000720) SubClassOf [cycloaddition](http://purl.obolibrary.org/obo/MOP_0000562) 
 
 
 ### [3+2] cycloaddition `http://purl.obolibrary.org/obo/MOP_0006371`
@@ -459,6 +534,9 @@
 
 - [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0006371) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0006371" 
 
+- [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0006371) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000715, which was already used in MOP for 'trimerization' (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, '[3+2] cycloaddition' (MOP:0006371) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000715 were copied over to it." 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
 - [[3+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0006371) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A cycloaddition in which one participant contributes three electrons and the other participant contributes two electrons to the transformation of reactants to products." 
   - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
 
@@ -468,9 +546,16 @@
 
 
 ### [4+2] cycloaddition `http://purl.obolibrary.org/obo/MOP_0000565`
-#### Removed
-- [[4+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000565) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
 
+#### Added
+- [[4+2] cycloaddition](http://purl.obolibrary.org/obo/MOP_0000565) SubClassOf [BFO_0000055](http://purl.obolibrary.org/obo/BFO_0000055) some [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) 
+
+
+### acetylene reduction `http://purl.obolibrary.org/obo/MOP_0000713`
+
+#### Added
+- [acetylene reduction](http://purl.obolibrary.org/obo/MOP_0000713) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term 'carboxylation', although it was already used for 'acetylene reduction' in the MOP release and 'carboxylation' was already defined in MOP with a different IRI (MOP:0000591). Hence, the axioms wrongly asserted in RXNO were copied over to the correct 'carboxylation' (MOP:0000591) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)" 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
 
 
 ### acylation `http://purl.obolibrary.org/obo/MOP_0000479`
@@ -482,33 +567,17 @@
 
 
 ### alcohol oxidation `http://purl.obolibrary.org/obo/MOP_0000572`
-#### Removed
-- [alcohol oxidation](http://purl.obolibrary.org/obo/MOP_0000572) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
-
-- [alcohol oxidation](http://purl.obolibrary.org/obo/MOP_0000572) SubClassOf [BFO_0000078](http://purl.obolibrary.org/obo/BFO_0000078) some [CHEBI_30879](http://purl.obolibrary.org/obo/CHEBI_30879) 
 
 #### Added
 - [alcohol oxidation](http://purl.obolibrary.org/obo/MOP_0000572) SubClassOf [RO_0004009](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_30879](http://purl.obolibrary.org/obo/CHEBI_30879) 
 
 
 ### aldehyde reduction `http://purl.obolibrary.org/obo/MOP_0000571`
-#### Removed
-- [aldehyde reduction](http://purl.obolibrary.org/obo/MOP_0000571) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
-
-- [aldehyde reduction](http://purl.obolibrary.org/obo/MOP_0000571) SubClassOf [BFO_0000077](http://purl.obolibrary.org/obo/BFO_0000077) some [CHEBI_15734](http://purl.obolibrary.org/obo/CHEBI_15734) 
-
-- [aldehyde reduction](http://purl.obolibrary.org/obo/MOP_0000571) SubClassOf [BFO_0000078](http://purl.obolibrary.org/obo/BFO_0000078) some [CHEBI_17478](http://purl.obolibrary.org/obo/CHEBI_17478) 
 
 #### Added
 - [aldehyde reduction](http://purl.obolibrary.org/obo/MOP_0000571) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_15734](http://purl.obolibrary.org/obo/CHEBI_15734) 
 
 - [aldehyde reduction](http://purl.obolibrary.org/obo/MOP_0000571) SubClassOf [RO_0004009](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_17478](http://purl.obolibrary.org/obo/CHEBI_17478) 
-
-
-### alkene oxidation `http://purl.obolibrary.org/obo/MOP_0000581`
-#### Removed
-- [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
-
 
 
 ### alkene oxidative cleavage `http://purl.obolibrary.org/obo/MOP_0000708`
@@ -608,6 +677,9 @@
 
 - [carbonyl oxidation to alkyne](http://purl.obolibrary.org/obo/MOP_0006370) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0006370" 
 
+- [carbonyl oxidation to alkyne](http://purl.obolibrary.org/obo/MOP_0006370) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000714, which was already used in MOP for 'ligand exchange reaction'(see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, 'carbonyl oxidation to alkyne' (MOP:0006370) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000714 were copied over to it." 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
 - [carbonyl oxidation to alkyne](http://purl.obolibrary.org/obo/MOP_0006370) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Oxidation of a carbonyl group to an alkyne." 
   - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
 
@@ -617,17 +689,10 @@
 
 
 ### carboxylation `http://purl.obolibrary.org/obo/MOP_0000591`
-#### Removed
-- [carboxylation](http://purl.obolibrary.org/obo/MOP_0000591) SubClassOf [organylation](http://purl.obolibrary.org/obo/MOP_0000458) 
 
 #### Added
-- [carboxylation](http://purl.obolibrary.org/obo/MOP_0000591) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27 this class was wrongly also defined in RXNO under the ID MOP:0000713 ('acetylene reduction'). 
-Thus the &quot;has_participant some 'carboxy group'&quot; axiom, which was not yet present on 'carboxylation' (MOP:0000591) in MOP was copied from this wrongly defined  'carboxylation' in RXNO to the proper one in MOP.
-
-The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation' was also moved to be correctly subsumed in RXNO." 
-  - [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
-
-- [carboxylation](http://purl.obolibrary.org/obo/MOP_0000591) SubClassOf [acylation](http://purl.obolibrary.org/obo/MOP_0000479) 
+- [carboxylation](http://purl.obolibrary.org/obo/MOP_0000591) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for 'acetylene reduction'. Thus, the &quot;'has participant' some 'carboxy group'&quot; axiom, which was not yet present on 'carboxylation' in MOP, was copied over from this wrongly defined 'carboxylation' in RXNO to MOP:0000591. The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation' was also moved to be correctly subsumed in RXNO." 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
 
 - [carboxylation](http://purl.obolibrary.org/obo/MOP_0000591) SubClassOf [RO_0000057](http://purl.obolibrary.org/obo/RO_0000057) some [CHEBI_46883](http://purl.obolibrary.org/obo/CHEBI_46883) 
 
@@ -684,6 +749,12 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 #### Added
 - [condensative chain polymerisation](http://purl.obolibrary.org/obo/MOP_0000645) EquivalentTo [chain polymerisation](http://purl.obolibrary.org/obo/MOP_0000634) and ([BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [condensation reaction](http://purl.obolibrary.org/obo/MOP_0000627)) 
+
+
+### contributor `http://purl.org/dc/terms/contributor`
+
+#### Added
+- AnnotationProperty: [contributor](http://purl.org/dc/terms/contributor) 
 
 
 ### copolymerisation `http://purl.obolibrary.org/obo/MOP_0000631`
@@ -753,17 +824,14 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 - [cyclotrimerization](http://purl.obolibrary.org/obo/MOP_0000716) [date](http://purl.org/dc/terms/date) "2022-02-01T09:48:59Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
+- [cyclotrimerization](http://purl.obolibrary.org/obo/MOP_0000716) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term 'enolization', although it was already used for 'cyclotrimerization' in the MOP release and 'enolization' was already defined in MOP with a different IRI  (MOP:0000672). Hence, the axioms wrongly asserted in RXNO on MOP:0000716 were copied over to the correct 'enolization' (MOP:0000672) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)" 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
 
 ### date `http://purl.org/dc/terms/date`
 
 #### Added
 - AnnotationProperty: [date](http://purl.org/dc/terms/date) 
-
-
-### date `http://www.geneontology.org/formats/oboInOwl#date`
-#### Removed
-- AnnotationProperty: [date](http://www.geneontology.org/formats/oboInOwl#date) 
-
 
 
 ### date `http://purl.org/dc/elements/1.1/date`
@@ -773,22 +841,20 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### dealcoholative condensation `http://purl.obolibrary.org/obo/MOP_0000825`
-#### Removed
-- [dealcoholative condensation](http://purl.obolibrary.org/obo/MOP_0000825) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
 
 #### Added
+- Class: [dealcoholative condensation](http://purl.obolibrary.org/obo/MOP_0000825) 
+
 - [dealcoholative condensation](http://purl.obolibrary.org/obo/MOP_0000825) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
 
+- [dealcoholative condensation](http://purl.obolibrary.org/obo/MOP_0000825) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000825" 
 
-### dealkylation `http://purl.obolibrary.org/obo/MOP_0001369`
-#### Removed
-- [dealkylation](http://purl.obolibrary.org/obo/MOP_0001369) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
+- [dealcoholative condensation](http://purl.obolibrary.org/obo/MOP_0000825) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an alcohol molecule." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
 
-- [dealkylation](http://purl.obolibrary.org/obo/MOP_0001369) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Breaking of a covalent bond between an alkyl group and a substrate." 
-  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:xp" 
+- [dealcoholative condensation](http://purl.obolibrary.org/obo/MOP_0000825) [label](http://www.w3.org/2000/01/rdf-schema#label) "dealcoholative condensation" 
 
-- [dealkylation](http://purl.obolibrary.org/obo/MOP_0001369) SubClassOf [deorganylation](http://purl.obolibrary.org/obo/MOP_0001458) 
-
+- [dealcoholative condensation](http://purl.obolibrary.org/obo/MOP_0000825) SubClassOf [condensation reaction](http://purl.obolibrary.org/obo/MOP_0000627) 
 
 
 ### deamination `http://purl.obolibrary.org/obo/MOP_0000651`
@@ -800,15 +866,20 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### decarboxylation `http://purl.obolibrary.org/obo/MOP_0001713`
-#### Removed
-- [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
-
-- [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) SubClassOf [BFO_0000057](http://purl.obolibrary.org/obo/BFO_0000057) some [CHEBI_46883](http://purl.obolibrary.org/obo/CHEBI_46883) 
-
-- [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) SubClassOf [BFO_0000077](http://purl.obolibrary.org/obo/BFO_0000077) some [CHEBI_16526](http://purl.obolibrary.org/obo/CHEBI_16526) 
 
 #### Added
+- Class: [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) 
+
 - [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
+
+- [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0001713" 
+
+- [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Breaking of a covalent bond between a molecule and a carboxy group." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:xp" 
+
+- [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) [label](http://www.w3.org/2000/01/rdf-schema#label) "decarboxylation" 
+
+- [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) SubClassOf [deorganylation](http://purl.obolibrary.org/obo/MOP_0001458) 
 
 - [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) SubClassOf [RO_0000057](http://purl.obolibrary.org/obo/RO_0000057) some [CHEBI_46883](http://purl.obolibrary.org/obo/CHEBI_46883) 
 
@@ -816,29 +887,47 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### decarboxylative condensation `http://purl.obolibrary.org/obo/MOP_0000722`
-#### Removed
-- [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
-
-- [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) SubClassOf [has_part](http://purl.obolibrary.org/obo/rxno.obo#has_part) some [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) 
 
 #### Added
+- Class: [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) 
+
+- [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "batchelorc" 
+
+- [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2014-03-05T10:00:00Z" 
+
 - [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
+
+- [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000722" 
+
+- [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of a carbon dioxide molecule." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:xp" 
+
+- [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) [label](http://www.w3.org/2000/01/rdf-schema#label) "decarboxylative condensation" 
+
+- [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) SubClassOf [condensation reaction](http://purl.obolibrary.org/obo/MOP_0000627) 
 
 - [decarboxylative condensation](http://purl.obolibrary.org/obo/MOP_0000722) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [decarboxylation](http://purl.obolibrary.org/obo/MOP_0001713) 
 
 
 ### deethanolative condensation `http://purl.obolibrary.org/obo/MOP_0000723`
-#### Removed
-- [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
 
 #### Added
+- Class: [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) 
+
+- [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "batchelorc" 
+
+- [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2014-03-05T10:00:00Z" 
+
 - [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
 
+- [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000723" 
 
-### default-namespace `http://www.geneontology.org/formats/oboInOwl#default-namespace`
-#### Removed
-- AnnotationProperty: [default-namespace](http://www.geneontology.org/formats/oboInOwl#default-namespace) 
+- [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A reaction in which two or more reactants or remote reactive sites within the same molecular entity yield a single main product with accompanying formation of an ethanol molecule." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RSC:xp" 
 
+- [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) [label](http://www.w3.org/2000/01/rdf-schema#label) "deethanolative condensation" 
+
+- [deethanolative condensation](http://purl.obolibrary.org/obo/MOP_0000723) SubClassOf [dealcoholative condensation](http://purl.obolibrary.org/obo/MOP_0000825) 
 
 
 ### dehydration reaction `http://purl.obolibrary.org/obo/MOP_0000628`
@@ -882,11 +971,22 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### dienophilicity `http://purl.obolibrary.org/obo/MOP_0000826`
-#### Removed
-- [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
 
 #### Added
+- Class: [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) 
+
+- [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://goldbook.iupac.org/D01700.html" 
+
 - [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
+
+- [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000826" 
+
+- [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A disposition which is realised in a [4+2] reaction with a double-bonded system." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
+
+- [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) [label](http://www.w3.org/2000/01/rdf-schema#label) "dienophilicity" 
+
+- [dienophilicity](http://purl.obolibrary.org/obo/MOP_0000826) SubClassOf [BFO_0000016](http://purl.obolibrary.org/obo/BFO_0000016) 
 
 
 ### electron pair transfer `http://purl.obolibrary.org/obo/MOP_0000679`
@@ -898,25 +998,41 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### enolisability `http://purl.obolibrary.org/obo/MOP_0000717`
-#### Removed
-- [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
 
 #### Added
+- Class: [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) 
+
 - [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
+
+- [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000717" 
+
+- [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "Disposition that is realised in the process of enolisation" 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
+
+- [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) [label](http://www.w3.org/2000/01/rdf-schema#label) "enolisability" 
+
+- [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) SubClassOf [BFO_0000016](http://purl.obolibrary.org/obo/BFO_0000016) 
 
 
 ### enolisable carbonyl compound `http://purl.obolibrary.org/obo/MOP_0000718`
-#### Removed
-- [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "RXNO" 
-
-- [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) EquivalentTo [CHEBI_36587](http://purl.obolibrary.org/obo/CHEBI_36587) and ([BFO_0000162](http://purl.obolibrary.org/obo/BFO_0000162) some [enolisability](http://purl.obolibrary.org/obo/MOP_0000717)) 
-
-- [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) SubClassOf [BFO_0000162](http://purl.obolibrary.org/obo/BFO_0000162) some [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) 
 
 #### Added
+- Class: [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) 
+
 - [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "MOP" 
 
+- [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0000718" 
+
+- [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A carbonyl compound that bears the disposition to be enolised." 
+  - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
+
+- [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "this surely belongs in ChEBI but put it here pro tem" 
+
+- [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) [label](http://www.w3.org/2000/01/rdf-schema#label) "enolisable carbonyl compound" 
+
 - [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) EquivalentTo [CHEBI_36587](http://purl.obolibrary.org/obo/CHEBI_36587) and ([RO_0000091](http://purl.obolibrary.org/obo/RO_0000091) some [enolisability](http://purl.obolibrary.org/obo/MOP_0000717)) 
+
+- [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) SubClassOf [CHEBI_36587](http://purl.obolibrary.org/obo/CHEBI_36587) 
 
 - [enolisable carbonyl compound](http://purl.obolibrary.org/obo/MOP_0000718) SubClassOf [RO_0000091](http://purl.obolibrary.org/obo/RO_0000091) some [enolisability](http://purl.obolibrary.org/obo/MOP_0000717) 
 
@@ -933,6 +1049,9 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 - [enolization](http://purl.obolibrary.org/obo/MOP_0000672) SubClassOf [BFO_0000078](http://purl.obolibrary.org/obo/BFO_0000078) some [CHEBI_36586](http://purl.obolibrary.org/obo/CHEBI_36586) 
 
 #### Added
+- [enolization](http://purl.obolibrary.org/obo/MOP_0000672) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Prior to the resolving of https://github.com/rsc-ontology/rxno/issues/27, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for 'cyclotrimerization'. Thus, the 'realizes some enolisability' axiom, which was not yet present on 'enolization' (MOP:0000672) in MOP was copied over from this wrongly defined 'enolization' in RXNO." 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
 - [enolization](http://purl.obolibrary.org/obo/MOP_0000672) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A 'keto-enol tautomerisation' where a carbonyl compound is converted to an enol. Usually this is a reversible tautomerization but it can be irreversible." 
   - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
 
@@ -983,12 +1102,6 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 - [ester reduction to primary alcohol](http://purl.obolibrary.org/obo/MOP_0000579) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_15734](http://purl.obolibrary.org/obo/CHEBI_15734) 
 
 
-### formation of covalent bond with nitrogen centre `http://purl.obolibrary.org/obo/MOP_0000802`
-
-#### Added
-- [formation of covalent bond with nitrogen centre](http://purl.obolibrary.org/obo/MOP_0000802) SubClassOf [RO_0000057](http://purl.obolibrary.org/obo/RO_0000057) some [CHEBI_29785](http://purl.obolibrary.org/obo/CHEBI_29785) 
-
-
 ### formylation `http://purl.obolibrary.org/obo/MOP_0000003`
 
 #### Added
@@ -1019,10 +1132,16 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 - [graft polymerisation](http://purl.obolibrary.org/obo/MOP_0000702) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_53518](http://purl.obolibrary.org/obo/CHEBI_53518) 
 
 
-### has_part `http://purl.obolibrary.org/obo/rxno.obo#has_part`
+### hasOBOFormatVersion `http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion`
 #### Removed
-- ObjectProperty: [has_part](http://purl.obolibrary.org/obo/rxno.obo#has_part) 
+- AnnotationProperty: [hasOBOFormatVersion](http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion) 
 
+
+
+### hasOBONamespace `http://www.geneontology.org/formats/oboInOwl#hasOBONamespace`
+
+#### Added
+- AnnotationProperty: [hasOBONamespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) 
 
 
 ### homopolymerisation `http://purl.obolibrary.org/obo/MOP_0000633`
@@ -1116,6 +1235,9 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 - [ligand exchange reaction](http://purl.obolibrary.org/obo/MOP_0000714) SubClassOf [BFO_0000057](http://purl.obolibrary.org/obo/BFO_0000057) some [CHEBI_52214](http://purl.obolibrary.org/obo/CHEBI_52214) 
 
 #### Added
+- [ligand exchange reaction](http://purl.obolibrary.org/obo/MOP_0000714) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term 'carbonyl oxidation to alkyne', although it was already used for 'ligand exchange reaction' in the MOP release. Since 'carbonyl oxidation to alkyne' was not yet defined in MOP, MOP:0006370 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000714 were copied over to MOP:0006370. (see also: https://github.com/rsc-ontology/rxno/issues/27)" 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
 - [ligand exchange reaction](http://purl.obolibrary.org/obo/MOP_0000714) SubClassOf [RO_0000057](http://purl.obolibrary.org/obo/RO_0000057) some [CHEBI_52214](http://purl.obolibrary.org/obo/CHEBI_52214) 
 
 
@@ -1127,6 +1249,14 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 #### Added
 - [living copolymerisation](http://purl.obolibrary.org/obo/MOP_0000649) EquivalentTo [living polymerisation](http://purl.obolibrary.org/obo/MOP_0000646) and ([RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_53310](http://purl.obolibrary.org/obo/CHEBI_53310)) 
+
+
+### nitration `http://purl.obolibrary.org/obo/MOP_0000556`
+#### Removed
+- [nitration](http://purl.obolibrary.org/obo/MOP_0000556) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "has_participant: CHEBI:29785" 
+
+#### Added
+- [nitration](http://purl.obolibrary.org/obo/MOP_0000556) SubClassOf [RO_0000057](http://purl.obolibrary.org/obo/RO_0000057) some [CHEBI_29785](http://purl.obolibrary.org/obo/CHEBI_29785) 
 
 
 ### nitrile reduction `http://purl.obolibrary.org/obo/MOP_0000711`
@@ -1146,6 +1276,9 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 - [olefin reduction](http://purl.obolibrary.org/obo/MOP_0000712) SubClassOf [BFO_0000078](http://purl.obolibrary.org/obo/BFO_0000078) some [CHEBI_33641](http://purl.obolibrary.org/obo/CHEBI_33641) 
 
 #### Added
+- [olefin reduction](http://purl.obolibrary.org/obo/MOP_0000712) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term 'oxidation state', although it was already used for 'olefin reduction' in the MOP release. Since 'oxidation state' was not yet defined in MOP, MOP:0005561 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000712 were copied over to MOP:0005561. (see also: https://github.com/rsc-ontology/rxno/issues/27)" 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
 - [olefin reduction](http://purl.obolibrary.org/obo/MOP_0000712) SubClassOf [RO_0004009](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_33641](http://purl.obolibrary.org/obo/CHEBI_33641) 
 
 
@@ -1158,12 +1291,13 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 - [oxidation state](http://purl.obolibrary.org/obo/MOP_0005561) [id](http://www.geneontology.org/formats/oboInOwl#id) "MOP:0005561" 
 
+- [oxidation state](http://purl.obolibrary.org/obo/MOP_0005561) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000712, which was already used in MOP for 'olefin reduction' (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, 'oxidation state' (MOP:0005561) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000712 were copied over to it." 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
 - [oxidation state](http://purl.obolibrary.org/obo/MOP_0005561) [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A formal account of the degree of oxidation of an atom." 
   - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429" 
 
 - [oxidation state](http://purl.obolibrary.org/obo/MOP_0005561) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "It turns out to be formally defined, which makes our definitions a bit poor." 
-
-- [oxidation state](http://purl.obolibrary.org/obo/MOP_0005561) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "The same term was provided in RXNO under the ID MOP:0000712 which conflicts with the same ID in MOP preserved for olefin reduction. The term was deleted from RXNO to be reimported correctly from MOP iwith the new current ID&quot;)" 
 
 - [oxidation state](http://purl.obolibrary.org/obo/MOP_0005561) [label](http://www.w3.org/2000/01/rdf-schema#label) "oxidation state" 
 
@@ -1231,14 +1365,8 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### primary alkene oxidation to carboxylic acid and carbon dioxide `http://purl.obolibrary.org/obo/MOP_0000584`
-#### Removed
-- [primary alkene oxidation to carboxylic acid and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000584) SubClassOf [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581) 
-
-- [primary alkene oxidation to carboxylic acid and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000584) SubClassOf [oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000707) 
 
 #### Added
-- [primary alkene oxidation to carboxylic acid and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000584) SubClassOf [alkene oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000708) 
-
 - [primary alkene oxidation to carboxylic acid and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000584) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_16526](http://purl.obolibrary.org/obo/CHEBI_16526) 
 
 
@@ -1259,14 +1387,8 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### quaternary alkene oxidation to ketones `http://purl.obolibrary.org/obo/MOP_0000588`
-#### Removed
-- [quaternary alkene oxidation to ketones](http://purl.obolibrary.org/obo/MOP_0000588) SubClassOf [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581) 
-
-- [quaternary alkene oxidation to ketones](http://purl.obolibrary.org/obo/MOP_0000588) SubClassOf [oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000707) 
 
 #### Added
-- [quaternary alkene oxidation to ketones](http://purl.obolibrary.org/obo/MOP_0000588) SubClassOf [alkene oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000708) 
-
 - [quaternary alkene oxidation to ketones](http://purl.obolibrary.org/obo/MOP_0000588) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_17087](http://purl.obolibrary.org/obo/CHEBI_17087) 
 
 
@@ -1341,28 +1463,16 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### secondary terminal alkene oxidation to ketone and carbon dioxide `http://purl.obolibrary.org/obo/MOP_0000587`
-#### Removed
-- [secondary terminal alkene oxidation to ketone and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000587) SubClassOf [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581) 
-
-- [secondary terminal alkene oxidation to ketone and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000587) SubClassOf [oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000707) 
 
 #### Added
-- [secondary terminal alkene oxidation to ketone and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000587) SubClassOf [alkene oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000708) 
-
 - [secondary terminal alkene oxidation to ketone and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000587) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_16526](http://purl.obolibrary.org/obo/CHEBI_16526) 
 
 - [secondary terminal alkene oxidation to ketone and carbon dioxide](http://purl.obolibrary.org/obo/MOP_0000587) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_17087](http://purl.obolibrary.org/obo/CHEBI_17087) 
 
 
 ### secondary, non-terminal alkene oxidation to aldehydes `http://purl.obolibrary.org/obo/MOP_0000586`
-#### Removed
-- [secondary, non-terminal alkene oxidation to aldehydes](http://purl.obolibrary.org/obo/MOP_0000586) SubClassOf [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581) 
-
-- [secondary, non-terminal alkene oxidation to aldehydes](http://purl.obolibrary.org/obo/MOP_0000586) SubClassOf [oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000707) 
 
 #### Added
-- [secondary, non-terminal alkene oxidation to aldehydes](http://purl.obolibrary.org/obo/MOP_0000586) SubClassOf [alkene oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000708) 
-
 - [secondary, non-terminal alkene oxidation to aldehydes](http://purl.obolibrary.org/obo/MOP_0000586) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_17478](http://purl.obolibrary.org/obo/CHEBI_17478) 
 
 
@@ -1405,14 +1515,8 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 
 
 ### tertiary alkene oxidation to carboxylic acid and ketone `http://purl.obolibrary.org/obo/MOP_0000585`
-#### Removed
-- [tertiary alkene oxidation to carboxylic acid and ketone](http://purl.obolibrary.org/obo/MOP_0000585) SubClassOf [alkene oxidation](http://purl.obolibrary.org/obo/MOP_0000581) 
-
-- [tertiary alkene oxidation to carboxylic acid and ketone](http://purl.obolibrary.org/obo/MOP_0000585) SubClassOf [oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000707) 
 
 #### Added
-- [tertiary alkene oxidation to carboxylic acid and ketone](http://purl.obolibrary.org/obo/MOP_0000585) SubClassOf [alkene oxidative cleavage](http://purl.obolibrary.org/obo/MOP_0000708) 
-
 - [tertiary alkene oxidation to carboxylic acid and ketone](http://purl.obolibrary.org/obo/MOP_0000585) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_17087](http://purl.obolibrary.org/obo/CHEBI_17087) 
 
 - [tertiary alkene oxidation to carboxylic acid and ketone](http://purl.obolibrary.org/obo/MOP_0000585) SubClassOf [RO_0004008](http://purl.obolibrary.org/obo/RO_0004008) some [CHEBI_33575](http://purl.obolibrary.org/obo/CHEBI_33575) 
@@ -1467,21 +1571,23 @@ The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation
 - [trimerization](http://purl.obolibrary.org/obo/MOP_0000715) [seeAlso](http://www.w3.org/2000/01/rdf-schema#seeAlso) [issuecomment-1124151946](https://github.com/rsc-ontologies/rxno/pull/46#issuecomment-1124151946) 
 
 #### Added
+- [trimerization](http://purl.obolibrary.org/obo/MOP_0000715) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) [34](https://github.com/rsc-ontology/rxno/issues/34) 
+
+- [trimerization](http://purl.obolibrary.org/obo/MOP_0000715) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) [45](https://github.com/rsc-ontology/rxno/issues/45) 
+
 - [trimerization](http://purl.obolibrary.org/obo/MOP_0000715) [creator](http://purl.org/dc/terms/creator) [0000-0002-4378-6061](http://orcid.org/0000-0002-4378-6061) 
 
 - [trimerization](http://purl.obolibrary.org/obo/MOP_0000715) [date](http://purl.org/dc/terms/date) "2022-02-01T09:40:48Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [trimerization](http://purl.obolibrary.org/obo/MOP_0000715) [IAO_0000116](http://purl.obolibrary.org/obo/IAO_0000116) "The GO class &quot;protein trimerization&quot; (https://purl.obolibrary.org/obo/GO_0070206) would actually be a subclass of &quot;trimerization&quot; according to the definition provided here. However, for the reason of not wanting to inject this subclassOf axiom into GO, we decided to not assert this in MOP as of yet. Further discussion is needed with the GO and/or OBO team to see how this GO class can be integrated." 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
+
+- [trimerization](http://purl.obolibrary.org/obo/MOP_0000715) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term '[3+2] cycloaddition', although it was already used for 'trimerization' in the MOP release. Since 'carbonyl oxidation to alkyne' was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27)" 
+  - [creator](http://purl.org/dc/terms/creator) [0000-0002-1595-3213](https://orcid.org/0000-0002-1595-3213) 
 
 
 ### type `http://purl.org/dc/elements/1.1/type`
 
 #### Added
 - AnnotationProperty: [type](http://purl.org/dc/elements/1.1/type) 
-
-
-### univalent carboacylation `http://purl.obolibrary.org/obo/MOP_0000029`
-#### Removed
-- [univalent carboacylation](http://purl.obolibrary.org/obo/MOP_0000029) SubClassOf [organylation](http://purl.obolibrary.org/obo/MOP_0000458) 
-
-#### Added
-- [univalent carboacylation](http://purl.obolibrary.org/obo/MOP_0000029) SubClassOf [carboacylation](http://purl.obolibrary.org/obo/MOP_0000028) 
 
