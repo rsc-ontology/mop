@@ -12,7 +12,7 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/mop/mop-base.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-10-24/mop-base.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/mop/releases/2026-10-26/mop-base.owl"/>
         <dc:type rdf:resource="http://purl.obolibrary.org/obo/IAO_8000001"/>
         <dcterms:contributor rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
         <dcterms:contributor rdf:resource="https://orcid.org/0009-0001-5998-5030"/>
@@ -20,7 +20,7 @@
         <dcterms:description>MOP is the molecular process ontology. It contains the molecular processes that underlie the name reaction ontology RXNO, for example cyclization, methylation and demethylation.</dcterms:description>
         <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dcterms:title>Molecular Process Ontology (MOP)</dcterms:title>
-        <owl:versionInfo>2026-10-24</owl:versionInfo>
+        <owl:versionInfo>2026-10-26</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -12008,7 +12008,7 @@
         <oboInOwl:created_by>batchelorc</oboInOwl:created_by>
         <oboInOwl:creation_date>2009-06-05T04:57:07Z</oboInOwl:creation_date>
         <oboInOwl:id>MOP:0000591</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for &apos;acetylene reduction&apos;. Thus, the &quot;&apos;has participant&apos; some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; in MOP, was copied over from this wrongly defined &apos;carboxylation&apos; in RXNO to MOP:0000591. The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for &apos;acetylene reduction&apos;. Thus, the &quot;&apos;has participant&apos; some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; in MOP, was copied over from this wrongly defined &apos;carboxylation&apos; in RXNO to MOP:0000591. The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</rdfs:comment>
         <rdfs:comment>CHEBI:46883.</rdfs:comment>
         <rdfs:label>carboxylation</rdfs:label>
     </owl:Class>
@@ -12021,7 +12021,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000591"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for &apos;acetylene reduction&apos;. Thus, the &quot;&apos;has participant&apos; some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; in MOP, was copied over from this wrongly defined &apos;carboxylation&apos; in RXNO to MOP:0000591. The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for &apos;acetylene reduction&apos;. Thus, the &quot;&apos;has participant&apos; some &apos;carboxy group&apos;&quot; axiom, which was not yet present on &apos;carboxylation&apos; in MOP, was copied over from this wrongly defined &apos;carboxylation&apos; in RXNO to MOP:0000591. The only RXNO subclass &apos;Kolbe-Schmitt reaction&apos; (RXNO:0000182) of &apos;carboxylation&apos; was also moved to be correctly subsumed in RXNO.</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
@@ -14810,7 +14810,7 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>Hydrogenation of an olefin to a paraffin.</obo:IAO_0000115>
         <oboInOwl:id>MOP:0000712</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;oxidation state&apos;, although it was already used for &apos;olefin reduction&apos; in the MOP release. Since &apos;oxidation state&apos; was not yet defined in MOP, MOP:0005561 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000712 were copied over to MOP:0005561. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;oxidation state&apos;, although it was already used for &apos;olefin reduction&apos; in the MOP release. Since &apos;oxidation state&apos; was not yet defined in MOP, MOP:0005561 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000712 were copied over to MOP:0005561. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:label>olefin reduction</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14822,7 +14822,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000712"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;oxidation state&apos;, although it was already used for &apos;olefin reduction&apos; in the MOP release. Since &apos;oxidation state&apos; was not yet defined in MOP, MOP:0005561 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000712 were copied over to MOP:0005561. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;oxidation state&apos;, although it was already used for &apos;olefin reduction&apos; in the MOP release. Since &apos;oxidation state&apos; was not yet defined in MOP, MOP:0005561 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000712 were copied over to MOP:0005561. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
@@ -14834,13 +14834,13 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/MOP_0000589"/>
         <obo:IAO_0000115>Hydrogenation of an acetylene to an olefin.</obo:IAO_0000115>
         <oboInOwl:id>MOP:0000713</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;carboxylation&apos;, although it was already used for &apos;acetylene reduction&apos; in the MOP release and &apos;carboxylation&apos; was already defined in MOP with a different IRI (MOP:0000591). Hence, the axioms wrongly asserted in RXNO were copied over to the correct &apos;carboxylation&apos; (MOP:0000591) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;carboxylation&apos;, although it was already used for &apos;acetylene reduction&apos; in the MOP release and &apos;carboxylation&apos; was already defined in MOP with a different IRI (MOP:0000591). Hence, the axioms wrongly asserted in RXNO were copied over to the correct &apos;carboxylation&apos; (MOP:0000591) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:label>acetylene reduction</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000713"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;carboxylation&apos;, although it was already used for &apos;acetylene reduction&apos; in the MOP release and &apos;carboxylation&apos; was already defined in MOP with a different IRI (MOP:0000591). Hence, the axioms wrongly asserted in RXNO were copied over to the correct &apos;carboxylation&apos; (MOP:0000591) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;carboxylation&apos;, although it was already used for &apos;acetylene reduction&apos; in the MOP release and &apos;carboxylation&apos; was already defined in MOP with a different IRI (MOP:0000591). Hence, the axioms wrongly asserted in RXNO were copied over to the correct &apos;carboxylation&apos; (MOP:0000591) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
@@ -14861,7 +14861,7 @@
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2021-11-03T09:13:45Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym>ligand substitution reaction</oboInOwl:hasExactSynonym>
         <oboInOwl:id>MOP:0000714</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;carbonyl oxidation to alkyne&apos;, although it was already used for &apos;ligand exchange reaction&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006370 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000714 were copied over to MOP:0006370. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;carbonyl oxidation to alkyne&apos;, although it was already used for &apos;ligand exchange reaction&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006370 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000714 were copied over to MOP:0006370. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:comment>Typically, weakly bound ligands are replaced by more strongly bound ones, so that the resulting complex becomes thermodynamically more stable.</rdfs:comment>
         <rdfs:label xml:lang="en">ligand exchange reaction</rdfs:label>
     </owl:Class>
@@ -14875,7 +14875,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000714"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;carbonyl oxidation to alkyne&apos;, although it was already used for &apos;ligand exchange reaction&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006370 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000714 were copied over to MOP:0006370. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the MOP term &apos;carbonyl oxidation to alkyne&apos;, although it was already used for &apos;ligand exchange reaction&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006370 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000714 were copied over to MOP:0006370. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
@@ -14892,7 +14892,7 @@
         <dcterms:creator rdf:resource="http://orcid.org/0000-0002-4378-6061"/>
         <dcterms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-01T09:40:48Z</dcterms:date>
         <oboInOwl:id>MOP:0000715</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;[3+2] cycloaddition&apos;, although it was already used for &apos;trimerization&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;[3+2] cycloaddition&apos;, although it was already used for &apos;trimerization&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:label xml:lang="en">trimerization</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14910,7 +14910,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000715"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;[3+2] cycloaddition&apos;, although it was already used for &apos;trimerization&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;[3+2] cycloaddition&apos;, although it was already used for &apos;trimerization&apos; in the MOP release. Since &apos;carbonyl oxidation to alkyne&apos; was not yet defined in MOP, MOP:0006371 was minted to resolve this IRI clash and all axioms asserted wrongly in RXNO on MOP:0000715 were copied over to MOP:0006371. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
@@ -14925,7 +14925,7 @@
         <dcterms:creator rdf:resource="http://orcid.org/0000-0002-4378-6061"/>
         <dcterms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-02-01T09:48:59Z</dcterms:date>
         <oboInOwl:id>MOP:0000716</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;enolization&apos;, although it was already used for &apos;cyclotrimerization&apos; in the MOP release and &apos;enolization&apos; was already defined in MOP with a different IRI  (MOP:0000672). Hence, the axioms wrongly asserted in RXNO on MOP:0000716 were copied over to the correct &apos;enolization&apos; (MOP:0000672) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;enolization&apos;, although it was already used for &apos;cyclotrimerization&apos; in the MOP release and &apos;enolization&apos; was already defined in MOP with a different IRI  (MOP:0000672). Hence, the axioms wrongly asserted in RXNO on MOP:0000716 were copied over to the correct &apos;enolization&apos; (MOP:0000672) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</rdfs:comment>
         <rdfs:label xml:lang="en">cyclotrimerization</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14937,7 +14937,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0000716"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;enolization&apos;, although it was already used for &apos;cyclotrimerization&apos; in the MOP release and &apos;enolization&apos; was already defined in MOP with a different IRI  (MOP:0000672). Hence, the axioms wrongly asserted in RXNO on MOP:0000716 were copied over to the correct &apos;enolization&apos; (MOP:0000672) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this IRI was used in the RXNO release to define the term &apos;enolization&apos;, although it was already used for &apos;cyclotrimerization&apos; in the MOP release and &apos;enolization&apos; was already defined in MOP with a different IRI  (MOP:0000672). Hence, the axioms wrongly asserted in RXNO on MOP:0000716 were copied over to the correct &apos;enolization&apos; (MOP:0000672) class in MOP. (see also: https://github.com/rsc-ontology/rxno/issues/27)</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
@@ -67580,7 +67580,7 @@
         <obo:IAO_0000115>A formal account of the degree of oxidation of an atom.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>http://goldbook.iupac.org/O04365.html</oboInOwl:hasDbXref>
         <oboInOwl:id>MOP:0005561</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000712, which was already used in MOP for &apos;olefin reduction&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;oxidation state&apos; (MOP:0005561) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000712 were copied over to it.</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000712, which was already used in MOP for &apos;olefin reduction&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;oxidation state&apos; (MOP:0005561) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000712 were copied over to it.</rdfs:comment>
         <rdfs:comment>It turns out to be formally defined, which makes our definitions a bit poor.</rdfs:comment>
         <rdfs:label>oxidation state</rdfs:label>
     </owl:Class>
@@ -67593,7 +67593,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0005561"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000712, which was already used in MOP for &apos;olefin reduction&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;oxidation state&apos; (MOP:0005561) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000712 were copied over to it.</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000712, which was already used in MOP for &apos;olefin reduction&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;oxidation state&apos; (MOP:0005561) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000712 were copied over to it.</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
@@ -67624,7 +67624,7 @@
         <obo:IAO_0000115>Oxidation of a carbonyl group to an alkyne.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0006370</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000714, which was already used in MOP for &apos;ligand exchange reaction&apos;(see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;carbonyl oxidation to alkyne&apos; (MOP:0006370) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000714 were copied over to it.</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000714, which was already used in MOP for &apos;ligand exchange reaction&apos;(see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;carbonyl oxidation to alkyne&apos; (MOP:0006370) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000714 were copied over to it.</rdfs:comment>
         <rdfs:label>carbonyl oxidation to alkyne</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -67636,7 +67636,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0006370"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000714, which was already used in MOP for &apos;ligand exchange reaction&apos;(see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;carbonyl oxidation to alkyne&apos; (MOP:0006370) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000714 were copied over to it.</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000714, which was already used in MOP for &apos;ligand exchange reaction&apos;(see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;carbonyl oxidation to alkyne&apos; (MOP:0006370) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000714 were copied over to it.</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
     
@@ -67649,7 +67649,7 @@
         <obo:IAO_0000115>A cycloaddition in which one participant contributes three electrons and the other participant contributes two electrons to the transformation of reactants to products.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>MOP</oboInOwl:hasOBONamespace>
         <oboInOwl:id>MOP:0006371</oboInOwl:id>
-        <rdfs:comment>Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000715, which was already used in MOP for &apos;trimerization&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;[3+2] cycloaddition&apos; (MOP:0006371) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000715 were copied over to it.</rdfs:comment>
+        <rdfs:comment>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000715, which was already used in MOP for &apos;trimerization&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;[3+2] cycloaddition&apos; (MOP:0006371) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000715 were copied over to it.</rdfs:comment>
         <rdfs:label>[3+2] cycloaddition</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -67661,7 +67661,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/MOP_0006371"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Before the mirgation of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000715, which was already used in MOP for &apos;trimerization&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;[3+2] cycloaddition&apos; (MOP:0006371) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000715 were copied over to it.</owl:annotatedTarget>
+        <owl:annotatedTarget>Before the migration of MOP and RXNO to an ODK based workflow, this term was only defined in the RXNO release using the IRI MOP:0000715, which was already used in MOP for &apos;trimerization&apos; (see also: https://github.com/rsc-ontology/rxno/issues/27). To resolve this IRI clash, &apos;[3+2] cycloaddition&apos; (MOP:0006371) was minted in MOP and all axioms wrongly asserted in RXNO on MOP:0000715 were copied over to it.</owl:annotatedTarget>
         <dcterms:creator rdf:resource="https://orcid.org/0000-0002-1595-3213"/>
     </owl:Axiom>
 </rdf:RDF>
