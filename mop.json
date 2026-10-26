@@ -14930,7 +14930,7 @@
           "val" : "Formation of a covalent bond between a substrate and a carboxy group.",
           "xrefs" : [ "RSC:xp" ]
         },
-        "comments" : [ "Before the migration of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000716, which in MOP was already used for 'acetylene reduction'. Thus, the \"'has participant' some 'carboxy group'\" axiom, which was not yet present on 'carboxylation' in MOP, was copied over from this wrongly defined 'carboxylation' in RXNO to MOP:0000591. The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation' was also moved to be correctly subsumed in RXNO.", "CHEBI:46883." ],
+        "comments" : [ "Before the migration of MOP and RXNO to an ODK based workflow, this class was wrongly also defined in RXNO under the ID MOP:0000713, which in MOP was already used for 'acetylene reduction'. Thus, the \"'has participant' some 'carboxy group'\" axiom, which was not yet present on 'carboxylation' in MOP, was copied over from this wrongly defined 'carboxylation' in RXNO to MOP:0000591. The only RXNO subclass 'Kolbe-Schmitt reaction' (RXNO:0000182) of 'carboxylation' was also moved to be correctly subsumed in RXNO.", "CHEBI:46883." ],
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
           "val" : "batchelorc"
