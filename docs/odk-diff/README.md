@@ -2,7 +2,7 @@
 [author](http://purl.org/dc/terms/creator): [Philip Strömert](https://orcid.org/0000-0002-1595-3213) | [created on](http://purl.org/dc/terms/created): 01.10.2026
 
 ## Pre-ODK Migration Background
-Before the migration to an Ontology Development Kit (ODK) based workflow, the two ontologies RXNO and MOP were maintained within the same GitHub repository: https://github.com/rsc-ontology/rxno. Their release workflow edited the release files `rxno.owl` and `mop.owl` directly, so these two files were the only source of truth for both ontologies, which is in contrast to an ODK based workflow, where release files are generated automatically from a separate editor OWL file and/or component files (OWL files and/or ROBOT TSV files).
+Before the migration to an Ontology Development Kit (ODK) based workflow, the two ontologies RXNO and MOP were maintained within the same GitHub repository: https://github.com/rsc-ontology/rxno. Their release workflow edited the release files `rxno.owl` and `mop.owl` directly, so these two files were the only source of truth for both ontologies, which is in contrast to an ODK-based workflow, where release files are generated automatically from a separate editor OWL file and/or component files (OWL files and/or ROBOT TSV files).
 
 In 2021, as a result of the [Ontologies4Chem: the landscape of ontologies in chemistry](https://doi.org/10.1515/pac-2021-2007) overview paper, the NFDI4Chem team began improving both ontologies by filing issues and pull requests in this single RXNO repository. One of the first suggestions was to properly import MOP into RXNO via `owl:import` instead of (re)defining the MOP classes inside the `rxno.owl` file (see [issue #27](https://github.com/rsc-ontology/rxno/issues/27)).
 
@@ -13,7 +13,7 @@ While trying to resolve this issue in 2022, it became apparent that the MOP clas
   * represented the same reaction but carried different axioms or annotations, or
   * represented *different* reactions in MOP and RXNO, and thus had clashing PURLs.
 
-To resolve this and enable a proper import of MOP into RXNO in an ODK based repository, a systematic analysis was needed to identify: which MOP classes could be safely cut from RXNO and copied to MOP, which had to be split into two classes to avoid PURL clashes, and which had to be vetted for differing axiomatisation. The following sections describe how this analysis was conducted.
+To resolve this and enable a proper import of MOP into RXNO in an ODK-based repository, a systematic analysis was needed to identify: which MOP classes could be safely cut from RXNO and copied to MOP, which had to be split into two classes to avoid PURL clashes, and which had to be vetted for differing axiomatisation. The following sections describe how this analysis was conducted.
 
 ## Creating and Archiving a Pre-ODK Release of RXNO and MOP
 Before the migration to ODK, both ontologies were published only directly in the GitHub repository's code base; no GitHub releases had ever been created. We therefore created a pre-ODK release and tag so that these versions of RXNO and MOP could be referenced: https://github.com/rsc-ontology/rxno/tree/pre-odk-release
@@ -226,7 +226,7 @@ This reason explains the differences on:
 - acylation `http://purl.obolibrary.org/obo/MOP_0000479`
 - alcohol oxidation `http://purl.obolibrary.org/obo/MOP_0000572`
 - aldehyde reduction `http://purl.obolibrary.org/obo/MOP_0000571`
-- alkene ozonolysis `http://purl.obolibrary.org/obo/MOP_0000583` (Parent swap only — see Critical §2 for details.)
+- alkene ozonolysis `http://purl.obolibrary.org/obo/MOP_0000583` (Parent swap only — see [Duplicates: One reaction, two IRIs](#duplicates) for details.)
 - allylation `http://purl.obolibrary.org/obo/MOP_0000422`
 - amine oxidation `http://purl.obolibrary.org/obo/MOP_0000575`
 - arylation `http://purl.obolibrary.org/obo/MOP_0000411`
@@ -290,7 +290,29 @@ This reason explains the differences on:
   - **Added**
     - SubClassOf [BFO_0000117](http://purl.obolibrary.org/obo/BFO_0000117) some [accepting a hydron](http://purl.obolibrary.org/obo/MOP_0000737) 
 
-##### Annotation differences (no logical impact)
+
+##### Different labels
+
+**Cause:** Three MOP terms have different `rdfs:label` values in the two files. The `mop.owl` label is generally shorter and more generic (e.g., "dehydration reaction" vs. "molecular dehydration reaction").
+
+**Action:** Domain-expert review to decide which label is more accurate.
+
+**Affected terms (3):**
+- `http://purl.obolibrary.org/obo/MOP_0000628` — "molecular dehydration reaction" → "dehydration reaction"
+- `http://purl.obolibrary.org/obo/MOP_0000574` — "secondary alcohol oxidation to ketone" → "secondary alcohol oxidation"
+- `http://purl.obolibrary.org/obo/MOP_0000573` — "primary alcohol oxidation to aldehyde" → "primary alcohol oxidation"
+
+**Example:**
+- molecular dehydration reaction `http://purl.obolibrary.org/obo/MOP_0000628`
+  - Removed
+    - [label](http://www.w3.org/2000/01/rdf-schema#label) "molecular dehydration reaction"
+  - Added
+    - [label](http://www.w3.org/2000/01/rdf-schema#label) "dehydration reaction"
+
+<a id="metadata-changes"></a>
+### Metadata Changes (no logical impact)
+
+##### Annotation differences
 
 **Cause:** The two files carry different annotations on otherwise logically identical terms. The most common pattern is that `mop.owl` has richer annotations than `rxno.owl` (definitions added, dbxref URIs updated from `AU:xxx` shorthand to full DOI URLs, synonyms added). One term (`allylic rearrangement`) shows the reverse pattern: `rxno.owl` had an extra `hasDbXref` that is missing in `mop.owl`.
 
@@ -336,27 +358,6 @@ This reason explains the differences on:
     - [IAO_0000115](http://purl.obolibrary.org/obo/IAO_0000115) "A sigmatropic rearrangement where the intermediate consists of two three-electron fragments." 
       - [hasDbXref](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-5985-7429"
 
-
-##### Different labels
-
-**Cause:** Three MOP terms have different `rdfs:label` values in the two files. The `mop.owl` label is generally shorter and more generic (e.g., "dehydration reaction" vs. "molecular dehydration reaction").
-
-**Action:** Domain-expert review to decide which label is more accurate.
-
-**Affected terms (3):**
-- `http://purl.obolibrary.org/obo/MOP_0000628` — "molecular dehydration reaction" → "dehydration reaction"
-- `http://purl.obolibrary.org/obo/MOP_0000574` — "secondary alcohol oxidation to ketone" → "secondary alcohol oxidation"
-- `http://purl.obolibrary.org/obo/MOP_0000573` — "primary alcohol oxidation to aldehyde" → "primary alcohol oxidation"
-
-**Example:**
-- molecular dehydration reaction `http://purl.obolibrary.org/obo/MOP_0000628`
-  - Removed
-    - [label](http://www.w3.org/2000/01/rdf-schema#label) "molecular dehydration reaction"
-  - Added
-    - [label](http://www.w3.org/2000/01/rdf-schema#label) "dehydration reaction"
-
-
-### Metadata Changes
 
 #### Alternative ID annotations
 
