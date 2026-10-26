@@ -1,0 +1,100 @@
+MOP:0000003	# formylation
+MOP:0000339	# silylation
+MOP:0000364	# methylation
+MOP:0000369	# alkylation
+MOP:0000410	# hydrocarbylation
+MOP:0000411	# arylation
+MOP:0000422	# allylation
+MOP:0000458	# organylation
+MOP:0000479	# acylation
+MOP:0000524	# 
+MOP:0000539	# sulfonylation
+MOP:0000543	# molecular process
+MOP:0000550	# halogenation
+MOP:0000555	# imination
+MOP:0000556	# nitration
+MOP:0000561	# cyclization
+MOP:0000562	# cycloaddition
+MOP:0000563	# [2+2] cycloaddition
+MOP:0000564	# cycloelimination
+MOP:0000565	# [4+2] cycloaddition
+MOP:0000566	# formation of covalent bond with group
+MOP:0000567	# breaking of covalent bond with group
+MOP:0000568	# oxidation
+MOP:0000569	# reduction
+MOP:0000570	# electron attachment
+MOP:0000571	# aldehyde reduction
+MOP:0000572	# alcohol oxidation
+MOP:0000573	# primary alcohol oxidation to aldehyde
+MOP:0000574	# secondary alcohol oxidation to ketone
+MOP:0000575	# amine oxidation
+MOP:0000576	# imine reduction
+MOP:0000577	# ester reduction
+MOP:0000578	# ester reduction to aldehyde
+MOP:0000579	# ester reduction to primary alcohol
+MOP:0000580	# ketone reduction
+MOP:0000581	# alkene oxidation
+MOP:0000582	# "alkene oxidation to 1,2-diol"
+MOP:0000583	# alkene ozonolysis
+MOP:0000584	# primary alkene oxidation to carboxylic acid and carbon dioxide
+MOP:0000585	# tertiary alkene oxidation to carboxylic acid and ketone
+MOP:0000586	# "secondary, non-terminal alkene oxidation to aldehydes"
+MOP:0000587	# secondary terminal alkene oxidation to ketone and carbon dioxide
+MOP:0000588	# quaternary alkene oxidation to ketones
+MOP:0000589	# hydrogenation
+MOP:0000596	# pseudohalogenation
+MOP:0000618	# solvolysis
+MOP:0000619	# hydrolysis
+MOP:0000627	# condensation reaction
+MOP:0000628	# molecular dehydration reaction
+MOP:0000642	# addition reaction
+MOP:0000650	# amination
+MOP:0000656	# elimination reaction
+MOP:0000671	# epoxidation
+MOP:0000705	# oxidation at sulfur
+MOP:0000706	# oxidation at nitrogen
+MOP:0000712	# oxidation state
+MOP:0000713	# carboxylation
+MOP:0000714	# carbonyl oxidation to alkyne
+MOP:0000715	# [3+2] cycloaddition
+MOP:0000716	# enolisation
+MOP:0000717	# enolisability
+MOP:0000718	# enolisable carbonyl compound
+MOP:0000719	# O-dealkylation
+MOP:0000720	# [2+2+1] cycloaddition
+MOP:0000721	# "[3,3]-sigmatropic rearrangement"
+MOP:0000722	# decarboxylative condensation
+MOP:0000723	# deethanolative condensation
+MOP:0000730	# Brønsted acid catalysis
+MOP:0000731	# base catalysis
+MOP:0000732	# hydron donation
+MOP:0000733	# accepting an electron pair in Lewis adduct formation
+MOP:0000734	# Lewis acid catalysis
+MOP:0000735	# Lewis base catalysis
+MOP:0000736	# Brønsted base catalysis
+MOP:0000737	# accepting a hydron
+MOP:0000738	# electron pair donation in Lewis adduct formation
+MOP:0000739	# Lewis adduct formation
+MOP:0000740	# acid catalysis
+MOP:0000790	# substitution reaction
+MOP:0000791	# aromatic substitution
+MOP:0000792	# allylic rearrangement
+MOP:0000793	# N-substitution
+MOP:0000794	# O-substitution
+MOP:0000795	# S-substitution
+MOP:0000802	# formation of covalent bond with nitrogen centre
+MOP:0000825	# dealcoholative condensation
+MOP:0000826	# dienophilicity
+MOP:0001369	# dealkylation
+MOP:0001458	# deorganylation
+MOP:0001550	# dehalogenation
+MOP:0001713	# decarboxylation
+MOP:0002364	# N-methylation
+MOP:0002369	# N-alkylation
+MOP:0002411	# N-arylation
+MOP:0002479	# N-acylation
+MOP:0002524	# N-sulfonylation
+MOP:0003339	# O-silylation
+MOP:0003479	# O-acylation
+MOP:0003524	# O-sulfonylation
+MOP:0006369	# P-alkylation
