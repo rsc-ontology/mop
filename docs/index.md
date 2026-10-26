@@ -1,7 +1,9 @@
-# MOP Ontology Documentation
+# The Molecular Process Ontology (MOP) Documentation
 
 [//]: # "This file is meant to be edited by the ontology maintainer."
 
-Welcome to the MOP documentation!
+Welcome to the documentation of the Molecular Process Ontology!
+
+>CAVE: This documentation is currently still work in progress.
 
 You can find descriptions of the standard ontology engineering workflows [here](odk-workflows/index.md).
