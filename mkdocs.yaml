@@ -18,12 +18,13 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
 
-site_url: https://rsc-ontologies.github.io/mop/
+site_url: https://rsc-ontology.github.io/mop/
 repo_url: https://github.com/rsc-ontology/mop/
 
 nav:
   - Getting started: index.md
   - Cite: cite.md
+  - MOP to ODK Migration: odk-diff/README.md
   - How-to guides:
       - Standard ODK workflows:
           - Overview: odk-workflows/index.md
@@ -37,5 +38,5 @@ nav:
           - Managing your automated testing: odk-workflows/ManageAutomatedTest.md
           - Continuous Integration: odk-workflows/ContinuousIntegration.md
           - Your ODK Repository Overview: odk-workflows/RepositoryFileStructure.md 
-      - Contributing: contributing.md
+  - Contributing: contributing.md
 
